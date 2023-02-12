@@ -1,5 +1,7 @@
 ﻿using Microsoft.Win32;
+using MySql.Data.MySqlClient;
 using STelecom.Classes.Cheack;
+using STelecom.DataBase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -99,5 +101,31 @@ namespace STelecom
             hidePassword.ForeColor = Color.Black;
         }
         #endregion
+
+        void BtnAuthorization_Click(object sender, EventArgs e)
+        {
+            string loginUser = txbLogin.Text;
+            string passUser = txbPassword.Text;
+            string querystring = $"SELECT id, login, password, is_users	FROM users " +
+                $"WHERE login = '{loginUser}' AND password = '{passUser}'";
+            using (MySqlCommand command = new MySqlCommand(querystring, DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    if (table.Rows.Count == 1)
+                    {
+                        DB.GetInstance.CloseConnection();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неверный логин и пароль");
+                        DB.GetInstance.CloseConnection();
+                    }
+                }
+            }
+        }
     }
 }

@@ -100,6 +100,7 @@
             this.btnAuthorization.TabIndex = 35;
             this.btnAuthorization.Text = "Enter";
             this.btnAuthorization.UseVisualStyleBackColor = false;
+            this.btnAuthorization.Click += new System.EventHandler(this.BtnAuthorization_Click);
             // 
             // label4
             // 
