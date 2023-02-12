@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using STelecom.Classes.Cheack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace STelecom
     {
         public AuthorizationForm()
         {
+            if (!InstanceChecker.TakeMemory())
+                StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
