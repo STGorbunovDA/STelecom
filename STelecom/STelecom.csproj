@@ -56,7 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Cheack\InstanceChecker.cs" />
-    <Compile Include="DataBase\DB.cs" />
+    <Compile Include="Classes\DataBase\DB.cs" />
+    <Compile Include="Classes\Other\Encryption.cs" />
     <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,5 +105,6 @@
   <ItemGroup>
     <Content Include="radio_22703.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
