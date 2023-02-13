@@ -111,6 +111,12 @@ namespace STelecom
 
             string loginUser = txbLogin.Text;
             string passUser = txbPassword.Text;
+            //string DBPassword_Encrypt = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
+            //string DBPassword_Decrypt = Encryption.DecryptCipherTextToPlainText(DBPassword_Encrypt);
+
+            //string DBLOGIN_Encrypt = Encryption.EncryptPlainTextToCipherText(txbLogin.Text);
+            //string DBLOGIN_Decrypt = Encryption.DecryptCipherTextToPlainText(DBLOGIN_Encrypt);
+
             //string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
             string querystring = $"SELECT id, login, password, is_users	FROM users " +
                 $"WHERE login = '{loginUser}' AND password = '{passUser}'";
