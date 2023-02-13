@@ -110,9 +110,8 @@ namespace STelecom
                 return;
 
             string loginUser = txbLogin.Text;
-            string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
-
-            //string passUser = txbPassword.Text;
+            string passUser = txbPassword.Text;
+            //string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
             string querystring = $"SELECT id, login, password, is_users	FROM users " +
                 $"WHERE login = '{loginUser}' AND password = '{passUser}'";
             using (MySqlCommand command = new MySqlCommand(querystring, DB.GetInstance.GetConnection()))
@@ -124,6 +123,8 @@ namespace STelecom
                     adapter.Fill(table);
                     if (table.Rows.Count == 1)
                     {
+                        CheckUser user = new CheckUser(table.Rows[0].ItemArray[1].ToString(), table.Rows[0].ItemArray[3].ToString());
+
                         DB.GetInstance.CloseConnection();
                     }
                     else

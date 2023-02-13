@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Cheack\CheckUser.cs" />
     <Compile Include="Classes\Cheack\InstanceChecker.cs" />
     <Compile Include="Classes\Cheack\InternetCheck.cs" />
     <Compile Include="Classes\DataBase\DB.cs" />
