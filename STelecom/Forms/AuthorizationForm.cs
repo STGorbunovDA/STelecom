@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using MySql.Data.MySqlClient;
 using STelecom.Classes.Cheack;
+using STelecom.Classes.Other;
 using STelecom.DataBase;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -105,7 +107,9 @@ namespace STelecom
         void BtnAuthorization_Click(object sender, EventArgs e)
         {
             string loginUser = txbLogin.Text;
-            string passUser = txbPassword.Text;
+            string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
+
+            //string passUser = txbPassword.Text;
             string querystring = $"SELECT id, login, password, is_users	FROM users " +
                 $"WHERE login = '{loginUser}' AND password = '{passUser}'";
             using (MySqlCommand command = new MySqlCommand(querystring, DB.GetInstance.GetConnection()))
