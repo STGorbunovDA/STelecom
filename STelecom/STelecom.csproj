@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Cheack\InstanceChecker.cs" />
+    <Compile Include="Classes\Cheack\InternetCheck.cs" />
     <Compile Include="Classes\DataBase\DB.cs" />
     <Compile Include="Classes\Other\Encryption.cs" />
     <Compile Include="Forms\AuthorizationForm.cs">

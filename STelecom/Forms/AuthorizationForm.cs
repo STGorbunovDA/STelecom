@@ -106,6 +106,9 @@ namespace STelecom
 
         void BtnAuthorization_Click(object sender, EventArgs e)
         {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+
             string loginUser = txbLogin.Text;
             string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
 
