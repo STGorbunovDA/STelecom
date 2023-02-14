@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using STelecom.Classes.Cheack;
 using STelecom.Classes.Other;
 using STelecom.DataBase;
+using STelecom.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,12 +112,6 @@ namespace STelecom
 
             string loginUser = txbLogin.Text;
             string passUser = txbPassword.Text;
-            //string DBPassword_Encrypt = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
-            //string DBPassword_Decrypt = Encryption.DecryptCipherTextToPlainText(DBPassword_Encrypt);
-
-            //string DBLOGIN_Encrypt = Encryption.EncryptPlainTextToCipherText(txbLogin.Text);
-            //string DBLOGIN_Decrypt = Encryption.DecryptCipherTextToPlainText(DBLOGIN_Encrypt);
-
             //string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
             string querystring = $"SELECT id, login, password, is_users	FROM users " +
                 $"WHERE login = '{loginUser}' AND password = '{passUser}'";
@@ -130,8 +125,17 @@ namespace STelecom
                     if (table.Rows.Count == 1)
                     {
                         CheckUser user = new CheckUser(table.Rows[0].ItemArray[1].ToString(), table.Rows[0].ItemArray[3].ToString());
-
-                        DB.GetInstance.CloseConnection();
+                        using (MenuForm menu = new MenuForm(user))
+                        {
+                            RegistryKey currentUserKey = Registry.CurrentUser;
+                            RegistryKey helloKey = currentUserKey.CreateSubKey("SOFTWARE\\ServiceTelekom_Setting\\Login_Password");
+                            helloKey.SetValue("Login", $"{txbLogin.Text}");
+                            helloKey.SetValue("Password", $"{txbPassword.Text}");
+                            helloKey.Close();
+                            this.Hide();
+                            menu.ShowDialog();
+                            DB.GetInstance.CloseConnection();
+                        }
                     }
                     else
                     {
