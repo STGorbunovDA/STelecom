@@ -63,9 +63,29 @@ namespace STelecom.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _999 {
+            get {
+                object obj = ResourceManager.GetObject("999", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap businesssettings_thebox_theproduct_negocio_2327 {
             get {
                 object obj = ResourceManager.GetObject("businesssettings_thebox_theproduct_negocio_2327", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gui_eraser_icon_157160__1_ {
+            get {
+                object obj = ResourceManager.GetObject("gui_eraser_icon_157160 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

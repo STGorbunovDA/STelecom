@@ -72,6 +72,12 @@
     <Compile Include="Forms\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SettingAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingAdminForm.Designer.cs">
+      <DependentUpon>SettingAdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingAdminForm.resx">
+      <DependentUpon>SettingAdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,6 +125,8 @@
   <ItemGroup>
     <None Include="IMG\Untitled-6.jpg" />
     <None Include="IMG\businesssettings_thebox_theproduct_negocio_2327.png" />
+    <None Include="IMG\999.jpg" />
+    <None Include="IMG\gui_eraser_icon_157160 %281%29.png" />
     <Content Include="radio_22703.ico" />
   </ItemGroup>
   <ItemGroup />
