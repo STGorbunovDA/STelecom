@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace STelecom.Classes.Cheack
 {
-    class CheckUser
+    public class CheckUser
     {
         public string Login { get; set; }
         public string IsAdmin { get; }

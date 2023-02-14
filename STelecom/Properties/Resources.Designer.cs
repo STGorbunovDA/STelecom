@@ -63,6 +63,16 @@ namespace STelecom.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap businesssettings_thebox_theproduct_negocio_2327 {
+            get {
+                object obj = ResourceManager.GetObject("businesssettings_thebox_theproduct_negocio_2327", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_64 {
             get {
                 object obj = ResourceManager.GetObject("lock_64", resourceCulture);
@@ -76,6 +86,16 @@ namespace STelecom.Properties {
         internal static System.Drawing.Bitmap Untitled_2 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_6 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
