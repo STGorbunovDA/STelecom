@@ -1,13 +1,6 @@
 ﻿using STelecom.Classes.Cheack;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace STelecom.Forms
@@ -75,5 +68,10 @@ namespace STelecom.Forms
             director.ForeColor = Color.Black;
         }
         #endregion
+
+        void SettingAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
