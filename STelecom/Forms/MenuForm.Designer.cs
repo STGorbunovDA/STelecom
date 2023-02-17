@@ -49,7 +49,6 @@
             this.settingAdmin.Size = new System.Drawing.Size(66, 69);
             this.settingAdmin.TabIndex = 4;
             this.settingAdmin.TabStop = false;
-            this.settingAdmin.Visible = false;
             this.settingAdmin.Click += new System.EventHandler(this.SettingAdmin_Click);
             // 
             // panel1

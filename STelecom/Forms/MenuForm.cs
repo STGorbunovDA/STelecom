@@ -71,7 +71,12 @@ namespace STelecom.Forms
 
         void SettingAdmin_Click(object sender, EventArgs e)
         {
-
+            using (SettingAdminForm SettingAdmin = new SettingAdminForm())
+            {
+                this.Hide();
+                SettingAdmin.ShowDialog();
+                this.Show();
+            }
         }
     }
 }
