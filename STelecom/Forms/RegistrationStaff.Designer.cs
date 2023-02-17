@@ -175,6 +175,7 @@
             this.btnDeleteRegistrationStaff.TabIndex = 117;
             this.btnDeleteRegistrationStaff.Text = "Удалить";
             this.btnDeleteRegistrationStaff.UseVisualStyleBackColor = false;
+            this.btnDeleteRegistrationStaff.Click += new System.EventHandler(this.BtnDeleteRegistrationStaff_Click);
             // 
             // btnChangeRegistrationStaff
             // 
