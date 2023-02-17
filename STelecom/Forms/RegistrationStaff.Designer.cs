@@ -187,6 +187,7 @@
             this.btnChangeRegistrationStaff.TabIndex = 116;
             this.btnChangeRegistrationStaff.Text = "Изменить";
             this.btnChangeRegistrationStaff.UseVisualStyleBackColor = false;
+            this.btnChangeRegistrationStaff.Click += new System.EventHandler(this.BtnChangeRegistrationStaff_Click);
             // 
             // txbId
             // 
