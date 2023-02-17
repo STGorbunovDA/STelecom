@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STelecom.Classes.Other;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -23,7 +24,9 @@ namespace STelecom
 
         static void ExceptionGlobal(object sender, ThreadExceptionEventArgs e)
         {
-            throw new NotImplementedException();
+            LogUser.LogExceptionUserSaveFilePC(e.Exception.Message);
+            LogUser.LogExceptionUserSaveFilePC(e.Exception.ToString());
+            MessageBox.Show(e.Exception.Message);
         }
     }
 }
