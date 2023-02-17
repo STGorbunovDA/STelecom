@@ -180,6 +180,40 @@ namespace STelecom.Forms
                 MessageBox.Show("Добавьте начальника участка!");
             CreateColums();
             RefreshDataGrid(dataGridView1);
-        }    
+        }
+        void PicbUpdate_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(dataGridView1);
+        }
+        void PicbClear_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(cmbSectionForemans.Text))
+            {
+                MessageBox.Show("Поле \"Начальник\" не должен быть пустым, добавьте начальника участка", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(cmbEngineers.Text))
+            {
+                MessageBox.Show("Поле \"Инженер\" не должен быть пустым, добавьте инженера", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(cmbCurator.Text))
+            {
+                MessageBox.Show("Поле \"Куратор\" не должен быть пустым, добавьте куратора", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(cmbCurator.Text))
+            {
+                MessageBox.Show("Поле \"Представитель Дирекции связи\" не должен быть пустым, добавьте представителя диреции связи", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            cmbSectionForemans.Text = cmbSectionForemans.Items[0].ToString();
+            cmbEngineers.Text = cmbEngineers.Items[0].ToString();
+            cmbRoad.Text = cmbRoad.Items[0].ToString();
+            cmbRoad.Text = cmbRoad.Items[0].ToString();
+            cmbRadioCommunicationDirectorate.Text = cmbRadioCommunicationDirectorate.Items[0].ToString();
+            txbAttorney.Clear();
+            txbNumberPrintDocument.Clear();
+        }
     }
 }
