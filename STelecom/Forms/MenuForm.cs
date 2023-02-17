@@ -7,7 +7,7 @@ namespace STelecom.Forms
 {
     public partial class MenuForm : Form
     {
-        private readonly CheckUser _user;
+        readonly CheckUser _user;
         public MenuForm(CheckUser user)
         {
             InitializeComponent();
@@ -22,10 +22,10 @@ namespace STelecom.Forms
             if (_user.Post == "Admin")
             {
                 settingAdmin.Visible = true;
-                director.Visible = true;
+                settingBrigades.Visible = true;
             }
             if (_user.Post == "Руководитель")
-                director.Visible = true;
+                settingBrigades.Visible = true;
         }
         void MenuForm_Load(object sender, EventArgs e)
         {
@@ -61,11 +61,11 @@ namespace STelecom.Forms
         }
         void Director_MouseEnter(object sender, EventArgs e)
         {
-            director.ForeColor = Color.White;
+            settingBrigades.ForeColor = Color.White;
         }
         void Director_MouseLeave(object sender, EventArgs e)
         {
-            director.ForeColor = Color.Black;
+            settingBrigades.ForeColor = Color.Black;
         }
         #endregion
 
@@ -75,6 +75,16 @@ namespace STelecom.Forms
             {
                 this.Hide();
                 SettingAdmin.ShowDialog();
+                this.Show();
+            }
+        }
+
+        void SettingBrigades_Click(object sender, EventArgs e)
+        {
+            using (RegistrationStaff registrationStaff = new RegistrationStaff(_user))
+            {
+                this.Hide();
+                registrationStaff.ShowDialog();
                 this.Show();
             }
         }

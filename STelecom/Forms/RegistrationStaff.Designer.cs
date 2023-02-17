@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReportCard = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbCurator = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbDepartmentCommunications = new System.Windows.Forms.ComboBox();
+            this.cmbRadioCommunicationDirectorate = new System.Windows.Forms.ComboBox();
             this.picB_Update = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txbNumberPrintDocument = new System.Windows.Forms.TextBox();
@@ -50,9 +50,9 @@
             this.txbAttorney = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.cmbEngineersFIO = new System.Windows.Forms.ComboBox();
-            this.cmB_road = new System.Windows.Forms.ComboBox();
-            this.cmbSectionForemanFIO = new System.Windows.Forms.ComboBox();
+            this.cmbEngineers = new System.Windows.Forms.ComboBox();
+            this.cmbRoad = new System.Windows.Forms.ComboBox();
+            this.cmbSectionForemans = new System.Windows.Forms.ComboBox();
             this.AuthorizationLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Update)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picB_clear)).BeginInit();
@@ -107,19 +107,19 @@
             this.label5.TabIndex = 123;
             this.label5.Text = "Представитель дирекция связи:";
             // 
-            // cmbDepartmentCommunications
+            // cmbRadioCommunicationDirectorate
             // 
-            this.cmbDepartmentCommunications.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbRadioCommunicationDirectorate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbDepartmentCommunications.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDepartmentCommunications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbDepartmentCommunications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmbDepartmentCommunications.FormattingEnabled = true;
-            this.cmbDepartmentCommunications.Location = new System.Drawing.Point(732, 355);
-            this.cmbDepartmentCommunications.Name = "cmbDepartmentCommunications";
-            this.cmbDepartmentCommunications.Size = new System.Drawing.Size(255, 28);
-            this.cmbDepartmentCommunications.TabIndex = 122;
+            this.cmbRadioCommunicationDirectorate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRadioCommunicationDirectorate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbRadioCommunicationDirectorate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbRadioCommunicationDirectorate.FormattingEnabled = true;
+            this.cmbRadioCommunicationDirectorate.Location = new System.Drawing.Point(732, 355);
+            this.cmbRadioCommunicationDirectorate.Name = "cmbRadioCommunicationDirectorate";
+            this.cmbRadioCommunicationDirectorate.Size = new System.Drawing.Size(255, 28);
+            this.cmbRadioCommunicationDirectorate.TabIndex = 122;
             // 
             // picB_Update
             // 
@@ -201,27 +201,27 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(12, 63);
             this.dataGridView1.Name = "dataGridView1";
@@ -230,6 +230,8 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.Size = new System.Drawing.Size(1007, 253);
             this.dataGridView1.TabIndex = 114;
+            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DataGridView1_CellBeginEdit);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // btnAddRegistrationStaff
             // 
@@ -297,30 +299,30 @@
             this.label30.TabIndex = 108;
             this.label30.Text = "Начальник:";
             // 
-            // cmbEngineersFIO
+            // cmbEngineers
             // 
-            this.cmbEngineersFIO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbEngineers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbEngineersFIO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEngineersFIO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbEngineersFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmbEngineersFIO.FormattingEnabled = true;
-            this.cmbEngineersFIO.Location = new System.Drawing.Point(256, 355);
-            this.cmbEngineersFIO.Name = "cmbEngineersFIO";
-            this.cmbEngineersFIO.Size = new System.Drawing.Size(223, 28);
-            this.cmbEngineersFIO.TabIndex = 107;
+            this.cmbEngineers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEngineers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbEngineers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbEngineers.FormattingEnabled = true;
+            this.cmbEngineers.Location = new System.Drawing.Point(256, 355);
+            this.cmbEngineers.Name = "cmbEngineers";
+            this.cmbEngineers.Size = new System.Drawing.Size(223, 28);
+            this.cmbEngineers.TabIndex = 107;
             // 
-            // cmB_road
+            // cmbRoad
             // 
-            this.cmB_road.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbRoad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmB_road.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmB_road.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmB_road.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmB_road.FormattingEnabled = true;
-            this.cmB_road.Items.AddRange(new object[] {
+            this.cmbRoad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbRoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbRoad.FormattingEnabled = true;
+            this.cmbRoad.Items.AddRange(new object[] {
             "Восточно-Сибирская ЖД",
             "Горьковская ЖД",
             "Дальневосточная ЖД",
@@ -338,24 +340,24 @@
             "Северо-Кавказская ЖД",
             "Юго-Восточная ЖД",
             "Южно-Уральская ЖД"});
-            this.cmB_road.Location = new System.Drawing.Point(494, 355);
-            this.cmB_road.Name = "cmB_road";
-            this.cmB_road.Size = new System.Drawing.Size(223, 28);
-            this.cmB_road.TabIndex = 106;
+            this.cmbRoad.Location = new System.Drawing.Point(494, 355);
+            this.cmbRoad.Name = "cmbRoad";
+            this.cmbRoad.Size = new System.Drawing.Size(223, 28);
+            this.cmbRoad.TabIndex = 106;
             // 
-            // cmbSectionForemanFIO
+            // cmbSectionForemans
             // 
-            this.cmbSectionForemanFIO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbSectionForemans.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbSectionForemanFIO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSectionForemanFIO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbSectionForemanFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmbSectionForemanFIO.FormattingEnabled = true;
-            this.cmbSectionForemanFIO.Location = new System.Drawing.Point(20, 355);
-            this.cmbSectionForemanFIO.Name = "cmbSectionForemanFIO";
-            this.cmbSectionForemanFIO.Size = new System.Drawing.Size(223, 28);
-            this.cmbSectionForemanFIO.TabIndex = 105;
+            this.cmbSectionForemans.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSectionForemans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbSectionForemans.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbSectionForemans.FormattingEnabled = true;
+            this.cmbSectionForemans.Location = new System.Drawing.Point(20, 355);
+            this.cmbSectionForemans.Name = "cmbSectionForemans";
+            this.cmbSectionForemans.Size = new System.Drawing.Size(223, 28);
+            this.cmbSectionForemans.TabIndex = 105;
             // 
             // AuthorizationLabel
             // 
@@ -380,7 +382,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbCurator);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.cmbDepartmentCommunications);
+            this.Controls.Add(this.cmbRadioCommunicationDirectorate);
             this.Controls.Add(this.picB_Update);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txbNumberPrintDocument);
@@ -395,9 +397,9 @@
             this.Controls.Add(this.txbAttorney);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label30);
-            this.Controls.Add(this.cmbEngineersFIO);
-            this.Controls.Add(this.cmB_road);
-            this.Controls.Add(this.cmbSectionForemanFIO);
+            this.Controls.Add(this.cmbEngineers);
+            this.Controls.Add(this.cmbRoad);
+            this.Controls.Add(this.cmbSectionForemans);
             this.Controls.Add(this.AuthorizationLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(1047, 505);
@@ -405,6 +407,7 @@
             this.Name = "RegistrationStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация сотрудников";
+            this.Load += new System.EventHandler(this.RegistrationStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picB_Update)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picB_clear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -419,7 +422,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbCurator;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbDepartmentCommunications;
+        private System.Windows.Forms.ComboBox cmbRadioCommunicationDirectorate;
         private System.Windows.Forms.PictureBox picB_Update;
         private System.Windows.Forms.Label label4;
         internal System.Windows.Forms.TextBox txbNumberPrintDocument;
@@ -434,9 +437,9 @@
         internal System.Windows.Forms.TextBox txbAttorney;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.ComboBox cmbEngineersFIO;
-        private System.Windows.Forms.ComboBox cmB_road;
-        private System.Windows.Forms.ComboBox cmbSectionForemanFIO;
+        private System.Windows.Forms.ComboBox cmbEngineers;
+        private System.Windows.Forms.ComboBox cmbRoad;
+        private System.Windows.Forms.ComboBox cmbSectionForemans;
         private System.Windows.Forms.Label AuthorizationLabel;
     }
 }
