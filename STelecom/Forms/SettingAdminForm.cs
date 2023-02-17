@@ -30,7 +30,6 @@ namespace STelecom.Forms
         }
         #endregion
 
-
         public SettingAdminForm()
         {
             InitializeComponent();
@@ -197,11 +196,42 @@ namespace STelecom.Forms
                 command.Parameters.AddWithValue($"loginUser", loginUser);
                 command.Parameters.AddWithValue($"passUser", passUser);
                 command.Parameters.AddWithValue($"post", post);
-                command.Parameters.AddWithValue($"uid", uid);
+                command.Parameters.AddWithValue($"uID", uid);
                 command.ExecuteNonQuery();
                 DB.GetInstance.CloseConnection();
                 MessageBox.Show("Запись успешно изменена!");
             }
+            RefreshDataGrid(dataGridView1);
+        }
+        void BtnDelete_Click(object sender, EventArgs e)
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                dataGridView1.Rows[row.Index].Cells[4].Value = RowState.Deleted;        
+            for (int index = 0; index < dataGridView1.Rows.Count; index++)
+            {
+                var rowState = (RowState)dataGridView1.Rows[index].Cells[4].Value;
+                if (rowState == RowState.Deleted)
+                {
+                    int dID = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
+                    var loginUser = dataGridView1.Rows[index].Cells[1].Value;
+                    DB.GetInstance.OpenConnection();
+                    using (MySqlCommand command = new MySqlCommand("usersDeleteID", DB.GetInstance.GetConnection()))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue($"dID", dID);
+                        command.ExecuteNonQuery();
+                    }
+                    using (MySqlCommand command = new MySqlCommand("settingBrigadesUpdateFIOEmptyStringDeleteUsers", DB.GetInstance.GetConnection()))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue($"loginUser", loginUser);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            DB.GetInstance.CloseConnection();
             RefreshDataGrid(dataGridView1);
         }
     }
