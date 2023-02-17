@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -263,9 +264,81 @@ namespace STelecom.Forms
             using (MySqlCommand command = new MySqlCommand("settingBrigadesInsert", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue($"sectionForeman", cmbSectionForemans);
+                command.Parameters.AddWithValue($"engineer", cmbEngineers);
+                command.Parameters.AddWithValue($"attorney", txbAttorney.Text);
+                command.Parameters.AddWithValue($"road", cmbRoad.Text);
+                command.Parameters.AddWithValue($"numberPrintDocument", txbNumberPrintDocument.Text);
+                command.Parameters.AddWithValue($"curator", cmbCurator.Text);
                 command.ExecuteNonQuery();
                 DB.GetInstance.CloseConnection();
                 MessageBox.Show("Бригада сформирована", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            RefreshDataGrid(dataGridView1);
+        }
+        void BtnChangeRegistrationStaff_Click(object sender, EventArgs e)
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            var uID = txbId.Text.Trim();
+            var re = new Regex(Environment.NewLine);
+            txbAttorney.Text = re.Replace(txbAttorney.Text, " ");
+            txbAttorney.Text.Trim();
+            var re2 = new Regex(Environment.NewLine);
+            txbNumberPrintDocument.Text = re2.Replace(txbNumberPrintDocument.Text, " ");
+            txbNumberPrintDocument.Text.Trim();
+            if (String.IsNullOrWhiteSpace(cmbSectionForemans.Text))
+            {
+                MessageBox.Show("Поле \"Начальник\" не должен быть пустым, добавьте начальника участка", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(cmbEngineers.Text))
+            {
+                MessageBox.Show("Поле \"Инженер\" не должен быть пустым, добавьте инженера", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(cmbRoad.Text))
+            {
+                MessageBox.Show("Поле \"Дорога\" не должна быть пустым, добавьте дорогу", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(cmbCurator.Text))
+            {
+                MessageBox.Show("Поле \"Куратор\" не должно быть пустым, добавьте куратора", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(cmbRadioCommunicationDirectorate.Text))
+            {
+                MessageBox.Show("Поле \"Представитель дирекции связи\" не должно быть пустым, добавьте представителя дирекции связи", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (!Regex.IsMatch(txbAttorney.Text, @"^[0-9]{1,}[\/][0-9]{1,}[\s][о][т][\s][0-9]{2,2}[\.][0-9]{2,2}[\.][2][0][0-9]{2,2}[\s][г][о][д][а]$"))
+            {
+                MessageBox.Show("Введите корректно \"Доверенность\"\n P.s. Пример: 53/53 от 10.01.2023 года", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbAttorney.Select();
+                return;
+            }
+            if (!Regex.IsMatch(txbNumberPrintDocument.Text, @"^[0-9]{2,}$"))
+            {
+                MessageBox.Show("Введите корректно \"№ печати\"\n P.s. Пример: 53", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbNumberPrintDocument.Select();
+                return;
+            }
+            using (MySqlCommand command = new MySqlCommand("settingBrigadesUpdate", DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue($"sectionForeman", cmbSectionForemans);
+                command.Parameters.AddWithValue($"engineer", cmbEngineers);
+                command.Parameters.AddWithValue($"attorney", txbAttorney.Text);
+                command.Parameters.AddWithValue($"road", cmbRoad.Text);
+                command.Parameters.AddWithValue($"numberPrintDocument", txbNumberPrintDocument.Text);
+                command.Parameters.AddWithValue($"curator", cmbCurator.Text);
+                command.Parameters.AddWithValue($"uID", uID);
+                command.ExecuteNonQuery();
+                DB.GetInstance.CloseConnection();
+                MessageBox.Show("Запись успешно изменена", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             RefreshDataGrid(dataGridView1);
         }
