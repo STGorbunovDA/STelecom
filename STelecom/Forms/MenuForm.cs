@@ -19,12 +19,12 @@ namespace STelecom.Forms
         }
         void IsAdmin()
         {
-            if (_user.IsAdmin == "Admin")
+            if (_user.Post == "Admin")
             {
                 settingAdmin.Visible = true;
                 director.Visible = true;
             }
-            if (_user.IsAdmin == "Руководитель")
+            if (_user.Post == "Руководитель")
                 director.Visible = true;
         }
         void MenuForm_Load(object sender, EventArgs e)

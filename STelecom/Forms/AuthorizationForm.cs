@@ -109,22 +109,22 @@ namespace STelecom
         {
             if (!InternetCheck.CheackSkyNET())
                 return;
-
             string loginUser = txbLogin.Text;
-            string passUser = txbPassword.Text;
-            //string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
-            string querystring = $"SELECT id, login, password, is_users	FROM users " +
-                $"WHERE login = '{loginUser}' AND password = '{passUser}'";
-            using (MySqlCommand command = new MySqlCommand(querystring, DB.GetInstance.GetConnection()))
+            //string passUser = txbPassword.Text;
+            string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);  
+            using (MySqlCommand command = new MySqlCommand("usersSelectLoginPasswordPost", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue($"loginUser", loginUser);
+                command.Parameters.AddWithValue($"passUser", passUser);
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                 {
                     DataTable table = new DataTable();
                     adapter.Fill(table);
                     if (table.Rows.Count == 1)
                     {
-                        CheckUser user = new CheckUser(table.Rows[0].ItemArray[1].ToString(), table.Rows[0].ItemArray[3].ToString());
+                        CheckUser user = new CheckUser(table.Rows[0].ItemArray[0].ToString(), table.Rows[0].ItemArray[2].ToString());
                         using (MenuForm menu = new MenuForm(user))
                         {
                             RegistryKey currentUserKey = Registry.CurrentUser;
