@@ -33,15 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.picbClear = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.cmbIsAdminPost = new System.Windows.Forms.ComboBox();
+            this.cmbIsUsersPost = new System.Windows.Forms.ComboBox();
             this.txbPass = new System.Windows.Forms.TextBox();
             this.txbLogin = new System.Windows.Forms.TextBox();
             this.txbId = new System.Windows.Forms.TextBox();
-            this.picbClear = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,6 +83,8 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.Size = new System.Drawing.Size(800, 287);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DataGridView1_CellBeginEdit);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // panel2
             // 
@@ -91,7 +93,7 @@
             this.panel2.Controls.Add(this.btnChange);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnUpdate);
-            this.panel2.Controls.Add(this.cmbIsAdminPost);
+            this.panel2.Controls.Add(this.cmbIsUsersPost);
             this.panel2.Controls.Add(this.txbPass);
             this.panel2.Controls.Add(this.txbLogin);
             this.panel2.Controls.Add(this.txbId);
@@ -100,6 +102,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(809, 98);
             this.panel2.TabIndex = 4;
+            // 
+            // picbClear
+            // 
+            this.picbClear.BackColor = System.Drawing.Color.Transparent;
+            this.picbClear.BackgroundImage = global::STelecom.Properties.Resources.gui_eraser_icon_157160__1_;
+            this.picbClear.Location = new System.Drawing.Point(764, 16);
+            this.picbClear.Name = "picbClear";
+            this.picbClear.Size = new System.Drawing.Size(33, 30);
+            this.picbClear.TabIndex = 9;
+            this.picbClear.TabStop = false;
+            this.picbClear.Click += new System.EventHandler(this.PicbClear_Click);
             // 
             // btnAdd
             // 
@@ -112,6 +125,7 @@
             this.btnAdd.TabIndex = 61;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnChange
             // 
@@ -148,24 +162,25 @@
             this.btnUpdate.TabIndex = 58;
             this.btnUpdate.Text = "Обновить";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // cmbIsAdminPost
+            // cmbIsUsersPost
             // 
-            this.cmbIsAdminPost.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cmbIsAdminPost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIsAdminPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmbIsAdminPost.FormattingEnabled = true;
-            this.cmbIsAdminPost.Items.AddRange(new object[] {
+            this.cmbIsUsersPost.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cmbIsUsersPost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIsUsersPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbIsUsersPost.FormattingEnabled = true;
+            this.cmbIsUsersPost.Items.AddRange(new object[] {
             "Инженер",
             "Начальник участка",
             "Куратор",
             "Руководитель",
             "Дирекция связи",
             "Admin"});
-            this.cmbIsAdminPost.Location = new System.Drawing.Point(570, 18);
-            this.cmbIsAdminPost.Name = "cmbIsAdminPost";
-            this.cmbIsAdminPost.Size = new System.Drawing.Size(188, 28);
-            this.cmbIsAdminPost.TabIndex = 57;
+            this.cmbIsUsersPost.Location = new System.Drawing.Point(570, 18);
+            this.cmbIsUsersPost.Name = "cmbIsUsersPost";
+            this.cmbIsUsersPost.Size = new System.Drawing.Size(188, 28);
+            this.cmbIsUsersPost.TabIndex = 57;
             // 
             // txbPass
             // 
@@ -192,16 +207,6 @@
             this.txbId.Size = new System.Drawing.Size(50, 26);
             this.txbId.TabIndex = 19;
             this.txbId.Visible = false;
-            // 
-            // picbClear
-            // 
-            this.picbClear.BackColor = System.Drawing.Color.Transparent;
-            this.picbClear.BackgroundImage = global::STelecom.Properties.Resources.gui_eraser_icon_157160__1_;
-            this.picbClear.Location = new System.Drawing.Point(764, 16);
-            this.picbClear.Name = "picbClear";
-            this.picbClear.Size = new System.Drawing.Size(33, 30);
-            this.picbClear.TabIndex = 9;
-            this.picbClear.TabStop = false;
             // 
             // panel1
             // 
@@ -234,11 +239,13 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(825, 500);
             this.MinimumSize = new System.Drawing.Size(825, 500);
             this.Name = "SettingAdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Админка";
+            this.Load += new System.EventHandler(this.SettingAdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -260,7 +267,7 @@
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.ComboBox cmbIsAdminPost;
+        private System.Windows.Forms.ComboBox cmbIsUsersPost;
         private System.Windows.Forms.TextBox txbPass;
         private System.Windows.Forms.TextBox txbLogin;
         private System.Windows.Forms.TextBox txbId;
