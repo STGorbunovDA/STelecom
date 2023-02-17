@@ -246,6 +246,7 @@
             this.btnAddRegistrationStaff.TabIndex = 113;
             this.btnAddRegistrationStaff.Text = "Добавить";
             this.btnAddRegistrationStaff.UseVisualStyleBackColor = false;
+            this.btnAddRegistrationStaff.Click += new System.EventHandler(this.BtnAddRegistrationStaff_Click);
             // 
             // label3
             // 

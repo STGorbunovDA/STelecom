@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,13 @@ namespace STelecom
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.ThreadException += new ThreadExceptionEventHandler(ExceptionGlobal);
             Application.Run(new AuthorizationForm());
+        }
+
+        static void ExceptionGlobal(object sender, ThreadExceptionEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

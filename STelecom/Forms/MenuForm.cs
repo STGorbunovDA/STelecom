@@ -88,5 +88,15 @@ namespace STelecom.Forms
                 this.Show();
             }
         }
+
+        void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //
+        }
     }
 }
