@@ -55,9 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Cheack\CheckUser.cs" />
-    <Compile Include="Classes\Cheack\InstanceChecker.cs" />
-    <Compile Include="Classes\Cheack\InternetCheck.cs" />
+    <Compile Include="Classes\Check\CheckUser.cs" />
+    <Compile Include="Classes\Check\InstanceChecker.cs" />
+    <Compile Include="Classes\Check\InternetCheck.cs" />
     <Compile Include="Classes\DataBase\DB.cs" />
     <Compile Include="Classes\Other\Encryption.cs" />
     <Compile Include="Forms\AuthorizationForm.cs">

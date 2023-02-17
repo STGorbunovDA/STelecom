@@ -43,39 +43,37 @@ namespace STelecom.Forms
         }
         void RefreshDataGrid(DataGridView dgw)
         {
-            if (InternetCheck.CheackSkyNET())
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            var myCulture = new CultureInfo("ru-RU");
+            myCulture.NumberFormat.NumberDecimalSeparator = ".";
+            Thread.CurrentThread.CurrentCulture = myCulture;
+            dgw.Rows.Clear();
+            using (MySqlCommand command = new MySqlCommand("usersSelectFull", DB.GetInstance.GetConnection()))
             {
-                var myCulture = new CultureInfo("ru-RU");
-                myCulture.NumberFormat.NumberDecimalSeparator = ".";
-                Thread.CurrentThread.CurrentCulture = myCulture;
-                dgw.Rows.Clear();
-                using (MySqlCommand command = new MySqlCommand("usersSelectFull", DB.GetInstance.GetConnection()))
-                {
-                    DB.GetInstance.OpenConnection();
+                DB.GetInstance.OpenConnection();
 
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
                     {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                                ReedSingleRow(dgw, reader);
-                            reader.Close();
-                        }
+                        while (reader.Read())
+                            ReedSingleRow(dgw, reader);
+                        reader.Close();
                     }
-                    command.ExecuteNonQuery();
-                    DB.GetInstance.CloseConnection();
                 }
-                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-                dataGridView1.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+                command.ExecuteNonQuery();
+                DB.GetInstance.CloseConnection();
             }
+            dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridView1.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+
         }
         void SettingAdminForm_Load(object sender, EventArgs e)
         {
-            if (!InternetCheck.CheackSkyNET())
-                return;
             CreateColums();
             RefreshDataGrid(dataGridView1);
-        }    
+        }
         void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.ReadOnly = false;
@@ -201,7 +199,7 @@ namespace STelecom.Forms
             if (!InternetCheck.CheackSkyNET())
                 return;
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-                dataGridView1.Rows[row.Index].Cells[4].Value = RowState.Deleted;        
+                dataGridView1.Rows[row.Index].Cells[4].Value = RowState.Deleted;
             for (int index = 0; index < dataGridView1.Rows.Count; index++)
             {
                 var rowState = (RowState)dataGridView1.Rows[index].Cells[4].Value;

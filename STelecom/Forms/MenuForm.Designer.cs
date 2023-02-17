@@ -30,7 +30,7 @@
         {
             this.settingAdmin = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.director = new System.Windows.Forms.Label();
+            this.settingBrigades = new System.Windows.Forms.Label();
             this.comparison = new System.Windows.Forms.Label();
             this.tutorialEngineers = new System.Windows.Forms.Label();
             this.sectionForeman = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.director);
+            this.panel1.Controls.Add(this.settingBrigades);
             this.panel1.Controls.Add(this.settingAdmin);
             this.panel1.Controls.Add(this.comparison);
             this.panel1.Controls.Add(this.tutorialEngineers);
@@ -65,26 +65,27 @@
             this.panel1.Size = new System.Drawing.Size(804, 461);
             this.panel1.TabIndex = 3;
             // 
-            // director
+            // settingBrigades
             // 
-            this.director.AutoSize = true;
-            this.director.BackColor = System.Drawing.Color.Transparent;
-            this.director.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.director.Location = new System.Drawing.Point(267, 320);
-            this.director.Name = "director";
-            this.director.Size = new System.Drawing.Size(282, 41);
-            this.director.TabIndex = 5;
-            this.director.Text = "Руководитель";
-            this.director.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.director.MouseEnter += new System.EventHandler(this.Director_MouseEnter);
-            this.director.MouseLeave += new System.EventHandler(this.Director_MouseLeave);
+            this.settingBrigades.AutoSize = true;
+            this.settingBrigades.BackColor = System.Drawing.Color.Transparent;
+            this.settingBrigades.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.settingBrigades.Location = new System.Drawing.Point(194, 314);
+            this.settingBrigades.Name = "settingBrigades";
+            this.settingBrigades.Size = new System.Drawing.Size(436, 41);
+            this.settingBrigades.TabIndex = 5;
+            this.settingBrigades.Text = "Формирование бригад";
+            this.settingBrigades.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.settingBrigades.Click += new System.EventHandler(this.SettingBrigades_Click);
+            this.settingBrigades.MouseEnter += new System.EventHandler(this.Director_MouseEnter);
+            this.settingBrigades.MouseLeave += new System.EventHandler(this.Director_MouseLeave);
             // 
             // comparison
             // 
             this.comparison.AutoSize = true;
             this.comparison.BackColor = System.Drawing.Color.Transparent;
             this.comparison.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comparison.Location = new System.Drawing.Point(267, 236);
+            this.comparison.Location = new System.Drawing.Point(271, 236);
             this.comparison.Name = "comparison";
             this.comparison.Size = new System.Drawing.Size(282, 41);
             this.comparison.TabIndex = 3;
@@ -98,7 +99,7 @@
             this.tutorialEngineers.AutoSize = true;
             this.tutorialEngineers.BackColor = System.Drawing.Color.Transparent;
             this.tutorialEngineers.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tutorialEngineers.Location = new System.Drawing.Point(303, 79);
+            this.tutorialEngineers.Location = new System.Drawing.Point(315, 79);
             this.tutorialEngineers.Name = "tutorialEngineers";
             this.tutorialEngineers.Size = new System.Drawing.Size(194, 41);
             this.tutorialEngineers.TabIndex = 2;
@@ -112,7 +113,7 @@
             this.sectionForeman.AutoSize = true;
             this.sectionForeman.BackColor = System.Drawing.Color.Transparent;
             this.sectionForeman.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sectionForeman.Location = new System.Drawing.Point(352, 157);
+            this.sectionForeman.Location = new System.Drawing.Point(359, 157);
             this.sectionForeman.Name = "sectionForeman";
             this.sectionForeman.Size = new System.Drawing.Size(106, 41);
             this.sectionForeman.TabIndex = 1;
@@ -147,7 +148,7 @@
 
         private System.Windows.Forms.PictureBox settingAdmin;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label director;
+        private System.Windows.Forms.Label settingBrigades;
         private System.Windows.Forms.Label comparison;
         private System.Windows.Forms.Label tutorialEngineers;
         private System.Windows.Forms.Label sectionForeman;
