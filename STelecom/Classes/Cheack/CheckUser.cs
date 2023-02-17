@@ -9,11 +9,11 @@ namespace STelecom.Classes.Cheack
     public class CheckUser
     {
         public string Login { get; set; }
-        public string IsAdmin { get; }
-        public CheckUser(string login, string isAdmin)
+        public string Post { get; }
+        public CheckUser(string login, string post)
         {
             Login = login.Trim();
-            IsAdmin = isAdmin;
+            Post = post;
         }
     }
 }

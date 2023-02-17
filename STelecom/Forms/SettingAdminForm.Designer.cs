@@ -138,6 +138,7 @@
             this.btnChange.TabIndex = 60;
             this.btnChange.Text = "Изменить";
             this.btnChange.UseVisualStyleBackColor = false;
+            this.btnChange.Click += new System.EventHandler(this.BtnChange_Click);
             // 
             // btnDelete
             // 

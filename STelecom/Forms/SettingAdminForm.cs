@@ -168,7 +168,7 @@ namespace STelecom.Forms
         {
             if (!InternetCheck.CheackSkyNET())
                 return true;
-            using (MySqlCommand command = new MySqlCommand($"usersSelectLoginPassword", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand($"usersSelectLoginPasswordPost", DB.GetInstance.GetConnection()))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue($"loginUser", loginUser);
@@ -182,7 +182,27 @@ namespace STelecom.Forms
                 }
             }
         }
-
-        
+        void BtnChange_Click(object sender, EventArgs e)
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            string uid = txbId.Text;
+            string loginUser = txbLogin.Text;
+            string passUser = Encryption.EncryptPlainTextToCipherText(txbPass.Text);
+            string post = cmbIsUsersPost.Text;
+            using (MySqlCommand command = new MySqlCommand("usersUpdateLoginPasswordPost", DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue($"loginUser", loginUser);
+                command.Parameters.AddWithValue($"passUser", passUser);
+                command.Parameters.AddWithValue($"post", post);
+                command.Parameters.AddWithValue($"uid", uid);
+                command.ExecuteNonQuery();
+                DB.GetInstance.CloseConnection();
+                MessageBox.Show("Запись успешно изменена!");
+            }
+            RefreshDataGrid(dataGridView1);
+        }
     }
 }
