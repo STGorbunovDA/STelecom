@@ -36,10 +36,10 @@
             this.cmbCurator = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbRadioCommunicationDirectorate = new System.Windows.Forms.ComboBox();
-            this.picB_Update = new System.Windows.Forms.PictureBox();
+            this.picbUpdate = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txbNumberPrintDocument = new System.Windows.Forms.TextBox();
-            this.picB_clear = new System.Windows.Forms.PictureBox();
+            this.picbClear = new System.Windows.Forms.PictureBox();
             this.btnDeleteRegistrationStaff = new System.Windows.Forms.Button();
             this.btnChangeRegistrationStaff = new System.Windows.Forms.Button();
             this.txbId = new System.Windows.Forms.TextBox();
@@ -54,8 +54,8 @@
             this.cmbRoad = new System.Windows.Forms.ComboBox();
             this.cmbSectionForemans = new System.Windows.Forms.ComboBox();
             this.AuthorizationLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_Update)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_clear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbUpdate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,15 +121,16 @@
             this.cmbRadioCommunicationDirectorate.Size = new System.Drawing.Size(255, 28);
             this.cmbRadioCommunicationDirectorate.TabIndex = 122;
             // 
-            // picB_Update
+            // picbUpdate
             // 
-            this.picB_Update.BackColor = System.Drawing.Color.Transparent;
-            this.picB_Update.Image = global::STelecom.Properties.Resources.icons8_синхронизация_подключения_32;
-            this.picB_Update.Location = new System.Drawing.Point(947, 20);
-            this.picB_Update.Name = "picB_Update";
-            this.picB_Update.Size = new System.Drawing.Size(33, 30);
-            this.picB_Update.TabIndex = 121;
-            this.picB_Update.TabStop = false;
+            this.picbUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.picbUpdate.Image = global::STelecom.Properties.Resources.icons8_синхронизация_подключения_32;
+            this.picbUpdate.Location = new System.Drawing.Point(947, 20);
+            this.picbUpdate.Name = "picbUpdate";
+            this.picbUpdate.Size = new System.Drawing.Size(33, 30);
+            this.picbUpdate.TabIndex = 121;
+            this.picbUpdate.TabStop = false;
+            this.picbUpdate.Click += new System.EventHandler(this.PicbUpdate_Click);
             // 
             // label4
             // 
@@ -152,15 +153,16 @@
             this.txbNumberPrintDocument.Size = new System.Drawing.Size(223, 28);
             this.txbNumberPrintDocument.TabIndex = 119;
             // 
-            // picB_clear
+            // picbClear
             // 
-            this.picB_clear.BackColor = System.Drawing.Color.Transparent;
-            this.picB_clear.Image = global::STelecom.Properties.Resources.gui_eraser_icon_157160__1_;
-            this.picB_clear.Location = new System.Drawing.Point(986, 20);
-            this.picB_clear.Name = "picB_clear";
-            this.picB_clear.Size = new System.Drawing.Size(33, 30);
-            this.picB_clear.TabIndex = 118;
-            this.picB_clear.TabStop = false;
+            this.picbClear.BackColor = System.Drawing.Color.Transparent;
+            this.picbClear.Image = global::STelecom.Properties.Resources.gui_eraser_icon_157160__1_;
+            this.picbClear.Location = new System.Drawing.Point(986, 20);
+            this.picbClear.Name = "picbClear";
+            this.picbClear.Size = new System.Drawing.Size(33, 30);
+            this.picbClear.TabIndex = 118;
+            this.picbClear.TabStop = false;
+            this.picbClear.Click += new System.EventHandler(this.PicbClear_Click);
             // 
             // btnDeleteRegistrationStaff
             // 
@@ -383,10 +385,10 @@
             this.Controls.Add(this.cmbCurator);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbRadioCommunicationDirectorate);
-            this.Controls.Add(this.picB_Update);
+            this.Controls.Add(this.picbUpdate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txbNumberPrintDocument);
-            this.Controls.Add(this.picB_clear);
+            this.Controls.Add(this.picbClear);
             this.Controls.Add(this.btnDeleteRegistrationStaff);
             this.Controls.Add(this.btnChangeRegistrationStaff);
             this.Controls.Add(this.txbId);
@@ -408,8 +410,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация сотрудников";
             this.Load += new System.EventHandler(this.RegistrationStaff_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picB_Update)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_clear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbUpdate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -423,10 +425,10 @@
         private System.Windows.Forms.ComboBox cmbCurator;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbRadioCommunicationDirectorate;
-        private System.Windows.Forms.PictureBox picB_Update;
+        private System.Windows.Forms.PictureBox picbUpdate;
         private System.Windows.Forms.Label label4;
         internal System.Windows.Forms.TextBox txbNumberPrintDocument;
-        private System.Windows.Forms.PictureBox picB_clear;
+        private System.Windows.Forms.PictureBox picbClear;
         private System.Windows.Forms.Button btnDeleteRegistrationStaff;
         private System.Windows.Forms.Button btnChangeRegistrationStaff;
         internal System.Windows.Forms.TextBox txbId;
