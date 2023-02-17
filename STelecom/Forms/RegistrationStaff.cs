@@ -265,12 +265,13 @@ namespace STelecom.Forms
             {
                 DB.GetInstance.OpenConnection();
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue($"sectionForeman", cmbSectionForemans);
-                command.Parameters.AddWithValue($"engineer", cmbEngineers);
+                command.Parameters.AddWithValue($"sectionForeman", cmbSectionForemans.Text);
+                command.Parameters.AddWithValue($"engineer", cmbEngineers.Text);
                 command.Parameters.AddWithValue($"attorney", txbAttorney.Text);
                 command.Parameters.AddWithValue($"road", cmbRoad.Text);
                 command.Parameters.AddWithValue($"numberPrintDocument", txbNumberPrintDocument.Text);
                 command.Parameters.AddWithValue($"curator", cmbCurator.Text);
+                command.Parameters.AddWithValue($"radioCommunicationDirectorate", cmbRadioCommunicationDirectorate.Text);
                 command.ExecuteNonQuery();
                 DB.GetInstance.CloseConnection();
                 MessageBox.Show("Бригада сформирована", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -329,17 +330,43 @@ namespace STelecom.Forms
             {
                 DB.GetInstance.OpenConnection();
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue($"sectionForeman", cmbSectionForemans);
-                command.Parameters.AddWithValue($"engineer", cmbEngineers);
+                command.Parameters.AddWithValue($"sectionForeman", cmbSectionForemans.Text);
+                command.Parameters.AddWithValue($"engineer", cmbEngineers.Text);
                 command.Parameters.AddWithValue($"attorney", txbAttorney.Text);
                 command.Parameters.AddWithValue($"road", cmbRoad.Text);
                 command.Parameters.AddWithValue($"numberPrintDocument", txbNumberPrintDocument.Text);
                 command.Parameters.AddWithValue($"curator", cmbCurator.Text);
+                command.Parameters.AddWithValue($"radioCommunicationDirectorate", cmbRadioCommunicationDirectorate.Text);
                 command.Parameters.AddWithValue($"uID", uID);
                 command.ExecuteNonQuery();
                 DB.GetInstance.CloseConnection();
                 MessageBox.Show("Запись успешно изменена", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            RefreshDataGrid(dataGridView1);
+        }
+        void BtnDeleteRegistrationStaff_Click(object sender, EventArgs e)
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                dataGridView1.Rows[row.Index].Cells[8].Value = RowState.Deleted;
+            DB.GetInstance.OpenConnection();
+            for (int index = 0; index < dataGridView1.Rows.Count; index++)
+            {
+                var rowState = (RowState)dataGridView1.Rows[index].Cells[8].Value;
+                if (rowState == RowState.Deleted)
+                {
+                    var dID = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
+                    using (MySqlCommand command = new MySqlCommand("settingBrigadesDelete", DB.GetInstance.GetConnection()))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue($"dID", dID);
+                        command.ExecuteNonQuery();
+                    }
+                        
+                }
+            }
+            DB.GetInstance.CloseConnection();
             RefreshDataGrid(dataGridView1);
         }
     }
