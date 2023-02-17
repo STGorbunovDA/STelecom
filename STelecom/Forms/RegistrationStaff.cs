@@ -103,10 +103,83 @@ namespace STelecom.Forms
         }
         void RegistrationStaff_Load(object sender, EventArgs e)
         {
+            using (MySqlCommand command = new MySqlCommand("usersSelectSectionForeman", DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                DataTable table = new DataTable();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                {
+                    adapter.Fill(table);
+                    if (table.Rows.Count > 0)
+                    {
+                        cmbSectionForemans.DataSource = table;
+                        cmbSectionForemans.ValueMember = "id";
+                        cmbSectionForemans.DisplayMember = "login";
+                    }
+                    else cmbSectionForemans.Text = String.Empty;
+                }
+            }
+            using (MySqlCommand command = new MySqlCommand("usersSelectEngineer", DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                DataTable table = new DataTable();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                {
+                    adapter.Fill(table);
+                    if (table.Rows.Count > 0)
+                    {
+                        cmbEngineers.DataSource = table;
+                        cmbEngineers.ValueMember = "id";
+                        cmbEngineers.DisplayMember = "login";
+                    }
+                    else cmbEngineers.Text = String.Empty;
+                }
+            }
+            using (MySqlCommand command = new MySqlCommand("usersSelectCurator", DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                DataTable table = new DataTable();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                {
+                    adapter.Fill(table);
+                    if (table.Rows.Count > 0)
+                    {
+                        cmbCurator.DataSource = table;
+                        cmbCurator.ValueMember = "id";
+                        cmbCurator.DisplayMember = "login";
+                    }
+                    else cmbCurator.Text = String.Empty;
+                }
+            }
+            using (MySqlCommand command = new MySqlCommand("usersSelectRadioCommunicationDirectorate", DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                DataTable table = new DataTable();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                {
+                    adapter.Fill(table);
+                    if (table.Rows.Count > 0)
+                    {
+                        cmbRadioCommunicationDirectorate.DataSource = table;
+                        cmbRadioCommunicationDirectorate.ValueMember = "id";
+                        cmbRadioCommunicationDirectorate.DisplayMember = "login";
+                    }
+                    else cmbRadioCommunicationDirectorate.Text = String.Empty;
+                }
+            }
+
+            if (String.IsNullOrWhiteSpace(cmbRadioCommunicationDirectorate.Text))
+                MessageBox.Show("Добавьте представителя дирекции связи!");
+            if (String.IsNullOrWhiteSpace(cmbCurator.Text))
+                MessageBox.Show("Добавьте куратора!");
+            if (String.IsNullOrWhiteSpace(cmbRoad.Text))
+                cmbRoad.Text = cmbRoad.Items[0].ToString();
+            if (String.IsNullOrWhiteSpace(cmbEngineers.Text))
+                MessageBox.Show("Добавьте инженера!");
+            if (String.IsNullOrWhiteSpace(cmbSectionForemans.Text))
+                MessageBox.Show("Добавьте начальника участка!");
             CreateColums();
             RefreshDataGrid(dataGridView1);
-        }
-
-        
+        }    
     }
 }
