@@ -1,5 +1,10 @@
-﻿using STelecom.Classes.Cheack;
+﻿using MySql.Data.MySqlClient;
+using STelecom.Classes.Cheack;
+using STelecom.Classes.Other;
+using STelecom.Classes.SeparateMethodsForm;
+using STelecom.DataBase;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -31,7 +36,21 @@ namespace STelecom.Forms
         {
             if (!InternetCheck.CheackSkyNET())
                 return;
-
+            DateTime Date = DateTime.Now;
+            string inputDate = Date.ToString("yyyy-MM-dd HH:mm:ss");
+            DateTime dateTimeInput = MenuMethod.CheckDateTimeInputLogUserDatabase(_user.Login);
+            if (Date.ToString("yyyy-MM-dd") != dateTimeInput.ToString("yyyy-MM-dd"))
+            {
+                using (MySqlCommand command = new MySqlCommand("logUsersInsertDateTimeInput", DB.GetInstance.GetConnection()))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue($"user", _user.Login);
+                    command.Parameters.AddWithValue($"dateTimeInput", inputDate);
+                    DB.GetInstance.OpenConnection();
+                    command.ExecuteNonQuery();
+                    DB.GetInstance.CloseConnection();
+                }
+            }
         }
 
         #region подсветка
@@ -96,7 +115,7 @@ namespace STelecom.Forms
 
         void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //
+            e.Cancel = FormClose.GetInstance.FClose(_user.Login);
         }
     }
 }
