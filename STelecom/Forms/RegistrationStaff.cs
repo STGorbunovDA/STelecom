@@ -362,20 +362,5 @@ namespace STelecom.Forms
             DB.GetInstance.CloseConnection();
             RefreshDataGrid(dataGridView1);
         }
-
-        void BtnReportCard_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("Нет сформированных бригад");
-                return;
-            }
-            using (ReportCardForm reportCard = new ReportCardForm())
-            {
-                this.Hide();
-                reportCard.ShowDialog();
-                this.Show();
-            }
-        }
     }
 }
