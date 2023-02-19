@@ -78,7 +78,7 @@
     <Compile Include="Forms\RegistrationStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegistrationStaff.Designer.cs">
+    <Compile Include="Forms\RegistrationStaff.Designer.cs"/>
       <DependentUpon>RegistrationStaff.cs</DependentUpon>
     
     <Compile Include="Forms\SettingAdminForm.cs">

@@ -70,7 +70,7 @@
             "Неисправность",
             "Автор",
             "Описание неисправности"});
-            this.cmbDateTimeInput.Location = new System.Drawing.Point(12, 13);
+            this.cmbDateTimeInput.Location = new System.Drawing.Point(345, 12);
             this.cmbDateTimeInput.Name = "cmbDateTimeInput";
             this.cmbDateTimeInput.Size = new System.Drawing.Size(228, 28);
             this.cmbDateTimeInput.TabIndex = 107;
@@ -79,11 +79,11 @@
             // 
             this.btnSaveExcel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSaveExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSaveExcel.Location = new System.Drawing.Point(340, 14);
+            this.btnSaveExcel.Location = new System.Drawing.Point(579, 13);
             this.btnSaveExcel.Name = "btnSaveExcel";
-            this.btnSaveExcel.Size = new System.Drawing.Size(93, 28);
+            this.btnSaveExcel.Size = new System.Drawing.Size(151, 31);
             this.btnSaveExcel.TabIndex = 106;
-            this.btnSaveExcel.Text = "Сохранить";
+            this.btnSaveExcel.Text = "Сохранить в excel";
             this.btnSaveExcel.UseVisualStyleBackColor = false;
             // 
             // picbClear
@@ -104,9 +104,9 @@
             this.panel1.Controls.Add(this.txbDateTimeInput);
             this.panel1.Controls.Add(this.txbUser);
             this.panel1.Controls.Add(this.txbId);
-            this.panel1.Location = new System.Drawing.Point(643, 9);
+            this.panel1.Location = new System.Drawing.Point(12, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(87, 35);
+            this.panel1.Size = new System.Drawing.Size(199, 35);
             this.panel1.TabIndex = 104;
             this.panel1.Visible = false;
             // 
@@ -194,18 +194,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(796, 505);
             this.dataGridView1.TabIndex = 103;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDelete.Location = new System.Drawing.Point(246, 14);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(88, 28);
-            this.btnDelete.TabIndex = 109;
-            this.btnDelete.Text = "Удалить";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // StaffTabulationForm
+            // ReportCardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,7 +211,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(836, 604);
             this.MinimumSize = new System.Drawing.Size(836, 604);
-            this.Name = "StaffTabulationForm";
+            this.Name = "ReportCardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Табель";
             ((System.ComponentModel.ISupportInitialize)(this.picbUpdate)).EndInit();
