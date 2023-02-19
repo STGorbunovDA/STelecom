@@ -80,7 +80,7 @@
     </Compile>
     <Compile Include="Forms\RegistrationStaff.Designer.cs">
       <DependentUpon>RegistrationStaff.cs</DependentUpon>
-    </Compile>
+    
     <Compile Include="Forms\SettingAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegistrationStaff.resx">
       <DependentUpon>RegistrationStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StaffTabulationForm.resx">
+      <DependentUpon>StaffTabulationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingAdminForm.resx">
       <DependentUpon>SettingAdminForm.cs</DependentUpon>
