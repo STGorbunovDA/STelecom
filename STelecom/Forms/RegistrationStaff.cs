@@ -370,7 +370,7 @@ namespace STelecom.Forms
                 MessageBox.Show("Нет сформированных бригад");
                 return;
             }
-            using (StaffTabulationForm staffTabulation = new StaffTabulationForm())
+            using (StaffTabulationsForm staffTabulation = new StaffTabulationsForm())
             {
                 this.Hide();
                 staffTabulation.ShowDialog();

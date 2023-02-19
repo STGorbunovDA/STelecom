@@ -35,11 +35,11 @@
             this.cmbDateTimeInput = new System.Windows.Forms.ComboBox();
             this.btnSaveExcel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txB_timeCount = new System.Windows.Forms.TextBox();
-            this.txB_dateTimeExit = new System.Windows.Forms.TextBox();
-            this.txB_dateTimeInput = new System.Windows.Forms.TextBox();
-            this.txB_user = new System.Windows.Forms.TextBox();
-            this.txB_id = new System.Windows.Forms.TextBox();
+            this.txbTimeCount = new System.Windows.Forms.TextBox();
+            this.txbDateTimeExit = new System.Windows.Forms.TextBox();
+            this.txbDateTimeInput = new System.Windows.Forms.TextBox();
+            this.txbUser = new System.Windows.Forms.TextBox();
+            this.txbId = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picbRefresh)).BeginInit();
@@ -56,6 +56,7 @@
             this.picbRefresh.Size = new System.Drawing.Size(33, 30);
             this.picbRefresh.TabIndex = 108;
             this.picbRefresh.TabStop = false;
+            this.picbRefresh.Click += new System.EventHandler(this.PicbRefresh_Click);
             // 
             // cmbDateTimeInput
             // 
@@ -72,6 +73,7 @@
             this.cmbDateTimeInput.Name = "cmbDateTimeInput";
             this.cmbDateTimeInput.Size = new System.Drawing.Size(228, 28);
             this.cmbDateTimeInput.TabIndex = 107;
+            this.cmbDateTimeInput.SelectionChangeCommitted += new System.EventHandler(this.CmbDateTimeInput_SelectionChangeCommitted);
             // 
             // btnSaveExcel
             // 
@@ -83,70 +85,71 @@
             this.btnSaveExcel.TabIndex = 106;
             this.btnSaveExcel.Text = "Сохранить";
             this.btnSaveExcel.UseVisualStyleBackColor = false;
+            this.btnSaveExcel.Click += new System.EventHandler(this.BtnSaveExcel_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.txB_timeCount);
-            this.panel1.Controls.Add(this.txB_dateTimeExit);
-            this.panel1.Controls.Add(this.txB_dateTimeInput);
-            this.panel1.Controls.Add(this.txB_user);
-            this.panel1.Controls.Add(this.txB_id);
-            this.panel1.Location = new System.Drawing.Point(728, 12);
+            this.panel1.Controls.Add(this.txbTimeCount);
+            this.panel1.Controls.Add(this.txbDateTimeExit);
+            this.panel1.Controls.Add(this.txbDateTimeInput);
+            this.panel1.Controls.Add(this.txbUser);
+            this.panel1.Controls.Add(this.txbId);
+            this.panel1.Location = new System.Drawing.Point(577, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(41, 35);
+            this.panel1.Size = new System.Drawing.Size(192, 35);
             this.panel1.TabIndex = 104;
             this.panel1.Visible = false;
             // 
-            // txB_timeCount
+            // txbTimeCount
             // 
-            this.txB_timeCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txB_timeCount.Location = new System.Drawing.Point(147, 3);
-            this.txB_timeCount.MaxLength = 49;
-            this.txB_timeCount.Multiline = true;
-            this.txB_timeCount.Name = "txB_timeCount";
-            this.txB_timeCount.Size = new System.Drawing.Size(33, 28);
-            this.txB_timeCount.TabIndex = 101;
+            this.txbTimeCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbTimeCount.Location = new System.Drawing.Point(147, 3);
+            this.txbTimeCount.MaxLength = 49;
+            this.txbTimeCount.Multiline = true;
+            this.txbTimeCount.Name = "txbTimeCount";
+            this.txbTimeCount.Size = new System.Drawing.Size(33, 28);
+            this.txbTimeCount.TabIndex = 101;
             // 
-            // txB_dateTimeExit
+            // txbDateTimeExit
             // 
-            this.txB_dateTimeExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txB_dateTimeExit.Location = new System.Drawing.Point(108, 3);
-            this.txB_dateTimeExit.MaxLength = 49;
-            this.txB_dateTimeExit.Multiline = true;
-            this.txB_dateTimeExit.Name = "txB_dateTimeExit";
-            this.txB_dateTimeExit.Size = new System.Drawing.Size(33, 28);
-            this.txB_dateTimeExit.TabIndex = 100;
+            this.txbDateTimeExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbDateTimeExit.Location = new System.Drawing.Point(108, 3);
+            this.txbDateTimeExit.MaxLength = 49;
+            this.txbDateTimeExit.Multiline = true;
+            this.txbDateTimeExit.Name = "txbDateTimeExit";
+            this.txbDateTimeExit.Size = new System.Drawing.Size(33, 28);
+            this.txbDateTimeExit.TabIndex = 100;
             // 
-            // txB_dateTimeInput
+            // txbDateTimeInput
             // 
-            this.txB_dateTimeInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txB_dateTimeInput.Location = new System.Drawing.Point(72, 3);
-            this.txB_dateTimeInput.MaxLength = 49;
-            this.txB_dateTimeInput.Multiline = true;
-            this.txB_dateTimeInput.Name = "txB_dateTimeInput";
-            this.txB_dateTimeInput.Size = new System.Drawing.Size(30, 28);
-            this.txB_dateTimeInput.TabIndex = 99;
+            this.txbDateTimeInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbDateTimeInput.Location = new System.Drawing.Point(72, 3);
+            this.txbDateTimeInput.MaxLength = 49;
+            this.txbDateTimeInput.Multiline = true;
+            this.txbDateTimeInput.Name = "txbDateTimeInput";
+            this.txbDateTimeInput.Size = new System.Drawing.Size(30, 28);
+            this.txbDateTimeInput.TabIndex = 99;
             // 
-            // txB_user
+            // txbUser
             // 
-            this.txB_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txB_user.Location = new System.Drawing.Point(36, 3);
-            this.txB_user.MaxLength = 49;
-            this.txB_user.Multiline = true;
-            this.txB_user.Name = "txB_user";
-            this.txB_user.Size = new System.Drawing.Size(30, 28);
-            this.txB_user.TabIndex = 98;
+            this.txbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbUser.Location = new System.Drawing.Point(36, 3);
+            this.txbUser.MaxLength = 49;
+            this.txbUser.Multiline = true;
+            this.txbUser.Name = "txbUser";
+            this.txbUser.Size = new System.Drawing.Size(30, 28);
+            this.txbUser.TabIndex = 98;
             // 
-            // txB_id
+            // txbId
             // 
-            this.txB_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txB_id.Location = new System.Drawing.Point(3, 3);
-            this.txB_id.MaxLength = 49;
-            this.txB_id.Multiline = true;
-            this.txB_id.Name = "txB_id";
-            this.txB_id.Size = new System.Drawing.Size(27, 28);
-            this.txB_id.TabIndex = 97;
+            this.txbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbId.Location = new System.Drawing.Point(3, 3);
+            this.txbId.MaxLength = 49;
+            this.txbId.Multiline = true;
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(27, 28);
+            this.txbId.TabIndex = 97;
             // 
             // dataGridView1
             // 
@@ -181,6 +184,8 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.Size = new System.Drawing.Size(796, 505);
             this.dataGridView1.TabIndex = 103;
+            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DataGridView1_CellBeginEdit);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // btnDelete
             // 
@@ -192,6 +197,7 @@
             this.btnDelete.TabIndex = 109;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // StaffTabulationsForm
             // 
@@ -212,6 +218,7 @@
             this.Name = "StaffTabulationsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Табель";
+            this.Load += new System.EventHandler(this.StaffTabulationsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picbRefresh)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -226,11 +233,11 @@
         private System.Windows.Forms.ComboBox cmbDateTimeInput;
         private System.Windows.Forms.Button btnSaveExcel;
         private System.Windows.Forms.Panel panel1;
-        internal System.Windows.Forms.TextBox txB_timeCount;
-        internal System.Windows.Forms.TextBox txB_dateTimeExit;
-        internal System.Windows.Forms.TextBox txB_dateTimeInput;
-        internal System.Windows.Forms.TextBox txB_user;
-        internal System.Windows.Forms.TextBox txB_id;
+        internal System.Windows.Forms.TextBox txbTimeCount;
+        internal System.Windows.Forms.TextBox txbDateTimeExit;
+        internal System.Windows.Forms.TextBox txbDateTimeInput;
+        internal System.Windows.Forms.TextBox txbUser;
+        internal System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnDelete;
     }

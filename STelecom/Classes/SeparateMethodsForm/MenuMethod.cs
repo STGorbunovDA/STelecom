@@ -11,10 +11,10 @@ namespace STelecom.Classes.SeparateMethodsForm
         public static DateTime CheckDateTimeInputLogUserDatabase(string user)
         {
             DateTime Date = DateTime.Now;
-            using (MySqlCommand command = new MySqlCommand("logUsersSelectDateTimeInput", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("logUsersSelectUserDateTimeInput", DB.GetInstance.GetConnection()))
             {
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue($"user", user);
+                command.Parameters.AddWithValue($"userLog", user);
                 command.Parameters.AddWithValue($"dateTimeInput", Date.ToString("yyyy-MM-dd"));
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                 {
