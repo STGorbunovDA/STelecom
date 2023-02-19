@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnReportCard = new System.Windows.Forms.Button();
+            this.btnStaffTabulationForm = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbCurator = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,17 +59,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnReportCard
+            // btnStaffTabulationForm
             // 
-            this.btnReportCard.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnReportCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReportCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnReportCard.Location = new System.Drawing.Point(863, 20);
-            this.btnReportCard.Name = "btnReportCard";
-            this.btnReportCard.Size = new System.Drawing.Size(78, 30);
-            this.btnReportCard.TabIndex = 126;
-            this.btnReportCard.Text = "Табель";
-            this.btnReportCard.UseVisualStyleBackColor = false;
+            this.btnStaffTabulationForm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnStaffTabulationForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStaffTabulationForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnStaffTabulationForm.Location = new System.Drawing.Point(863, 20);
+            this.btnStaffTabulationForm.Name = "btnStaffTabulationForm";
+            this.btnStaffTabulationForm.Size = new System.Drawing.Size(78, 30);
+            this.btnStaffTabulationForm.TabIndex = 126;
+            this.btnStaffTabulationForm.Text = "Табель";
+            this.btnStaffTabulationForm.UseVisualStyleBackColor = false;
+            this.btnStaffTabulationForm.Click += new System.EventHandler(this.BtnReportCard_Click);
             // 
             // label6
             // 
@@ -383,7 +384,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
             this.ClientSize = new System.Drawing.Size(1031, 466);
-            this.Controls.Add(this.btnReportCard);
+            this.Controls.Add(this.btnStaffTabulationForm);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbCurator);
             this.Controls.Add(this.label5);
@@ -423,7 +424,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnReportCard;
+        private System.Windows.Forms.Button btnStaffTabulationForm;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbCurator;
         private System.Windows.Forms.Label label5;
