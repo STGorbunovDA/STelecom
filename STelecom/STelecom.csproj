@@ -81,11 +81,11 @@
     <Compile Include="Forms\RegistrationStaff.Designer.cs">
       <DependentUpon>RegistrationStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ReportCardForm.cs">
+    <Compile Include="Forms\StaffTabulationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ReportCardForm.Designer.cs">
-      <DependentUpon>ReportCardForm.cs</DependentUpon>
+    <Compile Include="Forms\StaffTabulationForm.Designer.cs">
+      <DependentUpon>StaffTabulationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SettingAdminForm.cs">
       <SubType>Form</SubType>
@@ -104,8 +104,8 @@
     <EmbeddedResource Include="Forms\RegistrationStaff.resx">
       <DependentUpon>RegistrationStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ReportCardForm.resx">
-      <DependentUpon>ReportCardForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\StaffTabulationForm.resx">
+      <DependentUpon>StaffTabulationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingAdminForm.resx">
       <DependentUpon>SettingAdminForm.cs</DependentUpon>

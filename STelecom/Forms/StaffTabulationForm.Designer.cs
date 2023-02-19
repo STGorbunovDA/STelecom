@@ -1,6 +1,6 @@
 ﻿namespace STelecom.Forms
 {
-    partial class ReportCardForm
+    partial class StaffTabulationForm
     {
         /// <summary>
         /// Required designer variable.
