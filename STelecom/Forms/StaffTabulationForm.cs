@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace STelecom.Forms
 {
-    public partial class ReportCardForm : Form
+    public partial class StaffTabulationForm : Form
     {
-        public ReportCardForm()
+        public StaffTabulationForm()
         {
             InitializeComponent();
         }
