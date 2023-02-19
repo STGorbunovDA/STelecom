@@ -70,6 +70,7 @@
             this.btnReportCard.TabIndex = 126;
             this.btnReportCard.Text = "Табель";
             this.btnReportCard.UseVisualStyleBackColor = false;
+            this.btnReportCard.Click += new System.EventHandler(this.BtnReportCard_Click);
             // 
             // label6
             // 
