@@ -113,6 +113,16 @@ namespace STelecom.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap system_software_update_22485__1_ {
+            get {
+                object obj = ResourceManager.GetObject("system_software_update_22485 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Untitled_2 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-2", resourceCulture);
