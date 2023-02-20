@@ -49,7 +49,7 @@ namespace STelecom.Forms
             myCulture.NumberFormat.NumberDecimalSeparator = ".";
             Thread.CurrentThread.CurrentCulture = myCulture;
             dgw.Rows.Clear();
-            using (MySqlCommand command = new MySqlCommand("usersSelectFull", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("usersSelectFull_1", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
 
@@ -138,7 +138,7 @@ namespace STelecom.Forms
                 return;
             }
 
-            using (MySqlCommand command = new MySqlCommand("usersInsertLoginPassword", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("usersInsert_2", DB.GetInstance.GetConnection()))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue($"loginUser", loginUser);
@@ -158,7 +158,7 @@ namespace STelecom.Forms
         {
             if (!InternetCheck.CheackSkyNET())
                 return true;
-            using (MySqlCommand command = new MySqlCommand($"usersSelectLoginPasswordPost", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand($"usersSelect_1", DB.GetInstance.GetConnection()))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue($"loginUser", loginUser);
@@ -167,7 +167,7 @@ namespace STelecom.Forms
                 {
                     DataTable table = new DataTable();
                     adapter.Fill(table);
-                    if (table.Rows.Count == 1) return true;
+                    if (table.Rows.Count >= 1) return true;
                     else return false;
                 }
             }
@@ -180,7 +180,7 @@ namespace STelecom.Forms
             string loginUser = txbLogin.Text;
             string passUser = Encryption.EncryptPlainTextToCipherText(txbPass.Text);
             string post = cmbIsUsersPost.Text;
-            using (MySqlCommand command = new MySqlCommand("usersUpdateLoginPasswordPost", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("usersUpdate_1", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 command.CommandType = CommandType.StoredProcedure;
@@ -208,13 +208,13 @@ namespace STelecom.Forms
                     int dID = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
                     var loginUser = dataGridView1.Rows[index].Cells[1].Value;
                     DB.GetInstance.OpenConnection();
-                    using (MySqlCommand command = new MySqlCommand("usersDeleteID", DB.GetInstance.GetConnection()))
+                    using (MySqlCommand command = new MySqlCommand("usersDelete_1", DB.GetInstance.GetConnection()))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue($"dID", dID);
                         command.ExecuteNonQuery();
                     }
-                    using (MySqlCommand command = new MySqlCommand("settingBrigadesUpdateFIOEmptyStringDeleteUsers", DB.GetInstance.GetConnection()))
+                    using (MySqlCommand command = new MySqlCommand("settingBrigadesUpdate_2", DB.GetInstance.GetConnection()))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue($"loginUser", loginUser);

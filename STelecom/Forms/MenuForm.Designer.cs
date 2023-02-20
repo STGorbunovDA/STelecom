@@ -44,11 +44,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.settingAdmin.BackColor = System.Drawing.Color.Transparent;
             this.settingAdmin.BackgroundImage = global::STelecom.Properties.Resources.businesssettings_thebox_theproduct_negocio_2327;
+            this.settingAdmin.Enabled = false;
             this.settingAdmin.Location = new System.Drawing.Point(12, 12);
             this.settingAdmin.Name = "settingAdmin";
             this.settingAdmin.Size = new System.Drawing.Size(66, 69);
             this.settingAdmin.TabIndex = 4;
             this.settingAdmin.TabStop = false;
+            this.settingAdmin.Visible = false;
             this.settingAdmin.Click += new System.EventHandler(this.SettingAdmin_Click);
             // 
             // panel1
@@ -69,6 +71,7 @@
             // 
             this.settingBrigades.AutoSize = true;
             this.settingBrigades.BackColor = System.Drawing.Color.Transparent;
+            this.settingBrigades.Enabled = false;
             this.settingBrigades.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.settingBrigades.Location = new System.Drawing.Point(194, 314);
             this.settingBrigades.Name = "settingBrigades";
@@ -84,6 +87,7 @@
             // 
             this.comparison.AutoSize = true;
             this.comparison.BackColor = System.Drawing.Color.Transparent;
+            this.comparison.Enabled = false;
             this.comparison.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comparison.Location = new System.Drawing.Point(271, 236);
             this.comparison.Name = "comparison";
@@ -98,6 +102,7 @@
             // 
             this.tutorialEngineers.AutoSize = true;
             this.tutorialEngineers.BackColor = System.Drawing.Color.Transparent;
+            this.tutorialEngineers.Enabled = false;
             this.tutorialEngineers.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tutorialEngineers.Location = new System.Drawing.Point(315, 79);
             this.tutorialEngineers.Name = "tutorialEngineers";
@@ -112,6 +117,7 @@
             // 
             this.sectionForeman.AutoSize = true;
             this.sectionForeman.BackColor = System.Drawing.Color.Transparent;
+            this.sectionForeman.Enabled = false;
             this.sectionForeman.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sectionForeman.Location = new System.Drawing.Point(359, 157);
             this.sectionForeman.Name = "sectionForeman";

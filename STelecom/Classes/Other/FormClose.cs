@@ -35,7 +35,7 @@ namespace STelecom.Classes.Other
                 DateTime dateTimeInput = MenuMethod.CheckDateTimeInputLogUserDatabase(login);
                 if (Date.ToString("yyyy-MM-dd") == dateTimeInput.ToString("yyyy-MM-dd"))
                 {
-                    using (MySqlCommand command = new MySqlCommand("logUsersUpdateDateTimeExit", DB.GetInstance.GetConnection()))
+                    using (MySqlCommand command = new MySqlCommand("logUsersUpdate_1", DB.GetInstance.GetConnection()))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue($"dateTimeExit", exitDate);
