@@ -2,17 +2,13 @@
 using STelecom.Classes.Cheack;
 using STelecom.DataBase;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace STelecom.Forms
@@ -55,7 +51,7 @@ namespace STelecom.Forms
             myCulture.NumberFormat.NumberDecimalSeparator = ".";
             Thread.CurrentThread.CurrentCulture = myCulture;
             dgw.Rows.Clear();
-            using (MySqlCommand command = new MySqlCommand("logUsersSelectFull", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("logUsersSelectFull_1", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 using (MySqlDataReader reader = command.ExecuteReader())
@@ -77,7 +73,7 @@ namespace STelecom.Forms
         {
             CreateColums();
             RefreshDataGrid(dataGridView1);
-            using (MySqlCommand command = new MySqlCommand("logUsersSelectDistinctDateTimeInput", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("logUsersSelect_3", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 DataTable table = new DataTable();
@@ -105,7 +101,7 @@ namespace STelecom.Forms
             if (cmbDateTimeInput.Items.Count == 0)
                 return;
             string date = Convert.ToDateTime(cmbDateTimeInput.Text).ToString("yyyy-MM-dd");
-            using (MySqlCommand command = new MySqlCommand("logUsersSelectFullDateTimeInput", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("logUsersSelectFull_2", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 command.CommandType = CommandType.StoredProcedure;
@@ -199,7 +195,7 @@ namespace STelecom.Forms
                 if (rowState == RowState.Deleted)
                 {
                     int id = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
-                    using (MySqlCommand command = new MySqlCommand("logUsersDeleteID", DB.GetInstance.GetConnection()))
+                    using (MySqlCommand command = new MySqlCommand("logUsersDelete_1", DB.GetInstance.GetConnection()))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue($"dID", id);

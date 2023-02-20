@@ -11,7 +11,7 @@ namespace STelecom.Classes.SeparateMethodsForm
         public static DateTime CheckDateTimeInputLogUserDatabase(string user)
         {
             DateTime Date = DateTime.Now;
-            using (MySqlCommand command = new MySqlCommand("logUsersSelectUserDateTimeInput", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("logUsersSelect_2", DB.GetInstance.GetConnection()))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue($"userLog", user);

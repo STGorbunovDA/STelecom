@@ -17,23 +17,14 @@ namespace STelecom.Forms
         {
             InitializeComponent();
             _user = user;
-            IsAdmin();
             tutorialEngineers.ForeColor = Color.FromArgb(56, 56, 56);
             sectionForeman.ForeColor = Color.FromArgb(56, 56, 56);
             comparison.ForeColor = Color.FromArgb(56, 56, 56);
         }
-        void IsAdmin()
-        {
-            if (_user.Post == "Admin")
-            {
-                settingAdmin.Visible = true;
-                settingBrigades.Visible = true;
-            }
-            if (_user.Post == "Руководитель")
-                settingBrigades.Visible = true;
-        }
         void MenuForm_Load(object sender, EventArgs e)
         {
+            string[] queryPost = { "settingBrigadesSelect_1", "settingBrigadesSelect_2", 
+                "settingBrigadesSelect_3", "settingBrigadesSelect_4" };
             if (!InternetCheck.CheackSkyNET())
                 return;
             DateTime Date = DateTime.Now;
@@ -41,7 +32,7 @@ namespace STelecom.Forms
             DateTime dateTimeInput = MenuMethod.CheckDateTimeInputLogUserDatabase(_user.Login);
             if (Date.ToString("yyyy-MM-dd") != dateTimeInput.ToString("yyyy-MM-dd"))
             {
-                using (MySqlCommand command = new MySqlCommand("logUsersInsertDateTimeInput", DB.GetInstance.GetConnection()))
+                using (MySqlCommand command = new MySqlCommand("logUsersInsert_1", DB.GetInstance.GetConnection()))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue($"user", _user.Login);
@@ -49,6 +40,75 @@ namespace STelecom.Forms
                     DB.GetInstance.OpenConnection();
                     command.ExecuteNonQuery();
                     DB.GetInstance.CloseConnection();
+                }
+            }
+            if (_user.Post == "Admin")
+            {
+                settingAdmin.Visible = true;
+                settingAdmin.Enabled = true;
+                tutorialEngineers.Enabled = true;
+                sectionForeman.Enabled = true;
+                comparison.Enabled = true;
+                settingBrigades.Enabled = true;
+            }
+            else if (_user.Post == "Руководитель")
+            {
+                tutorialEngineers.Enabled = true;
+                sectionForeman.Enabled = true;
+                comparison.Enabled = true;
+                settingBrigades.Enabled = true;
+            }
+            else if (_user.Post == "Начальник участка")
+            {
+                if (CheckPostUsersSettingBrigades(queryPost[0]))
+                {
+                    tutorialEngineers.Enabled = true;
+                    sectionForeman.Enabled = true;
+                }
+                else MessageBox.Show("Сообщи руководителю что-бы сформировал тебя в бригаду");
+
+            }
+            else if (_user.Post == "Инженер")
+            {
+                if (CheckPostUsersSettingBrigades(queryPost[1]))
+                {
+                    tutorialEngineers.Enabled = true;
+                    sectionForeman.Enabled = true;
+                }
+                else MessageBox.Show("Сообщи руководителю что-бы сформировал тебя в бригаду");
+            }
+            else if (_user.Post == "Куратор")
+            {
+                if (CheckPostUsersSettingBrigades(queryPost[2]))
+                {
+                    comparison.Enabled = true;
+                    sectionForeman.Enabled = true;
+                }
+                else MessageBox.Show("Сообщи руководителю что-бы сформировал тебя в бригаду");
+            }
+            else if (_user.Post == "Дирекция связи")
+            {
+                if (CheckPostUsersSettingBrigades(queryPost[3]))
+                {
+                    //sectionForeman.Enabled = true;
+                    // TODO сделать доступ к БД сразу
+                }   
+                else MessageBox.Show("Сообщи руководителю что-бы сформировал тебя в бригаду");
+            }
+        }
+        bool CheckPostUsersSettingBrigades(string queryPost)
+        {
+            using (MySqlCommand command = new MySqlCommand(queryPost, DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue($"userLogin", _user.Login);
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    if (table.Rows.Count >= 1) return true;
+                    else return false;
                 }
             }
         }

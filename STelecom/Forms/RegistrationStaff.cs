@@ -56,7 +56,7 @@ namespace STelecom.Forms
             myCulture.NumberFormat.NumberDecimalSeparator = ".";
             Thread.CurrentThread.CurrentCulture = myCulture;
             dgw.Rows.Clear();
-            using (MySqlCommand command = new MySqlCommand("settingBrigadesSelectFull", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("settingBrigadesSelect_5", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 using (MySqlDataReader reader = command.ExecuteReader())
@@ -98,7 +98,7 @@ namespace STelecom.Forms
         }
         void RegistrationStaff_Load(object sender, EventArgs e)
         {
-            using (MySqlCommand command = new MySqlCommand("usersSelectSectionForeman", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("usersSelect_2", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 DataTable table = new DataTable();
@@ -114,7 +114,7 @@ namespace STelecom.Forms
                     else cmbSectionForemans.Text = String.Empty;
                 }
             }
-            using (MySqlCommand command = new MySqlCommand("usersSelectEngineer", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("usersSelect_3", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 DataTable table = new DataTable();
@@ -130,7 +130,7 @@ namespace STelecom.Forms
                     else cmbEngineers.Text = String.Empty;
                 }
             }
-            using (MySqlCommand command = new MySqlCommand("usersSelectCurator", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("usersSelect_4", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 DataTable table = new DataTable();
@@ -146,7 +146,7 @@ namespace STelecom.Forms
                     else cmbCurator.Text = String.Empty;
                 }
             }
-            using (MySqlCommand command = new MySqlCommand("usersSelectRadioCommunicationDirectorate", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("usersSelect_5", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 DataTable table = new DataTable();
@@ -254,7 +254,7 @@ namespace STelecom.Forms
                 txbNumberPrintDocument.Select();
                 return;
             }
-            using (MySqlCommand command = new MySqlCommand("settingBrigadesInsert", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("settingBrigadesInsert_1", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 command.CommandType = CommandType.StoredProcedure;
@@ -319,7 +319,7 @@ namespace STelecom.Forms
                 txbNumberPrintDocument.Select();
                 return;
             }
-            using (MySqlCommand command = new MySqlCommand("settingBrigadesUpdate", DB.GetInstance.GetConnection()))
+            using (MySqlCommand command = new MySqlCommand("settingBrigadesUpdate_1", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();
                 command.CommandType = CommandType.StoredProcedure;
@@ -350,7 +350,7 @@ namespace STelecom.Forms
                 if (rowState == RowState.Deleted)
                 {
                     var dID = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
-                    using (MySqlCommand command = new MySqlCommand("settingBrigadesDelete", DB.GetInstance.GetConnection()))
+                    using (MySqlCommand command = new MySqlCommand("settingBrigadesDelete_1", DB.GetInstance.GetConnection()))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue($"dID", dID);
