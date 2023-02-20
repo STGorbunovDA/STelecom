@@ -15,7 +15,7 @@ namespace STelecom.Classes.SeparateMethodsForm
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue($"userLog", user);
-                command.Parameters.AddWithValue($"dateTimeInput", Date.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue($"date", Date.ToString("yyyy-MM-dd"));
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                 {
                     DataTable table = new DataTable();
@@ -26,7 +26,5 @@ namespace STelecom.Classes.SeparateMethodsForm
             }                 
         }
         #endregion
-
-
     }
 }
