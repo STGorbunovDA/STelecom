@@ -199,6 +199,7 @@
             this.Controls.Add(this.txbLogin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.AuthorizationLabel);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(816, 489);
             this.MinimumSize = new System.Drawing.Size(816, 489);

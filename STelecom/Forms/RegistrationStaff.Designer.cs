@@ -407,6 +407,7 @@
             this.Controls.Add(this.cmbRoad);
             this.Controls.Add(this.cmbSectionForemans);
             this.Controls.Add(this.AuthorizationLabel);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(1047, 505);
             this.MinimumSize = new System.Drawing.Size(1047, 505);

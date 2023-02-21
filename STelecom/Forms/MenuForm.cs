@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using STelecom.Classes.Cheack;
 using STelecom.Classes.Other;
-using STelecom.Classes.SeparateMethodsForm;
 using STelecom.DataBase;
 using System;
 using System.Data;
@@ -29,7 +28,7 @@ namespace STelecom.Forms
                 return;
             DateTime Date = DateTime.Now;
             string inputDate = Date.ToString("yyyy-MM-dd HH:mm:ss");
-            DateTime dateTimeInput = MenuMethod.CheckDateTimeInputLogUserDatabase(_user.Login);
+            DateTime dateTimeInput = CheckDateTimeInputLogUserDatabase(_user.Login);
             if (Date.ToString("yyyy-MM-dd") != dateTimeInput.ToString("yyyy-MM-dd"))
             {
                 using (MySqlCommand command = new MySqlCommand("logUsersInsert_1", DB.GetInstance.GetConnection()))
@@ -112,6 +111,65 @@ namespace STelecom.Forms
                 }
             }
         }
+        #region получение Даты регистрации входа в программу для табеля
+        DateTime CheckDateTimeInputLogUserDatabase(string user)
+        {
+            DateTime Date = DateTime.Now;
+            using (MySqlCommand command = new MySqlCommand("logUsersSelect_2", DB.GetInstance.GetConnection()))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue($"userLog", user);
+                command.Parameters.AddWithValue($"date", Date.ToString("yyyy-MM-dd"));
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    if (table.Rows.Count > 0) return Convert.ToDateTime(table.Rows[table.Rows.Count - 1].ItemArray[0]);
+                    else return DateTime.MinValue;
+                }
+            }
+        }
+        #endregion
+
+        void SettingAdmin_Click(object sender, EventArgs e)
+        {
+            using (SettingAdminForm SettingAdmin = new SettingAdminForm())
+            {
+                this.Hide();
+                SettingAdmin.ShowDialog();
+                this.Show();
+            }
+        }
+
+        void SettingBrigades_Click(object sender, EventArgs e)
+        {
+            using (RegistrationStaff registrationStaff = new RegistrationStaff(_user))
+            {
+                this.Hide();
+                registrationStaff.ShowDialog();
+                this.Show();
+            }
+        }
+
+        void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = FormClose.GetInstance.FClose(_user.Login);
+        }
+
+        void TutorialEngineers_Click(object sender, EventArgs e)
+        {
+            using (TutorialEngineerForm tutorialEngineer = new TutorialEngineerForm(_user))
+            {
+                this.Hide();
+                tutorialEngineer.ShowDialog();
+                this.Show();
+            }
+        }
 
         #region подсветка
         void TutorialEngineers_MouseEnter(object sender, EventArgs e)
@@ -147,35 +205,5 @@ namespace STelecom.Forms
             settingBrigades.ForeColor = Color.Black;
         }
         #endregion
-
-        void SettingAdmin_Click(object sender, EventArgs e)
-        {
-            using (SettingAdminForm SettingAdmin = new SettingAdminForm())
-            {
-                this.Hide();
-                SettingAdmin.ShowDialog();
-                this.Show();
-            }
-        }
-
-        void SettingBrigades_Click(object sender, EventArgs e)
-        {
-            using (RegistrationStaff registrationStaff = new RegistrationStaff(_user))
-            {
-                this.Hide();
-                registrationStaff.ShowDialog();
-                this.Show();
-            }
-        }
-
-        void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
-        void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = FormClose.GetInstance.FClose(_user.Login);
-        }
     }
 }
