@@ -212,6 +212,7 @@
             this.Controls.Add(this.btnSaveExcel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(836, 604);
             this.MinimumSize = new System.Drawing.Size(836, 604);

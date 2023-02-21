@@ -110,6 +110,7 @@
             this.tutorialEngineers.TabIndex = 2;
             this.tutorialEngineers.Text = "Обучалка";
             this.tutorialEngineers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tutorialEngineers.Click += new System.EventHandler(this.TutorialEngineers_Click);
             this.tutorialEngineers.MouseEnter += new System.EventHandler(this.TutorialEngineers_MouseEnter);
             this.tutorialEngineers.MouseLeave += new System.EventHandler(this.TutorialEngineers_MouseLeave);
             // 
@@ -136,6 +137,7 @@
             this.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
             this.ClientSize = new System.Drawing.Size(804, 461);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(820, 500);
             this.MinimumSize = new System.Drawing.Size(820, 500);
