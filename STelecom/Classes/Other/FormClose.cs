@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using STelecom.Classes.SeparateMethodsForm;
 using STelecom.DataBase;
 using System;
 using System.Data;
@@ -24,7 +23,25 @@ namespace STelecom.Classes.Other
                 return Class;
             }
         }
-
+        #region получение Даты регистрации входа в программу для табеля
+        DateTime CheckDateTimeInputLogUserDatabase(string user)
+        {
+            DateTime Date = DateTime.Now;
+            using (MySqlCommand command = new MySqlCommand("logUsersSelect_2", DB.GetInstance.GetConnection()))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue($"userLog", user);
+                command.Parameters.AddWithValue($"date", Date.ToString("yyyy-MM-dd"));
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    if (table.Rows.Count > 0) return Convert.ToDateTime(table.Rows[table.Rows.Count - 1].ItemArray[0]);
+                    else return DateTime.MinValue;
+                }
+            }
+        }
+        #endregion
         public bool FClose(string login)
         {
             DialogResult result = MessageBox.Show("Вы действительно хотите закрыть программу?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
@@ -32,7 +49,7 @@ namespace STelecom.Classes.Other
             {
                 DateTime Date = DateTime.Now;
                 string exitDate = Date.ToString("yyyy-MM-dd HH:mm:ss");
-                DateTime dateTimeInput = MenuMethod.CheckDateTimeInputLogUserDatabase(login);
+                DateTime dateTimeInput = CheckDateTimeInputLogUserDatabase(login);
                 if (Date.ToString("yyyy-MM-dd") == dateTimeInput.ToString("yyyy-MM-dd"))
                 {
                     using (MySqlCommand command = new MySqlCommand("logUsersUpdate_1", DB.GetInstance.GetConnection()))
