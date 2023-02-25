@@ -3,6 +3,7 @@ using STelecom.Classes.Cheack;
 using STelecom.DataBase;
 using System;
 using System.Data;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace STelecom.Forms
@@ -61,7 +62,66 @@ namespace STelecom.Forms
         }
         void BtnSaveAddRadiostantionProblem_Click(object sender, EventArgs e)
         {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            if (String.IsNullOrWhiteSpace(cmbModel.Text))
+            {
+                MessageBox.Show("Модель не может быть пустой", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (chbProblemEnable.Checked)
+            {
+                if (String.IsNullOrWhiteSpace(txbProblem.Text))
+                {
+                    MessageBox.Show("Опиши неисправность", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txbProblem.Select();
+                    return;
+                }
+            }
+            if (String.IsNullOrWhiteSpace(txbInfo.Text))
+            {
+                MessageBox.Show("Не заполнено поле \"Описание дефекта\"", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbInfo.Select();
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(txbActions.Text))
+            {
+                MessageBox.Show("Не заполнено поле \"Виды работ по устраненнию дефекта\"", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbActions.Select();
+                return;
+            }
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    Regex re = new Regex(Environment.NewLine);
+                    control.Text = re.Replace(control.Text, " ");
+                    control.Text.Trim();
+                }
+            }
+            string problem = String.Empty;
+            string model = cmbModel.Text;
+            if (chbProblemEnable.Checked)
+                problem = txbProblem.Text;
+            else problem = cmbProblem.Text;
 
+            string info = txbInfo.Text;
+            string actions = txbActions.Text;
+            string author = lbL_Author.Text;
+
+            using (MySqlCommand command = new MySqlCommand("tutorialEngineerInsert_1", DB.GetInstance.GetConnection()))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue($"model", model);
+                command.Parameters.AddWithValue($"problem", problem);
+                command.Parameters.AddWithValue($"info", info);
+                command.Parameters.AddWithValue($"actions", actions);
+                command.Parameters.AddWithValue($"author", author);
+                DB.GetInstance.OpenConnection();
+                command.ExecuteNonQuery();
+                DB.GetInstance.CloseConnection();
+                MessageBox.Show("Неисправность успешно добавлена!");
+            }
         }
     }
 }
