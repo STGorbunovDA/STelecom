@@ -181,6 +181,7 @@
             this.btnChangeProblem.TabIndex = 97;
             this.btnChangeProblem.Text = "Изменить неисправность";
             this.btnChangeProblem.UseVisualStyleBackColor = false;
+            this.btnChangeProblem.Click += new System.EventHandler(this.BtnChangeProblem_Click);
             // 
             // btnBriefInfo
             // 

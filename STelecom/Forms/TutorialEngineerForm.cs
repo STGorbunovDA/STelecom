@@ -317,5 +317,10 @@ namespace STelecom.Forms
             if (Application.OpenForms["AddToProblemRadiostantionForm"] == null)
                 addProblemRST.Show();
         }
+
+        void BtnChangeProblem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
