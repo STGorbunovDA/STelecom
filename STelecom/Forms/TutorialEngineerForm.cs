@@ -308,7 +308,6 @@ namespace STelecom.Forms
             if (dataGridView1.RowCount - currRowIndex > 0)
                 dataGridView1.CurrentCell = dataGridView1[0, currRowIndex];
         }
-
         void BtnNewProblemRST_Click(object sender, EventArgs e)
         {
             if (!InternetCheck.CheackSkyNET())
@@ -317,7 +316,6 @@ namespace STelecom.Forms
             if (Application.OpenForms["AddToProblemRadiostantionForm"] == null)
                 addProblemRST.Show();
         }
-
         void BtnChangeProblem_Click(object sender, EventArgs e)
         {
             if (!InternetCheck.CheackSkyNET())
@@ -333,6 +331,31 @@ namespace STelecom.Forms
                 changeToProblem.txbInfo.Text = txbInfo.Text;
                 changeToProblem.txbActions.Text = txbActions.Text;
                 changeToProblem.Show();
+            }
+        }
+        void DataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    if (!String.IsNullOrWhiteSpace(txbId.Text))
+                    {
+                        ContextMenu m1 = new ContextMenu();
+                        m1.MenuItems.Add(new MenuItem("Добавить новую неисправность", BtnNewProblemRST_Click));
+                        m1.MenuItems.Add(new MenuItem("Изменить неисправность", BtnChangeProblem_Click));
+                        m1.MenuItems.Add(new MenuItem("Удалить неисправность", BtnDeleteProblem_Click));
+                        m1.MenuItems.Add(new MenuItem("Сохранить в excel", BtnSaveExcel_Click));
+                        m1.MenuItems.Add(new MenuItem("Краткая иформация", BtnBriefInfo_Click));
+                        m1.Show(dataGridView1, new Point(e.X, e.Y));
+                    }
+                }
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    ContextMenu m2 = new ContextMenu();
+                    m2.MenuItems.Add(new MenuItem("Добавить новую неисправность", BtnNewProblemRST_Click));
+                    m2.MenuItems.Add(new MenuItem("Краткая иформация", BtnBriefInfo_Click));
+                }
             }
         }
     }
