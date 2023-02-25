@@ -320,7 +320,20 @@ namespace STelecom.Forms
 
         void BtnChangeProblem_Click(object sender, EventArgs e)
         {
-
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            if (String.IsNullOrWhiteSpace(txbId.Text))
+                return;
+            ChangeToProblemRadiostantionForm changeToProblem = new ChangeToProblemRadiostantionForm(_user);
+            if (Application.OpenForms["ChangeToProblemRadiostantionForm"] == null)
+            {
+                changeToProblem.txbId.Text = txbId.Text;
+                changeToProblem.cmbModel.Items.Add(txbModel.Text).ToString();
+                changeToProblem.txbProblem.Text = txbProblem.Text;
+                changeToProblem.txbInfo.Text = txbInfo.Text;
+                changeToProblem.txbActions.Text = txbActions.Text;
+                changeToProblem.Show();
+            }
         }
     }
 }
