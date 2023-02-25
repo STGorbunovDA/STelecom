@@ -8,33 +8,19 @@ using System.Windows.Forms;
 
 namespace STelecom.Forms
 {
-    public partial class AddToProblemRadiostantionForm : Form
+    public partial class ChangeToProblemRadiostantionForm : Form
     {
         private readonly CheckUser _user;
-        public AddToProblemRadiostantionForm(CheckUser user)
+        public ChangeToProblemRadiostantionForm(CheckUser user)
         {
             InitializeComponent();
-            _user = user;  
+            _user = user;
         }
-        void AddToProblemRadiostantionForm_Load(object sender, EventArgs e)
+        void ChangeToProblemRadiostantionForm_Load(object sender, EventArgs e)
         {
             lblAuthor.Text = _user.Login;
+            cmbModel.Text = cmbModel.Items[0].ToString();
             cmbProblem.Text = cmbProblem.Items[0].ToString();
-            if (!InternetCheck.CheackSkyNET())
-                return;
-            using (MySqlCommand command = new MySqlCommand("modelRadiostationSelect_1", DB.GetInstance.GetConnection()))
-            {
-                DB.GetInstance.OpenConnection();
-                DataTable table = new DataTable();
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
-                {
-                    adapter.Fill(table);
-                    cmbModel.DataSource = table;
-                    cmbModel.ValueMember = "id";
-                    cmbModel.DisplayMember = "modelRadiostantionName";
-                    DB.GetInstance.CloseConnection();
-                }
-            }
         }
         void PicbClearControl_Click(object sender, EventArgs e)
         {
@@ -60,7 +46,25 @@ namespace STelecom.Forms
                 txbProblem.Clear();
             }
         }
-        void BtnSaveAddRadiostantionProblem_Click(object sender, EventArgs e)
+        void CmbModel_Click(object sender, EventArgs e)
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            using (MySqlCommand command = new MySqlCommand("modelRadiostationSelect_1", DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                DataTable table = new DataTable();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                {
+                    adapter.Fill(table);
+                    cmbModel.DataSource = table;
+                    cmbModel.ValueMember = "id";
+                    cmbModel.DisplayMember = "modelRadiostantionName";
+                    DB.GetInstance.CloseConnection();
+                }
+            }
+        }
+        void BtnChageRadiostantionProblem_Click(object sender, EventArgs e)
         {
             if (!InternetCheck.CheackSkyNET())
                 return;
@@ -69,7 +73,7 @@ namespace STelecom.Forms
                 MessageBox.Show("Модель не может быть пустой", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (chbProblemEnable.Checked)
+            if (!chbProblemEnable.Checked)
             {
                 if (String.IsNullOrWhiteSpace(txbProblem.Text))
                 {
@@ -102,14 +106,13 @@ namespace STelecom.Forms
             string problem = String.Empty;
             string model = cmbModel.Text;
             if (chbProblemEnable.Checked)
-                problem = txbProblem.Text;
-            else problem = cmbProblem.Text;
-
+                problem = cmbProblem.Text;
+            else problem = txbProblem.Text;
             string info = txbInfo.Text;
             string actions = txbActions.Text;
             string author = lblAuthor.Text;
-
-            using (MySqlCommand command = new MySqlCommand("tutorialEngineerInsert_1", DB.GetInstance.GetConnection()))
+            string id = txbId.Text;
+            using (MySqlCommand command = new MySqlCommand("tutorialEngineerUpdate_1", DB.GetInstance.GetConnection()))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue($"model", model);
@@ -117,6 +120,7 @@ namespace STelecom.Forms
                 command.Parameters.AddWithValue($"info", info);
                 command.Parameters.AddWithValue($"actions", actions);
                 command.Parameters.AddWithValue($"author", author);
+                command.Parameters.AddWithValue($"uID", id);
                 DB.GetInstance.OpenConnection();
                 command.ExecuteNonQuery();
                 DB.GetInstance.CloseConnection();
