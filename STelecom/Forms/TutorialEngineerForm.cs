@@ -17,6 +17,7 @@ namespace STelecom.Forms
     {
         private readonly CheckUser _user;
         int selectedRow;
+        string[] queryPost = { "tutorialEngineerSelect_1", "tutorialEngineerSelect_2", "tutorialEngineerSelect_3" };
         #region состояние Rows
         enum RowState
         {
@@ -77,7 +78,6 @@ namespace STelecom.Forms
             dgw.Columns[5].Width = 142;
             for (int i = 0; i < dgw.Rows.Count; i++)
                 dgw.Rows[i].Height = 140;
-
         }
         void ReedSingleRowEnginer(DataGridView dgw, IDataRecord record)
         {
@@ -94,7 +94,6 @@ namespace STelecom.Forms
             RefreshDataGridEngineer(dataGridView1);
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
-
         }
         void PicbUpdate_Click(object sender, EventArgs e)
         {
@@ -112,7 +111,7 @@ namespace STelecom.Forms
                 "абсорбирующую ткань, кубки для мытья посуды или влажные салфетки.", "Информация",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        void DataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.ReadOnly = false;
             selectedRow = e.RowIndex;
@@ -172,8 +171,6 @@ namespace STelecom.Forms
                 MessageBox.Show("Файл успешно сохранен!");
             }
         }
-
-        string[] queryPost = { "tutorialEngineerSelect_1", "tutorialEngineerSelect_2", "tutorialEngineerSelect_3" };
         void CmbSeachUniqueEngineer(ComboBox cmbUnique, string queryPost)
         {
             if (!InternetCheck.CheackSkyNET())
@@ -194,7 +191,6 @@ namespace STelecom.Forms
                     else if (queryPost == "tutorialEngineerSelect_2")
                         cmbUnique.DisplayMember = "problem";
                     else cmbUnique.DisplayMember = "author";
-
                     DB.GetInstance.CloseConnection();
                 }
             }
@@ -221,7 +217,6 @@ namespace STelecom.Forms
         {
             if (!InternetCheck.CheackSkyNET())
                 return;
-            string searchString = string.Empty;
             string colName = string.Empty;
             dgw.Rows.Clear();
             if (cmbUnique == "Модель")
@@ -252,7 +247,6 @@ namespace STelecom.Forms
                 }
                 DB.GetInstance.CloseConnection();
             }
-
             dgw.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgw.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgw.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
@@ -266,16 +260,53 @@ namespace STelecom.Forms
             for (int i = 0; i < dgw.Rows.Count; i++)
                 dgw.Rows[i].Height = 140;
         }
-
         void TxbSearch_DoubleClick(object sender, EventArgs e)
         {
             SearchEngineer(dataGridView1, cmbSeach.Text, txbSearch.Text, cmbUnique.Text);
         }
-
         void TxbSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Return)
                 SearchEngineer(dataGridView1, cmbSeach.Text, txbSearch.Text, cmbUnique.Text);
         }
+        void BtnDeleteProblem_Click(object sender, EventArgs e)
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            if (String.IsNullOrWhiteSpace(txbId.Text))
+            {
+                MessageBox.Show("Выбери строку которую хочешь удалить!");
+                return;
+            }
+            if (dataGridView1.SelectedRows.Count > 1)
+            {
+                string Mesage = $"Вы действительно хотите удалить неисправность у модели: {txbModel.Text}?";
+                if (MessageBox.Show(Mesage, "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.No)
+                    return;
+            }
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                dataGridView1.Rows[row.Index].Cells[6].Value = RowState.Deleted;
+            for (int index = 0; index < dataGridView1.Rows.Count; index++)
+            {
+                var rowState = (RowState)dataGridView1.Rows[index].Cells[6].Value;
+                if (rowState == RowState.Deleted)
+                {
+                    int id = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
+                    using (MySqlCommand command = new MySqlCommand("tutorialEngineerDelete_1", DB.GetInstance.GetConnection()))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue($"dID", id);
+                        DB.GetInstance.OpenConnection();
+                        command.ExecuteNonQuery();
+                        DB.GetInstance.CloseConnection();
+                    }
+                }
+            }
+            int currRowIndex = dataGridView1.CurrentCell.RowIndex;
+            RefreshDataGridEngineer(dataGridView1);
+            dataGridView1.ClearSelection();
+            if (dataGridView1.RowCount - currRowIndex > 0)
+                dataGridView1.CurrentCell = dataGridView1[0, currRowIndex];
+        }     
     }
 }
