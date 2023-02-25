@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using STelecom.Classes.Cheack;
+using STelecom.Classes.Other;
 using STelecom.DataBase;
 using System;
 using System.Data;
@@ -44,9 +45,15 @@ namespace STelecom.Forms
         }
         void ReedSingleRow(DataGridView dgw, IDataRecord record)
         {
-            dataGridView1.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), record.GetString(1),
-                record.GetString(2), record.GetString(3), record.GetString(4), record.GetString(5), record.GetString(6),
-                record.GetString(7), RowState.New)));
+            dataGridView1.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), 
+                Encryption.DecryptCipherTextToPlainText(record.GetString(1)),
+                Encryption.DecryptCipherTextToPlainText(record.GetString(2)),
+                Encryption.DecryptCipherTextToPlainText(record.GetString(3)),
+                Encryption.DecryptCipherTextToPlainText(record.GetString(4)),
+                Encryption.DecryptCipherTextToPlainText(record.GetString(5)), 
+                Encryption.DecryptCipherTextToPlainText(record.GetString(6)),
+                Encryption.DecryptCipherTextToPlainText(record.GetString(7)), 
+                RowState.New)));
         }
         void RefreshDataGrid(DataGridView dgw)
         {
@@ -107,9 +114,12 @@ namespace STelecom.Forms
                     adapter.Fill(table);
                     if (table.Rows.Count > 0)
                     {
-                        cmbSectionForemans.DataSource = table;
-                        cmbSectionForemans.ValueMember = "id";
-                        cmbSectionForemans.DisplayMember = "login";
+                        foreach (DataRow row in table.Rows)
+                        {
+                            string login = Encryption.DecryptCipherTextToPlainText(row["login"].ToString());
+                            cmbSectionForemans.Items.Add(login);
+                        }
+                        cmbSectionForemans.Text = cmbSectionForemans.Items[0].ToString();
                     }
                     else cmbSectionForemans.Text = String.Empty;
                 }
@@ -123,9 +133,12 @@ namespace STelecom.Forms
                     adapter.Fill(table);
                     if (table.Rows.Count > 0)
                     {
-                        cmbEngineers.DataSource = table;
-                        cmbEngineers.ValueMember = "id";
-                        cmbEngineers.DisplayMember = "login";
+                        foreach (DataRow row in table.Rows)
+                        {
+                            string login = Encryption.DecryptCipherTextToPlainText(row["login"].ToString());
+                            cmbEngineers.Items.Add(login);
+                        }
+                        cmbEngineers.Text = cmbEngineers.Items[0].ToString();
                     }
                     else cmbEngineers.Text = String.Empty;
                 }
@@ -139,9 +152,12 @@ namespace STelecom.Forms
                     adapter.Fill(table);
                     if (table.Rows.Count > 0)
                     {
-                        cmbCurator.DataSource = table;
-                        cmbCurator.ValueMember = "id";
-                        cmbCurator.DisplayMember = "login";
+                        foreach (DataRow row in table.Rows)
+                        {
+                            string login = Encryption.DecryptCipherTextToPlainText(row["login"].ToString());
+                            cmbCurator.Items.Add(login);
+                        }
+                        cmbCurator.Text = cmbCurator.Items[0].ToString();
                     }
                     else cmbCurator.Text = String.Empty;
                 }
@@ -155,9 +171,12 @@ namespace STelecom.Forms
                     adapter.Fill(table);
                     if (table.Rows.Count > 0)
                     {
-                        cmbRadioCommunicationDirectorate.DataSource = table;
-                        cmbRadioCommunicationDirectorate.ValueMember = "id";
-                        cmbRadioCommunicationDirectorate.DisplayMember = "login";
+                        foreach (DataRow row in table.Rows)
+                        {
+                            string login = Encryption.DecryptCipherTextToPlainText(row["login"].ToString());
+                            cmbRadioCommunicationDirectorate.Items.Add(login);
+                        }
+                        cmbRadioCommunicationDirectorate.Text = cmbRadioCommunicationDirectorate.Items[0].ToString();
                     }
                     else cmbRadioCommunicationDirectorate.Text = String.Empty;
                 }
@@ -258,13 +277,13 @@ namespace STelecom.Forms
             {
                 DB.GetInstance.OpenConnection();
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue($"sectionForeman", cmbSectionForemans.Text);
-                command.Parameters.AddWithValue($"engineer", cmbEngineers.Text);
-                command.Parameters.AddWithValue($"attorney", txbAttorney.Text);
-                command.Parameters.AddWithValue($"road", cmbRoad.Text);
-                command.Parameters.AddWithValue($"numberPrintDocument", txbNumberPrintDocument.Text);
-                command.Parameters.AddWithValue($"curator", cmbCurator.Text);
-                command.Parameters.AddWithValue($"radioCommunicationDirectorate", cmbRadioCommunicationDirectorate.Text);
+                command.Parameters.AddWithValue($"sectionForeman", Encryption.EncryptPlainTextToCipherText(cmbSectionForemans.Text));
+                command.Parameters.AddWithValue($"engineer", Encryption.EncryptPlainTextToCipherText(cmbEngineers.Text));
+                command.Parameters.AddWithValue($"attorney", Encryption.EncryptPlainTextToCipherText(txbAttorney.Text));
+                command.Parameters.AddWithValue($"road", Encryption.EncryptPlainTextToCipherText(cmbRoad.Text));
+                command.Parameters.AddWithValue($"numberPrintDocument", Encryption.EncryptPlainTextToCipherText(txbNumberPrintDocument.Text));
+                command.Parameters.AddWithValue($"curator", Encryption.EncryptPlainTextToCipherText(cmbCurator.Text));
+                command.Parameters.AddWithValue($"radioCommunicationDirectorate", Encryption.EncryptPlainTextToCipherText(cmbRadioCommunicationDirectorate.Text));
                 command.ExecuteNonQuery();
                 DB.GetInstance.CloseConnection();
                 MessageBox.Show("Бригада сформирована", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -323,13 +342,13 @@ namespace STelecom.Forms
             {
                 DB.GetInstance.OpenConnection();
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue($"sectionForeman", cmbSectionForemans.Text);
-                command.Parameters.AddWithValue($"engineer", cmbEngineers.Text);
-                command.Parameters.AddWithValue($"attorney", txbAttorney.Text);
-                command.Parameters.AddWithValue($"road", cmbRoad.Text);
-                command.Parameters.AddWithValue($"numberPrintDocument", txbNumberPrintDocument.Text);
-                command.Parameters.AddWithValue($"curator", cmbCurator.Text);
-                command.Parameters.AddWithValue($"radioCommunicationDirectorate", cmbRadioCommunicationDirectorate.Text);
+                command.Parameters.AddWithValue($"sectionForeman", Encryption.EncryptPlainTextToCipherText(cmbSectionForemans.Text));
+                command.Parameters.AddWithValue($"engineer", Encryption.EncryptPlainTextToCipherText(cmbEngineers.Text));
+                command.Parameters.AddWithValue($"attorney", Encryption.EncryptPlainTextToCipherText(txbAttorney.Text));
+                command.Parameters.AddWithValue($"road", Encryption.EncryptPlainTextToCipherText(cmbRoad.Text));
+                command.Parameters.AddWithValue($"numberPrintDocument", Encryption.EncryptPlainTextToCipherText(txbNumberPrintDocument.Text));
+                command.Parameters.AddWithValue($"curator", Encryption.EncryptPlainTextToCipherText(cmbCurator.Text));
+                command.Parameters.AddWithValue($"radioCommunicationDirectorate", Encryption.EncryptPlainTextToCipherText(cmbRadioCommunicationDirectorate.Text));
                 command.Parameters.AddWithValue($"uID", uID);
                 command.ExecuteNonQuery();
                 DB.GetInstance.CloseConnection();
@@ -362,7 +381,6 @@ namespace STelecom.Forms
             DB.GetInstance.CloseConnection();
             RefreshDataGrid(dataGridView1);
         }
-
         void BtnReportCard_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count == 0)

@@ -103,9 +103,10 @@ namespace STelecom
         {
             if (!InternetCheck.CheackSkyNET())
                 return;
-            string loginUser = txbLogin.Text;
+            //string loginUser = txbLogin.Text;
             //string passUser = txbPassword.Text;
-            string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);  
+            string loginUser = Encryption.EncryptPlainTextToCipherText(txbLogin.Text);
+            string passUser = Encryption.EncryptPlainTextToCipherText(txbPassword.Text);
             using (MySqlCommand command = new MySqlCommand("usersSelect_1", DB.GetInstance.GetConnection()))
             {
                 DB.GetInstance.OpenConnection();

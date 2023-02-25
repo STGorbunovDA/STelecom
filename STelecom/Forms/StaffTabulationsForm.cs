@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using STelecom.Classes.Cheack;
+using STelecom.Classes.Other;
 using STelecom.DataBase;
 using System;
 using System.ComponentModel;
@@ -40,8 +41,10 @@ namespace STelecom.Forms
         }
         void ReedSingleRow(DataGridView dgw, IDataRecord record)
         {
-            dataGridView1.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), record.GetString(1),
-                record.GetDateTime(2), record.GetDateTime(3), record.GetDateTime(3).Subtract(record.GetDateTime(2)), RowState.New)));
+            dataGridView1.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), 
+                Encryption.DecryptCipherTextToPlainText(record.GetString(1)),
+                record.GetDateTime(2), record.GetDateTime(3),
+                record.GetDateTime(3).Subtract(record.GetDateTime(2)), RowState.New)));
         }
         void RefreshDataGrid(DataGridView dgw)
         {

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using STelecom.Classes.Cheack;
+using STelecom.Classes.Other;
 using STelecom.DataBase;
 using System;
 using System.Data;
@@ -18,7 +19,7 @@ namespace STelecom.Forms
         }
         void ChangeToProblemRadiostantionForm_Load(object sender, EventArgs e)
         {
-            lblAuthor.Text = _user.Login;
+            lblAuthor.Text = Encryption.DecryptCipherTextToPlainText(_user.Login);
             cmbModel.Text = cmbModel.Items[0].ToString();
             cmbProblem.Text = cmbProblem.Items[0].ToString();
         }
@@ -110,7 +111,7 @@ namespace STelecom.Forms
             else problem = txbProblem.Text;
             string info = txbInfo.Text;
             string actions = txbActions.Text;
-            string author = lblAuthor.Text;
+            string author = Encryption.EncryptPlainTextToCipherText(lblAuthor.Text);
             string id = txbId.Text;
             using (MySqlCommand command = new MySqlCommand("tutorialEngineerUpdate_1", DB.GetInstance.GetConnection()))
             {
