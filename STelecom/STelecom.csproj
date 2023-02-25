@@ -62,6 +62,12 @@
     <Compile Include="Classes\Other\Encryption.cs" />
     <Compile Include="Classes\Other\FormClose.cs" />
     <Compile Include="Classes\Other\LogUser.cs" />
+    <Compile Include="Forms\AddToProblemRadiostantionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddToProblemRadiostantionForm.Designer.cs">
+      <DependentUpon>AddToProblemRadiostantionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddToProblemRadiostantionForm.resx">
+      <DependentUpon>AddToProblemRadiostantionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>

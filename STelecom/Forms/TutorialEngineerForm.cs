@@ -307,6 +307,15 @@ namespace STelecom.Forms
             dataGridView1.ClearSelection();
             if (dataGridView1.RowCount - currRowIndex > 0)
                 dataGridView1.CurrentCell = dataGridView1[0, currRowIndex];
-        }     
+        }
+
+        void BtnNewProblemRST_Click(object sender, EventArgs e)
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            AddToProblemRadiostantionForm addProblemRST = new AddToProblemRadiostantionForm(_user);
+            if (Application.OpenForms["AddToProblemRadiostantionForm"] == null)
+                addProblemRST.Show();
+        }
     }
 }
