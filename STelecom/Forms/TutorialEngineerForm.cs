@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using STelecom.Classes.Cheack;
+using STelecom.Classes.Other;
 using STelecom.DataBase;
 using System;
 using System.Data;
@@ -44,6 +45,11 @@ namespace STelecom.Forms
             dgw.Columns.Add("IsNew", "RowState");
             dgw.Columns[6].Visible = false;
         }
+        void ReedSingleRowEnginer(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2),
+                record.GetString(3), record.GetString(4), Encryption.DecryptCipherTextToPlainText(record.GetString(5)), RowState.New)));
+        }
         void RefreshDataGridEngineer(DataGridView dgw)
         {
             if (!InternetCheck.CheackSkyNET())
@@ -78,11 +84,6 @@ namespace STelecom.Forms
             dgw.Columns[5].Width = 142;
             for (int i = 0; i < dgw.Rows.Count; i++)
                 dgw.Rows[i].Height = 140;
-        }
-        void ReedSingleRowEnginer(DataGridView dgw, IDataRecord record)
-        {
-            dgw.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2),
-                record.GetString(3), record.GetString(4), record.GetString(5), RowState.New)));
         }
         void TutorialEngineerForm_Load(object sender, EventArgs e)
         {

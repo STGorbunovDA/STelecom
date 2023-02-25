@@ -38,8 +38,10 @@ namespace STelecom.Forms
         }
         void ReedSingleRow(DataGridView dgw, IDataRecord record)
         {
-            dataGridView1.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), record.GetString(1),
-                record.GetString(2), record.GetString(3), RowState.New)));
+            dataGridView1.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0),
+                Encryption.DecryptCipherTextToPlainText(record.GetString(1)),
+                Encryption.DecryptCipherTextToPlainText(record.GetString(2)),
+                record.GetString(3), RowState.New)));
         }
         void RefreshDataGrid(DataGridView dgw)
         {
@@ -83,7 +85,7 @@ namespace STelecom.Forms
                 DataGridViewRow row = dataGridView1.Rows[selectedRow];
                 txbId.Text = row.Cells[0].Value.ToString();
                 txbLogin.Text = row.Cells[1].Value.ToString();
-                txbPass.Text = Encryption.DecryptCipherTextToPlainText(row.Cells[2].Value.ToString());
+                txbPass.Text = row.Cells[2].Value.ToString();
                 cmbIsUsersPost.Text = row.Cells[3].Value.ToString();
             }
         }
@@ -107,25 +109,25 @@ namespace STelecom.Forms
         {
             if (!InternetCheck.CheackSkyNET())
                 return;
-            string loginUser = txbLogin.Text;
-            if (!loginUser.Contains("-"))
+            if (!txbLogin.Text.Contains("-"))
             {
-                if (!Regex.IsMatch(loginUser, @"^[А-ЯЁ][а-яё]*(([\s]+[А-Я][\.]+[А-Я]+[\.])$)"))
+                if (!Regex.IsMatch(txbLogin.Text, @"^[А-ЯЁ][а-яё]*(([\s]+[А-Я][\.]+[А-Я]+[\.])$)"))
                 {
                     MessageBox.Show("Введите корректно поле \"Логин\"\nP.s. пример: Иванов В.В.", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txbLogin.Select();
                     return;
                 }
             }
-            else if (loginUser.Contains("-"))
+            else if (txbLogin.Text.Contains("-"))
             {
-                if (!Regex.IsMatch(loginUser, @"^[А-ЯЁ][а-яё]*(([\-][А-Я][а-яё]*[\s]+[А-Я]+[\.]+[А-Я]+[\.])$)"))
+                if (!Regex.IsMatch(txbLogin.Text, @"^[А-ЯЁ][а-яё]*(([\-][А-Я][а-яё]*[\s]+[А-Я]+[\.]+[А-Я]+[\.])$)"))
                 {
                     MessageBox.Show("Введите корректно поле \"Логин\"\nP.s. пример: Иванов-Петров В.В.", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txbLogin.Select();
                     return;
                 }
             }
+            string loginUser = Encryption.EncryptPlainTextToCipherText(txbLogin.Text);
             string passUser = Encryption.EncryptPlainTextToCipherText(txbPass.Text);
             if (UserCheck(loginUser, passUser))
             {
@@ -137,7 +139,6 @@ namespace STelecom.Forms
                 MessageBox.Show("Заполни должность!");
                 return;
             }
-
             using (MySqlCommand command = new MySqlCommand("usersInsert_2", DB.GetInstance.GetConnection()))
             {
                 command.CommandType = CommandType.StoredProcedure;
@@ -177,7 +178,7 @@ namespace STelecom.Forms
             if (!InternetCheck.CheackSkyNET())
                 return;
             string uid = txbId.Text;
-            string loginUser = txbLogin.Text;
+            string loginUser = Encryption.EncryptPlainTextToCipherText(txbLogin.Text);
             string passUser = Encryption.EncryptPlainTextToCipherText(txbPass.Text);
             string post = cmbIsUsersPost.Text;
             using (MySqlCommand command = new MySqlCommand("usersUpdate_1", DB.GetInstance.GetConnection()))
