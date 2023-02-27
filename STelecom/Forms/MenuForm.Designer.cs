@@ -126,6 +126,7 @@
             this.sectionForeman.TabIndex = 1;
             this.sectionForeman.Text = "База";
             this.sectionForeman.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.sectionForeman.Click += new System.EventHandler(this.SectionForeman_Click);
             this.sectionForeman.MouseEnter += new System.EventHandler(this.SectionForeman_MouseEnter);
             this.sectionForeman.MouseLeave += new System.EventHandler(this.SectionForeman_MouseLeave);
             // 
