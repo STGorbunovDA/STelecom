@@ -89,8 +89,12 @@ namespace STelecom.Forms
             {
                 if (CheckPostUsersSettingBrigades(queryPost[3]))
                 {
-                    //sectionForeman.Enabled = true;
-                    // TODO сделать доступ к БД сразу
+                    using (WorkForm workForm = new WorkForm())
+                    {
+                        this.Hide();
+                        workForm.ShowDialog();
+                        this.Show();
+                    }
                 }   
                 else MessageBox.Show("Сообщи руководителю что-бы сформировал тебя в бригаду");
             }
@@ -205,5 +209,15 @@ namespace STelecom.Forms
             settingBrigades.ForeColor = Color.Black;
         }
         #endregion
+
+        void SectionForeman_Click(object sender, EventArgs e)
+        {
+            using (WorkForm workForm = new WorkForm())
+            {
+                this.Hide();
+                workForm.ShowDialog();
+                this.Show();
+            }
+        }
     }
 }
