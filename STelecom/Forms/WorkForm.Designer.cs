@@ -252,6 +252,22 @@
             this.btnLoadingJsonFileDataBase = new System.Windows.Forms.Button();
             this.btnPnlFunctionalLoadingClose = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
+            this.pnlSeachDataGrid = new System.Windows.Forms.Panel();
+            this.panel_ = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnPnlSeachDataGrid = new System.Windows.Forms.Button();
+            this.btnPnlSeachDataGridClose = new System.Windows.Forms.Button();
+            this.txbPnlSeachDataGrid = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.pnlInfoPhoneFIO = new System.Windows.Forms.Panel();
+            this.pnlTxbPhoneNumberFIO = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.btnPnlInfoPhoneFIOClose = new System.Windows.Forms.Button();
+            this.pnlTxbRepresentativeFIO = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -272,6 +288,9 @@
             this.pnlChangeNumberActTOFull.SuspendLayout();
             this.pnlPrintBase.SuspendLayout();
             this.pnlFunctionalLoading.SuspendLayout();
+            this.pnlSeachDataGrid.SuspendLayout();
+            this.panel_.SuspendLayout();
+            this.pnlInfoPhoneFIO.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -2763,6 +2782,191 @@
             this.label36.TabIndex = 6;
             this.label36.Text = "Функциональная панель";
             // 
+            // pnlSeachDataGrid
+            // 
+            this.pnlSeachDataGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlSeachDataGrid.BackColor = System.Drawing.Color.SkyBlue;
+            this.pnlSeachDataGrid.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
+            this.pnlSeachDataGrid.Controls.Add(this.panel_);
+            this.pnlSeachDataGrid.Controls.Add(this.btnPnlSeachDataGrid);
+            this.pnlSeachDataGrid.Controls.Add(this.btnPnlSeachDataGridClose);
+            this.pnlSeachDataGrid.Controls.Add(this.txbPnlSeachDataGrid);
+            this.pnlSeachDataGrid.Controls.Add(this.label37);
+            this.pnlSeachDataGrid.Enabled = false;
+            this.pnlSeachDataGrid.Location = new System.Drawing.Point(448, 318);
+            this.pnlSeachDataGrid.Name = "pnlSeachDataGrid";
+            this.pnlSeachDataGrid.Size = new System.Drawing.Size(528, 141);
+            this.pnlSeachDataGrid.TabIndex = 98;
+            this.pnlSeachDataGrid.Visible = false;
+            // 
+            // panel_
+            // 
+            this.panel_.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel_.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel_.Controls.Add(this.button1);
+            this.panel_.Controls.Add(this.button2);
+            this.panel_.Controls.Add(this.textBox1);
+            this.panel_.Controls.Add(this.label17);
+            this.panel_.Enabled = false;
+            this.panel_.Location = new System.Drawing.Point(400, 330);
+            this.panel_.Name = "panel_";
+            this.panel_.Size = new System.Drawing.Size(528, 141);
+            this.panel_.TabIndex = 38;
+            this.panel_.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(394, 88);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 29);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Поиск";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(495, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 29);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(119, 49);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(372, 29);
+            this.textBox1.TabIndex = 37;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(25, 50);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(88, 23);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Поиск:";
+            // 
+            // btnPnlSeachDataGrid
+            // 
+            this.btnPnlSeachDataGrid.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlSeachDataGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPnlSeachDataGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlSeachDataGrid.Location = new System.Drawing.Point(394, 88);
+            this.btnPnlSeachDataGrid.Name = "btnPnlSeachDataGrid";
+            this.btnPnlSeachDataGrid.Size = new System.Drawing.Size(98, 29);
+            this.btnPnlSeachDataGrid.TabIndex = 36;
+            this.btnPnlSeachDataGrid.Text = "Поиск";
+            this.btnPnlSeachDataGrid.UseVisualStyleBackColor = false;
+            // 
+            // btnPnlSeachDataGridClose
+            // 
+            this.btnPnlSeachDataGridClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlSeachDataGridClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlSeachDataGridClose.Location = new System.Drawing.Point(495, 2);
+            this.btnPnlSeachDataGridClose.Name = "btnPnlSeachDataGridClose";
+            this.btnPnlSeachDataGridClose.Size = new System.Drawing.Size(30, 29);
+            this.btnPnlSeachDataGridClose.TabIndex = 34;
+            this.btnPnlSeachDataGridClose.Text = "X";
+            this.btnPnlSeachDataGridClose.UseVisualStyleBackColor = false;
+            // 
+            // txbPnlSeachDataGrid
+            // 
+            this.txbPnlSeachDataGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbPnlSeachDataGrid.Location = new System.Drawing.Point(119, 49);
+            this.txbPnlSeachDataGrid.Name = "txbPnlSeachDataGrid";
+            this.txbPnlSeachDataGrid.Size = new System.Drawing.Size(372, 29);
+            this.txbPnlSeachDataGrid.TabIndex = 37;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label37.Location = new System.Drawing.Point(25, 50);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(88, 23);
+            this.label37.TabIndex = 6;
+            this.label37.Text = "Поиск:";
+            // 
+            // pnlInfoPhoneFIO
+            // 
+            this.pnlInfoPhoneFIO.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlInfoPhoneFIO.BackColor = System.Drawing.Color.SkyBlue;
+            this.pnlInfoPhoneFIO.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
+            this.pnlInfoPhoneFIO.Controls.Add(this.pnlTxbPhoneNumberFIO);
+            this.pnlInfoPhoneFIO.Controls.Add(this.label31);
+            this.pnlInfoPhoneFIO.Controls.Add(this.btnPnlInfoPhoneFIOClose);
+            this.pnlInfoPhoneFIO.Controls.Add(this.pnlTxbRepresentativeFIO);
+            this.pnlInfoPhoneFIO.Controls.Add(this.label21);
+            this.pnlInfoPhoneFIO.Enabled = false;
+            this.pnlInfoPhoneFIO.Location = new System.Drawing.Point(477, 318);
+            this.pnlInfoPhoneFIO.Name = "pnlInfoPhoneFIO";
+            this.pnlInfoPhoneFIO.Size = new System.Drawing.Size(471, 141);
+            this.pnlInfoPhoneFIO.TabIndex = 99;
+            this.pnlInfoPhoneFIO.Visible = false;
+            // 
+            // pnlTxbPhoneNumberFIO
+            // 
+            this.pnlTxbPhoneNumberFIO.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnlTxbPhoneNumberFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.pnlTxbPhoneNumberFIO.Location = new System.Drawing.Point(164, 81);
+            this.pnlTxbPhoneNumberFIO.Name = "pnlTxbPhoneNumberFIO";
+            this.pnlTxbPhoneNumberFIO.ReadOnly = true;
+            this.pnlTxbPhoneNumberFIO.Size = new System.Drawing.Size(232, 29);
+            this.pnlTxbPhoneNumberFIO.TabIndex = 39;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label31.Location = new System.Drawing.Point(48, 87);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(114, 23);
+            this.label31.TabIndex = 38;
+            this.label31.Text = "Телефон:";
+            // 
+            // btnPnlInfoPhoneFIOClose
+            // 
+            this.btnPnlInfoPhoneFIOClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlInfoPhoneFIOClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlInfoPhoneFIOClose.Location = new System.Drawing.Point(433, 5);
+            this.btnPnlInfoPhoneFIOClose.Name = "btnPnlInfoPhoneFIOClose";
+            this.btnPnlInfoPhoneFIOClose.Size = new System.Drawing.Size(30, 29);
+            this.btnPnlInfoPhoneFIOClose.TabIndex = 34;
+            this.btnPnlInfoPhoneFIOClose.Text = "X";
+            this.btnPnlInfoPhoneFIOClose.UseVisualStyleBackColor = false;
+            // 
+            // pnlTxbRepresentativeFIO
+            // 
+            this.pnlTxbRepresentativeFIO.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnlTxbRepresentativeFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.pnlTxbRepresentativeFIO.Location = new System.Drawing.Point(164, 38);
+            this.pnlTxbRepresentativeFIO.Name = "pnlTxbRepresentativeFIO";
+            this.pnlTxbRepresentativeFIO.ReadOnly = true;
+            this.pnlTxbRepresentativeFIO.Size = new System.Drawing.Size(232, 29);
+            this.pnlTxbRepresentativeFIO.TabIndex = 37;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(48, 42);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(62, 23);
+            this.label21.TabIndex = 6;
+            this.label21.Text = "ФИО:";
+            // 
             // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2770,6 +2974,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1424, 777);
+            this.Controls.Add(this.pnlInfoPhoneFIO);
+            this.Controls.Add(this.pnlSeachDataGrid);
             this.Controls.Add(this.pnlPrintBase);
             this.Controls.Add(this.pnlChangeNumberActTOFull);
             this.Controls.Add(this.pnlTag);
@@ -2822,6 +3028,12 @@
             this.pnlPrintBase.ResumeLayout(false);
             this.pnlFunctionalLoading.ResumeLayout(false);
             this.pnlFunctionalLoading.PerformLayout();
+            this.pnlSeachDataGrid.ResumeLayout(false);
+            this.pnlSeachDataGrid.PerformLayout();
+            this.panel_.ResumeLayout(false);
+            this.panel_.PerformLayout();
+            this.pnlInfoPhoneFIO.ResumeLayout(false);
+            this.pnlInfoPhoneFIO.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3048,5 +3260,21 @@
         private System.Windows.Forms.Button btnLoadingJsonFileDataBase;
         private System.Windows.Forms.Button btnPnlFunctionalLoadingClose;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Panel pnlSeachDataGrid;
+        private System.Windows.Forms.Panel panel_;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnPnlSeachDataGrid;
+        private System.Windows.Forms.Button btnPnlSeachDataGridClose;
+        private System.Windows.Forms.TextBox txbPnlSeachDataGrid;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Panel pnlInfoPhoneFIO;
+        private System.Windows.Forms.TextBox pnlTxbPhoneNumberFIO;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button btnPnlInfoPhoneFIOClose;
+        private System.Windows.Forms.TextBox pnlTxbRepresentativeFIO;
+        private System.Windows.Forms.Label label21;
     }
 }
