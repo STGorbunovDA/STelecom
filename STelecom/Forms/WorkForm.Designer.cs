@@ -75,46 +75,46 @@
             this.mTripBtnShowDataBaseRstFull = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Btn_Add_Fill_Full_ActTO = new System.Windows.Forms.Button();
-            this.Btn_Add_Signature_ActTO = new System.Windows.Forms.Button();
-            this.picB_delete_Item_Fill_Full_ActTO = new System.Windows.Forms.PictureBox();
-            this.cmB_AddSignature = new System.Windows.Forms.ComboBox();
-            this.picB_delete_Item_Signature = new System.Windows.Forms.PictureBox();
+            this.btnAddFillFullActTO = new System.Windows.Forms.Button();
+            this.btnAddSignatureActTO = new System.Windows.Forms.Button();
+            this.picbDeleteItemFillFullActTO = new System.Windows.Forms.PictureBox();
+            this.cmbAddSignature = new System.Windows.Forms.ComboBox();
+            this.picbDeleteItemSignature = new System.Windows.Forms.PictureBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.cmB_AddFillFullActTO = new System.Windows.Forms.ComboBox();
+            this.cmbAddFillFullActTO = new System.Windows.Forms.ComboBox();
             this.btnSaveInFile = new System.Windows.Forms.Button();
             this.btnChangeRstForm = new System.Windows.Forms.Button();
             this.cmbRoad = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.cmb_number_unique_acts = new System.Windows.Forms.ComboBox();
-            this.btn_all_BD = new System.Windows.Forms.Button();
+            this.cmbNumberUnique = new System.Windows.Forms.ComboBox();
+            this.btnAllDataBase = new System.Windows.Forms.Button();
             this.cmbCity = new System.Windows.Forms.ComboBox();
-            this.picB_seach_datadrid_replay = new System.Windows.Forms.PictureBox();
-            this.btn_remont_act = new System.Windows.Forms.Button();
-            this.label_act_remont = new System.Windows.Forms.Label();
+            this.picbSeachDatadridReplay = new System.Windows.Forms.PictureBox();
+            this.btnPrintRemontAct = new System.Windows.Forms.Button();
+            this.lblActRemont = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_actTO_print = new System.Windows.Forms.Button();
+            this.btnPrintActTO = new System.Windows.Forms.Button();
             this.txbSerialNumber = new System.Windows.Forms.TextBox();
             this.btnNewAddRstForm = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
-            this.btnAddCity = new System.Windows.Forms.Button();
+            this.btnAddCityInRegistry = new System.Windows.Forms.Button();
             this.btnSeachDatabaseCity = new System.Windows.Forms.Button();
-            this.btn_search = new System.Windows.Forms.Button();
-            this.cmB_seach = new System.Windows.Forms.ComboBox();
-            this.txB_numberAct = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.cmbSeach = new System.Windows.Forms.ComboBox();
+            this.txbNumberAct = new System.Windows.Forms.TextBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
-            this.picB_update = new System.Windows.Forms.PictureBox();
-            this.picB_clear = new System.Windows.Forms.PictureBox();
-            this.txB_numberActRemont = new System.Windows.Forms.TextBox();
+            this.picbUpdate = new System.Windows.Forms.PictureBox();
+            this.picbClear = new System.Windows.Forms.PictureBox();
+            this.txbNumberActRemont = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_delete_Item_Fill_Full_ActTO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_delete_Item_Signature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_seach_datadrid_replay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_update)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_clear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbDeleteItemFillFullActTO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbDeleteItemSignature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbSeachDatadridReplay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbUpdate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbClear)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -457,26 +457,26 @@
             this.panel1.Controls.Add(this.btnChangeRstForm);
             this.panel1.Controls.Add(this.cmbRoad);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.cmb_number_unique_acts);
-            this.panel1.Controls.Add(this.btn_all_BD);
+            this.panel1.Controls.Add(this.cmbNumberUnique);
+            this.panel1.Controls.Add(this.btnAllDataBase);
             this.panel1.Controls.Add(this.cmbCity);
-            this.panel1.Controls.Add(this.picB_seach_datadrid_replay);
-            this.panel1.Controls.Add(this.btn_remont_act);
-            this.panel1.Controls.Add(this.label_act_remont);
+            this.panel1.Controls.Add(this.picbSeachDatadridReplay);
+            this.panel1.Controls.Add(this.btnPrintRemontAct);
+            this.panel1.Controls.Add(this.lblActRemont);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btn_actTO_print);
+            this.panel1.Controls.Add(this.btnPrintActTO);
             this.panel1.Controls.Add(this.txbSerialNumber);
             this.panel1.Controls.Add(this.btnNewAddRstForm);
             this.panel1.Controls.Add(this.label24);
-            this.panel1.Controls.Add(this.btnAddCity);
+            this.panel1.Controls.Add(this.btnAddCityInRegistry);
             this.panel1.Controls.Add(this.btnSeachDatabaseCity);
-            this.panel1.Controls.Add(this.btn_search);
-            this.panel1.Controls.Add(this.cmB_seach);
-            this.panel1.Controls.Add(this.txB_numberAct);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.cmbSeach);
+            this.panel1.Controls.Add(this.txbNumberAct);
             this.panel1.Controls.Add(this.textBox_search);
-            this.panel1.Controls.Add(this.picB_update);
-            this.panel1.Controls.Add(this.picB_clear);
-            this.panel1.Controls.Add(this.txB_numberActRemont);
+            this.panel1.Controls.Add(this.picbUpdate);
+            this.panel1.Controls.Add(this.picbClear);
+            this.panel1.Controls.Add(this.txbNumberActRemont);
             this.panel1.Location = new System.Drawing.Point(1, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1427, 146);
@@ -487,78 +487,78 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.Btn_Add_Fill_Full_ActTO);
-            this.panel4.Controls.Add(this.Btn_Add_Signature_ActTO);
-            this.panel4.Controls.Add(this.picB_delete_Item_Fill_Full_ActTO);
-            this.panel4.Controls.Add(this.cmB_AddSignature);
-            this.panel4.Controls.Add(this.picB_delete_Item_Signature);
+            this.panel4.Controls.Add(this.btnAddFillFullActTO);
+            this.panel4.Controls.Add(this.btnAddSignatureActTO);
+            this.panel4.Controls.Add(this.picbDeleteItemFillFullActTO);
+            this.panel4.Controls.Add(this.cmbAddSignature);
+            this.panel4.Controls.Add(this.picbDeleteItemSignature);
             this.panel4.Controls.Add(this.label25);
             this.panel4.Controls.Add(this.label26);
-            this.panel4.Controls.Add(this.cmB_AddFillFullActTO);
+            this.panel4.Controls.Add(this.cmbAddFillFullActTO);
             this.panel4.Location = new System.Drawing.Point(572, 37);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(332, 89);
             this.panel4.TabIndex = 117;
             // 
-            // Btn_Add_Fill_Full_ActTO
+            // btnAddFillFullActTO
             // 
-            this.Btn_Add_Fill_Full_ActTO.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_Add_Fill_Full_ActTO.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Add_Fill_Full_ActTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Btn_Add_Fill_Full_ActTO.Location = new System.Drawing.Point(179, 60);
-            this.Btn_Add_Fill_Full_ActTO.Name = "Btn_Add_Fill_Full_ActTO";
-            this.Btn_Add_Fill_Full_ActTO.Size = new System.Drawing.Size(94, 23);
-            this.Btn_Add_Fill_Full_ActTO.TabIndex = 119;
-            this.Btn_Add_Fill_Full_ActTO.Text = "Добавить";
-            this.Btn_Add_Fill_Full_ActTO.UseVisualStyleBackColor = false;
+            this.btnAddFillFullActTO.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddFillFullActTO.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddFillFullActTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddFillFullActTO.Location = new System.Drawing.Point(179, 60);
+            this.btnAddFillFullActTO.Name = "btnAddFillFullActTO";
+            this.btnAddFillFullActTO.Size = new System.Drawing.Size(94, 23);
+            this.btnAddFillFullActTO.TabIndex = 119;
+            this.btnAddFillFullActTO.Text = "Добавить";
+            this.btnAddFillFullActTO.UseVisualStyleBackColor = false;
             // 
-            // Btn_Add_Signature_ActTO
+            // btnAddSignatureActTO
             // 
-            this.Btn_Add_Signature_ActTO.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_Add_Signature_ActTO.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Add_Signature_ActTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Btn_Add_Signature_ActTO.Location = new System.Drawing.Point(30, 60);
-            this.Btn_Add_Signature_ActTO.Name = "Btn_Add_Signature_ActTO";
-            this.Btn_Add_Signature_ActTO.Size = new System.Drawing.Size(94, 23);
-            this.Btn_Add_Signature_ActTO.TabIndex = 118;
-            this.Btn_Add_Signature_ActTO.Text = "Добавить";
-            this.Btn_Add_Signature_ActTO.UseVisualStyleBackColor = false;
+            this.btnAddSignatureActTO.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddSignatureActTO.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddSignatureActTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddSignatureActTO.Location = new System.Drawing.Point(30, 60);
+            this.btnAddSignatureActTO.Name = "btnAddSignatureActTO";
+            this.btnAddSignatureActTO.Size = new System.Drawing.Size(94, 23);
+            this.btnAddSignatureActTO.TabIndex = 118;
+            this.btnAddSignatureActTO.Text = "Добавить";
+            this.btnAddSignatureActTO.UseVisualStyleBackColor = false;
             // 
-            // picB_delete_Item_Fill_Full_ActTO
+            // picbDeleteItemFillFullActTO
             // 
-            this.picB_delete_Item_Fill_Full_ActTO.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picB_delete_Item_Fill_Full_ActTO.BackColor = System.Drawing.Color.Transparent;
-            this.picB_delete_Item_Fill_Full_ActTO.BackgroundImage = global::STelecom.Properties.Resources.pngwing_com;
-            this.picB_delete_Item_Fill_Full_ActTO.Location = new System.Drawing.Point(283, 29);
-            this.picB_delete_Item_Fill_Full_ActTO.Name = "picB_delete_Item_Fill_Full_ActTO";
-            this.picB_delete_Item_Fill_Full_ActTO.Size = new System.Drawing.Size(29, 29);
-            this.picB_delete_Item_Fill_Full_ActTO.TabIndex = 116;
-            this.picB_delete_Item_Fill_Full_ActTO.TabStop = false;
+            this.picbDeleteItemFillFullActTO.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picbDeleteItemFillFullActTO.BackColor = System.Drawing.Color.Transparent;
+            this.picbDeleteItemFillFullActTO.BackgroundImage = global::STelecom.Properties.Resources.pngwing_com;
+            this.picbDeleteItemFillFullActTO.Location = new System.Drawing.Point(283, 29);
+            this.picbDeleteItemFillFullActTO.Name = "picbDeleteItemFillFullActTO";
+            this.picbDeleteItemFillFullActTO.Size = new System.Drawing.Size(29, 29);
+            this.picbDeleteItemFillFullActTO.TabIndex = 116;
+            this.picbDeleteItemFillFullActTO.TabStop = false;
             // 
-            // cmB_AddSignature
+            // cmbAddSignature
             // 
-            this.cmB_AddSignature.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmB_AddSignature.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cmB_AddSignature.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmB_AddSignature.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmB_AddSignature.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmB_AddSignature.FormattingEnabled = true;
-            this.cmB_AddSignature.Location = new System.Drawing.Point(30, 29);
-            this.cmB_AddSignature.Name = "cmB_AddSignature";
-            this.cmB_AddSignature.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmB_AddSignature.Size = new System.Drawing.Size(94, 28);
-            this.cmB_AddSignature.TabIndex = 85;
+            this.cmbAddSignature.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbAddSignature.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cmbAddSignature.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAddSignature.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbAddSignature.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbAddSignature.FormattingEnabled = true;
+            this.cmbAddSignature.Location = new System.Drawing.Point(30, 29);
+            this.cmbAddSignature.Name = "cmbAddSignature";
+            this.cmbAddSignature.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbAddSignature.Size = new System.Drawing.Size(94, 28);
+            this.cmbAddSignature.TabIndex = 85;
             // 
-            // picB_delete_Item_Signature
+            // picbDeleteItemSignature
             // 
-            this.picB_delete_Item_Signature.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picB_delete_Item_Signature.BackColor = System.Drawing.Color.Transparent;
-            this.picB_delete_Item_Signature.BackgroundImage = global::STelecom.Properties.Resources.pngwing_com;
-            this.picB_delete_Item_Signature.Location = new System.Drawing.Point(130, 28);
-            this.picB_delete_Item_Signature.Name = "picB_delete_Item_Signature";
-            this.picB_delete_Item_Signature.Size = new System.Drawing.Size(29, 29);
-            this.picB_delete_Item_Signature.TabIndex = 115;
-            this.picB_delete_Item_Signature.TabStop = false;
+            this.picbDeleteItemSignature.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picbDeleteItemSignature.BackColor = System.Drawing.Color.Transparent;
+            this.picbDeleteItemSignature.BackgroundImage = global::STelecom.Properties.Resources.pngwing_com;
+            this.picbDeleteItemSignature.Location = new System.Drawing.Point(130, 28);
+            this.picbDeleteItemSignature.Name = "picbDeleteItemSignature";
+            this.picbDeleteItemSignature.Size = new System.Drawing.Size(29, 29);
+            this.picbDeleteItemSignature.TabIndex = 115;
+            this.picbDeleteItemSignature.TabStop = false;
             // 
             // label25
             // 
@@ -588,19 +588,19 @@
             this.label26.TabIndex = 113;
             this.label26.Text = "Заполняем:";
             // 
-            // cmB_AddFillFullActTO
+            // cmbAddFillFullActTO
             // 
-            this.cmB_AddFillFullActTO.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmB_AddFillFullActTO.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cmB_AddFillFullActTO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmB_AddFillFullActTO.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmB_AddFillFullActTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmB_AddFillFullActTO.FormattingEnabled = true;
-            this.cmB_AddFillFullActTO.Location = new System.Drawing.Point(179, 29);
-            this.cmB_AddFillFullActTO.Name = "cmB_AddFillFullActTO";
-            this.cmB_AddFillFullActTO.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmB_AddFillFullActTO.Size = new System.Drawing.Size(94, 28);
-            this.cmB_AddFillFullActTO.TabIndex = 114;
+            this.cmbAddFillFullActTO.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbAddFillFullActTO.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cmbAddFillFullActTO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAddFillFullActTO.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbAddFillFullActTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbAddFillFullActTO.FormattingEnabled = true;
+            this.cmbAddFillFullActTO.Location = new System.Drawing.Point(179, 29);
+            this.cmbAddFillFullActTO.Name = "cmbAddFillFullActTO";
+            this.cmbAddFillFullActTO.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbAddFillFullActTO.Size = new System.Drawing.Size(94, 28);
+            this.cmbAddFillFullActTO.TabIndex = 114;
             // 
             // btnSaveInFile
             // 
@@ -666,33 +666,33 @@
             this.label18.TabIndex = 81;
             this.label18.Text = "Функциональная панель";
             // 
-            // cmb_number_unique_acts
+            // cmbNumberUnique
             // 
-            this.cmb_number_unique_acts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbNumberUnique.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_number_unique_acts.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cmb_number_unique_acts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_number_unique_acts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_number_unique_acts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmb_number_unique_acts.FormattingEnabled = true;
-            this.cmb_number_unique_acts.Location = new System.Drawing.Point(1137, 32);
-            this.cmb_number_unique_acts.Name = "cmb_number_unique_acts";
-            this.cmb_number_unique_acts.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmb_number_unique_acts.Size = new System.Drawing.Size(251, 28);
-            this.cmb_number_unique_acts.TabIndex = 79;
-            this.cmb_number_unique_acts.Visible = false;
+            this.cmbNumberUnique.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cmbNumberUnique.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNumberUnique.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbNumberUnique.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbNumberUnique.FormattingEnabled = true;
+            this.cmbNumberUnique.Location = new System.Drawing.Point(1137, 32);
+            this.cmbNumberUnique.Name = "cmbNumberUnique";
+            this.cmbNumberUnique.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbNumberUnique.Size = new System.Drawing.Size(251, 28);
+            this.cmbNumberUnique.TabIndex = 79;
+            this.cmbNumberUnique.Visible = false;
             // 
-            // btn_all_BD
+            // btnAllDataBase
             // 
-            this.btn_all_BD.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_all_BD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_all_BD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btn_all_BD.Location = new System.Drawing.Point(490, 101);
-            this.btn_all_BD.Name = "btn_all_BD";
-            this.btn_all_BD.Size = new System.Drawing.Size(74, 31);
-            this.btn_all_BD.TabIndex = 78;
-            this.btn_all_BD.Text = "Полная БД";
-            this.btn_all_BD.UseVisualStyleBackColor = false;
+            this.btnAllDataBase.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAllDataBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAllDataBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAllDataBase.Location = new System.Drawing.Point(490, 101);
+            this.btnAllDataBase.Name = "btnAllDataBase";
+            this.btnAllDataBase.Size = new System.Drawing.Size(74, 31);
+            this.btnAllDataBase.TabIndex = 78;
+            this.btnAllDataBase.Text = "Полная БД";
+            this.btnAllDataBase.UseVisualStyleBackColor = false;
             // 
             // cmbCity
             // 
@@ -706,41 +706,41 @@
             this.cmbCity.Size = new System.Drawing.Size(235, 28);
             this.cmbCity.TabIndex = 77;
             // 
-            // picB_seach_datadrid_replay
+            // picbSeachDatadridReplay
             // 
-            this.picB_seach_datadrid_replay.BackColor = System.Drawing.Color.Transparent;
-            this.picB_seach_datadrid_replay.BackgroundImage = global::STelecom.Properties.Resources.data_analysis_icon_icons_com_52842;
-            this.picB_seach_datadrid_replay.Location = new System.Drawing.Point(511, 66);
-            this.picB_seach_datadrid_replay.Name = "picB_seach_datadrid_replay";
-            this.picB_seach_datadrid_replay.Size = new System.Drawing.Size(32, 32);
-            this.picB_seach_datadrid_replay.TabIndex = 76;
-            this.picB_seach_datadrid_replay.TabStop = false;
+            this.picbSeachDatadridReplay.BackColor = System.Drawing.Color.Transparent;
+            this.picbSeachDatadridReplay.BackgroundImage = global::STelecom.Properties.Resources.data_analysis_icon_icons_com_52842;
+            this.picbSeachDatadridReplay.Location = new System.Drawing.Point(511, 66);
+            this.picbSeachDatadridReplay.Name = "picbSeachDatadridReplay";
+            this.picbSeachDatadridReplay.Size = new System.Drawing.Size(32, 32);
+            this.picbSeachDatadridReplay.TabIndex = 76;
+            this.picbSeachDatadridReplay.TabStop = false;
             // 
-            // btn_remont_act
+            // btnPrintRemontAct
             // 
-            this.btn_remont_act.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnPrintRemontAct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_remont_act.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_remont_act.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_remont_act.Location = new System.Drawing.Point(1282, 101);
-            this.btn_remont_act.Name = "btn_remont_act";
-            this.btn_remont_act.Size = new System.Drawing.Size(137, 32);
-            this.btn_remont_act.TabIndex = 73;
-            this.btn_remont_act.Text = "Печать";
-            this.btn_remont_act.UseVisualStyleBackColor = false;
+            this.btnPrintRemontAct.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrintRemontAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPrintRemontAct.Location = new System.Drawing.Point(1282, 101);
+            this.btnPrintRemontAct.Name = "btnPrintRemontAct";
+            this.btnPrintRemontAct.Size = new System.Drawing.Size(137, 32);
+            this.btnPrintRemontAct.TabIndex = 73;
+            this.btnPrintRemontAct.Text = "Печать";
+            this.btnPrintRemontAct.UseVisualStyleBackColor = false;
             // 
-            // label_act_remont
+            // lblActRemont
             // 
-            this.label_act_remont.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblActRemont.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_act_remont.AutoSize = true;
-            this.label_act_remont.BackColor = System.Drawing.Color.Transparent;
-            this.label_act_remont.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_act_remont.Location = new System.Drawing.Point(1017, 110);
-            this.label_act_remont.Name = "label_act_remont";
-            this.label_act_remont.Size = new System.Drawing.Size(110, 16);
-            this.label_act_remont.TabIndex = 30;
-            this.label_act_remont.Text = "Акт Ремонта №:";
+            this.lblActRemont.AutoSize = true;
+            this.lblActRemont.BackColor = System.Drawing.Color.Transparent;
+            this.lblActRemont.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblActRemont.Location = new System.Drawing.Point(1017, 110);
+            this.lblActRemont.Name = "lblActRemont";
+            this.lblActRemont.Size = new System.Drawing.Size(110, 16);
+            this.lblActRemont.TabIndex = 30;
+            this.lblActRemont.Text = "Акт Ремонта №:";
             // 
             // label1
             // 
@@ -755,18 +755,18 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Акт ТО №:";
             // 
-            // btn_actTO_print
+            // btnPrintActTO
             // 
-            this.btn_actTO_print.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnPrintActTO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_actTO_print.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_actTO_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_actTO_print.Location = new System.Drawing.Point(1282, 66);
-            this.btn_actTO_print.Name = "btn_actTO_print";
-            this.btn_actTO_print.Size = new System.Drawing.Size(137, 32);
-            this.btn_actTO_print.TabIndex = 8;
-            this.btn_actTO_print.Text = "Печать";
-            this.btn_actTO_print.UseVisualStyleBackColor = false;
+            this.btnPrintActTO.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrintActTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPrintActTO.Location = new System.Drawing.Point(1282, 66);
+            this.btnPrintActTO.Name = "btnPrintActTO";
+            this.btnPrintActTO.Size = new System.Drawing.Size(137, 32);
+            this.btnPrintActTO.TabIndex = 8;
+            this.btnPrintActTO.Text = "Печать";
+            this.btnPrintActTO.UseVisualStyleBackColor = false;
             // 
             // txbSerialNumber
             // 
@@ -802,16 +802,16 @@
             this.label24.TabIndex = 16;
             this.label24.Text = "Загрузка Базы:";
             // 
-            // btnAddCity
+            // btnAddCityInRegistry
             // 
-            this.btnAddCity.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddCity.Location = new System.Drawing.Point(529, 32);
-            this.btnAddCity.Name = "btnAddCity";
-            this.btnAddCity.Size = new System.Drawing.Size(29, 29);
-            this.btnAddCity.TabIndex = 15;
-            this.btnAddCity.Text = "+";
-            this.btnAddCity.UseVisualStyleBackColor = false;
+            this.btnAddCityInRegistry.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddCityInRegistry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddCityInRegistry.Location = new System.Drawing.Point(529, 32);
+            this.btnAddCityInRegistry.Name = "btnAddCityInRegistry";
+            this.btnAddCityInRegistry.Size = new System.Drawing.Size(29, 29);
+            this.btnAddCityInRegistry.TabIndex = 15;
+            this.btnAddCityInRegistry.Text = "+";
+            this.btnAddCityInRegistry.UseVisualStyleBackColor = false;
             // 
             // btnSeachDatabaseCity
             // 
@@ -825,29 +825,29 @@
             this.btnSeachDatabaseCity.Text = "...";
             this.btnSeachDatabaseCity.UseVisualStyleBackColor = false;
             // 
-            // btn_search
+            // btnSearch
             // 
-            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_search.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_search.Location = new System.Drawing.Point(1390, 31);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(29, 30);
-            this.btn_search.TabIndex = 13;
-            this.btn_search.Text = "...";
-            this.btn_search.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSearch.Location = new System.Drawing.Point(1390, 31);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(29, 30);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "...";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // cmB_seach
+            // cmbSeach
             // 
-            this.cmB_seach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbSeach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmB_seach.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cmB_seach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmB_seach.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmB_seach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmB_seach.FormattingEnabled = true;
-            this.cmB_seach.Items.AddRange(new object[] {
+            this.cmbSeach.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cmbSeach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSeach.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbSeach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbSeach.FormattingEnabled = true;
+            this.cmbSeach.Items.AddRange(new object[] {
             "Предприятие",
             "Станция",
             "Заводской номер",
@@ -857,21 +857,21 @@
             "Представитель ПП",
             "Номер Акта списания",
             "Модель"});
-            this.cmB_seach.Location = new System.Drawing.Point(908, 32);
-            this.cmB_seach.Name = "cmB_seach";
-            this.cmB_seach.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmB_seach.Size = new System.Drawing.Size(219, 28);
-            this.cmB_seach.TabIndex = 8;
+            this.cmbSeach.Location = new System.Drawing.Point(908, 32);
+            this.cmbSeach.Name = "cmbSeach";
+            this.cmbSeach.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbSeach.Size = new System.Drawing.Size(219, 28);
+            this.cmbSeach.TabIndex = 8;
             // 
-            // txB_numberAct
+            // txbNumberAct
             // 
-            this.txB_numberAct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txbNumberAct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txB_numberAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txB_numberAct.Location = new System.Drawing.Point(1135, 68);
-            this.txB_numberAct.Name = "txB_numberAct";
-            this.txB_numberAct.Size = new System.Drawing.Size(141, 29);
-            this.txB_numberAct.TabIndex = 27;
+            this.txbNumberAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbNumberAct.Location = new System.Drawing.Point(1135, 68);
+            this.txbNumberAct.Name = "txbNumberAct";
+            this.txbNumberAct.Size = new System.Drawing.Size(141, 29);
+            this.txbNumberAct.TabIndex = 27;
             // 
             // textBox_search
             // 
@@ -883,41 +883,41 @@
             this.textBox_search.Size = new System.Drawing.Size(249, 29);
             this.textBox_search.TabIndex = 4;
             // 
-            // picB_update
+            // picbUpdate
             // 
-            this.picB_update.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.picbUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picB_update.BackColor = System.Drawing.Color.Transparent;
-            this.picB_update.BackgroundImage = global::STelecom.Properties.Resources.system_software_update_22485__1_1;
-            this.picB_update.Location = new System.Drawing.Point(908, 77);
-            this.picB_update.Name = "picB_update";
-            this.picB_update.Size = new System.Drawing.Size(50, 50);
-            this.picB_update.TabIndex = 2;
-            this.picB_update.TabStop = false;
+            this.picbUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.picbUpdate.BackgroundImage = global::STelecom.Properties.Resources.system_software_update_22485__1_1;
+            this.picbUpdate.Location = new System.Drawing.Point(908, 77);
+            this.picbUpdate.Name = "picbUpdate";
+            this.picbUpdate.Size = new System.Drawing.Size(50, 50);
+            this.picbUpdate.TabIndex = 2;
+            this.picbUpdate.TabStop = false;
             // 
-            // picB_clear
+            // picbClear
             // 
-            this.picB_clear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.picbClear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picB_clear.BackColor = System.Drawing.Color.Transparent;
-            this.picB_clear.BackgroundImage = global::STelecom.Properties.Resources.gui_eraser_icon_157160;
-            this.picB_clear.Location = new System.Drawing.Point(964, 77);
-            this.picB_clear.Name = "picB_clear";
-            this.picB_clear.Size = new System.Drawing.Size(47, 50);
-            this.picB_clear.TabIndex = 1;
-            this.picB_clear.TabStop = false;
+            this.picbClear.BackColor = System.Drawing.Color.Transparent;
+            this.picbClear.BackgroundImage = global::STelecom.Properties.Resources.gui_eraser_icon_157160;
+            this.picbClear.Location = new System.Drawing.Point(964, 77);
+            this.picbClear.Name = "picbClear";
+            this.picbClear.Size = new System.Drawing.Size(47, 50);
+            this.picbClear.TabIndex = 1;
+            this.picbClear.TabStop = false;
             // 
-            // txB_numberActRemont
+            // txbNumberActRemont
             // 
-            this.txB_numberActRemont.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txbNumberActRemont.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txB_numberActRemont.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txB_numberActRemont.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txB_numberActRemont.Location = new System.Drawing.Point(1135, 103);
-            this.txB_numberActRemont.Name = "txB_numberActRemont";
-            this.txB_numberActRemont.ReadOnly = true;
-            this.txB_numberActRemont.Size = new System.Drawing.Size(141, 29);
-            this.txB_numberActRemont.TabIndex = 72;
+            this.txbNumberActRemont.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txbNumberActRemont.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbNumberActRemont.Location = new System.Drawing.Point(1135, 103);
+            this.txbNumberActRemont.Name = "txbNumberActRemont";
+            this.txbNumberActRemont.ReadOnly = true;
+            this.txbNumberActRemont.Size = new System.Drawing.Size(141, 29);
+            this.txbNumberActRemont.TabIndex = 72;
             // 
             // WorkForm
             // 
@@ -940,11 +940,11 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_delete_Item_Fill_Full_ActTO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_delete_Item_Signature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_seach_datadrid_replay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_update)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_clear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbDeleteItemFillFullActTO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbDeleteItemSignature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbSeachDatadridReplay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbUpdate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbClear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -999,37 +999,37 @@
         private System.Windows.Forms.ToolStripMenuItem mTripBtnShowDataBaseRstFull;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button Btn_Add_Fill_Full_ActTO;
-        private System.Windows.Forms.Button Btn_Add_Signature_ActTO;
-        private System.Windows.Forms.PictureBox picB_delete_Item_Fill_Full_ActTO;
-        private System.Windows.Forms.ComboBox cmB_AddSignature;
-        private System.Windows.Forms.PictureBox picB_delete_Item_Signature;
+        private System.Windows.Forms.Button btnAddFillFullActTO;
+        private System.Windows.Forms.Button btnAddSignatureActTO;
+        private System.Windows.Forms.PictureBox picbDeleteItemFillFullActTO;
+        private System.Windows.Forms.ComboBox cmbAddSignature;
+        private System.Windows.Forms.PictureBox picbDeleteItemSignature;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox cmB_AddFillFullActTO;
+        private System.Windows.Forms.ComboBox cmbAddFillFullActTO;
         private System.Windows.Forms.Button btnSaveInFile;
         private System.Windows.Forms.Button btnChangeRstForm;
         private System.Windows.Forms.ComboBox cmbRoad;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox cmb_number_unique_acts;
-        private System.Windows.Forms.Button btn_all_BD;
+        private System.Windows.Forms.ComboBox cmbNumberUnique;
+        private System.Windows.Forms.Button btnAllDataBase;
         internal System.Windows.Forms.ComboBox cmbCity;
-        private System.Windows.Forms.PictureBox picB_seach_datadrid_replay;
-        private System.Windows.Forms.Button btn_remont_act;
-        private System.Windows.Forms.Label label_act_remont;
+        private System.Windows.Forms.PictureBox picbSeachDatadridReplay;
+        private System.Windows.Forms.Button btnPrintRemontAct;
+        private System.Windows.Forms.Label lblActRemont;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_actTO_print;
+        private System.Windows.Forms.Button btnPrintActTO;
         private System.Windows.Forms.TextBox txbSerialNumber;
         private System.Windows.Forms.Button btnNewAddRstForm;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button btnAddCity;
+        private System.Windows.Forms.Button btnAddCityInRegistry;
         private System.Windows.Forms.Button btnSeachDatabaseCity;
-        private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.ComboBox cmB_seach;
-        private System.Windows.Forms.TextBox txB_numberAct;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox cmbSeach;
+        private System.Windows.Forms.TextBox txbNumberAct;
         private System.Windows.Forms.TextBox textBox_search;
-        private System.Windows.Forms.PictureBox picB_update;
-        private System.Windows.Forms.PictureBox picB_clear;
-        private System.Windows.Forms.TextBox txB_numberActRemont;
+        private System.Windows.Forms.PictureBox picbUpdate;
+        private System.Windows.Forms.PictureBox picbClear;
+        private System.Windows.Forms.TextBox txbNumberActRemont;
     }
 }
