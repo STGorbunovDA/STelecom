@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mTrip_file = new System.Windows.Forms.ToolStripMenuItem();
             this.mTripAddChange = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,6 +224,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnIinformationRemontCompanyRegedit = new System.Windows.Forms.Button();
             this.lblInformationRemontCompany = new System.Windows.Forms.Label();
+            this.pnlTag = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnFormTag = new System.Windows.Forms.Button();
+            this.btnPnlTagClose = new System.Windows.Forms.Button();
+            this.txbDatePnlTag = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.pnlChangeNumberActTOFull = new System.Windows.Forms.Panel();
+            this.btnPnlChangeNumberActTOFull = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txbPnlChangeNumberActTOFull = new System.Windows.Forms.TextBox();
+            this.btnPnlChangeNumberActTOFullClose = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -240,6 +251,8 @@
             this.pnlDateRegistrationStaff.SuspendLayout();
             this.pnlDecommissionSerialNumber.SuspendLayout();
             this.pnlRemontInformationCompany.SuspendLayout();
+            this.pnlTag.SuspendLayout();
+            this.pnlChangeNumberActTOFull.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1072,44 +1085,44 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(0, 179);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.Size = new System.Drawing.Size(1427, 533);
@@ -2395,6 +2408,127 @@
             this.lblInformationRemontCompany.TabIndex = 6;
             this.lblInformationRemontCompany.Text = "Данные для ремонта";
             // 
+            // pnlTag
+            // 
+            this.pnlTag.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlTag.BackColor = System.Drawing.Color.SkyBlue;
+            this.pnlTag.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
+            this.pnlTag.Controls.Add(this.monthCalendar1);
+            this.pnlTag.Controls.Add(this.btnFormTag);
+            this.pnlTag.Controls.Add(this.btnPnlTagClose);
+            this.pnlTag.Controls.Add(this.txbDatePnlTag);
+            this.pnlTag.Controls.Add(this.label34);
+            this.pnlTag.Location = new System.Drawing.Point(556, 299);
+            this.pnlTag.Name = "pnlTag";
+            this.pnlTag.Size = new System.Drawing.Size(313, 178);
+            this.pnlTag.TabIndex = 94;
+            this.pnlTag.Visible = false;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(75, 7);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 39;
+            this.monthCalendar1.Visible = false;
+            // 
+            // btnFormTag
+            // 
+            this.btnFormTag.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFormTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnFormTag.Location = new System.Drawing.Point(170, 109);
+            this.btnFormTag.Name = "btnFormTag";
+            this.btnFormTag.Size = new System.Drawing.Size(124, 29);
+            this.btnFormTag.TabIndex = 36;
+            this.btnFormTag.Text = "Сформировать";
+            this.btnFormTag.UseVisualStyleBackColor = false;
+            // 
+            // btnPnlTagClose
+            // 
+            this.btnPnlTagClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlTagClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlTagClose.Location = new System.Drawing.Point(264, 24);
+            this.btnPnlTagClose.Name = "btnPnlTagClose";
+            this.btnPnlTagClose.Size = new System.Drawing.Size(30, 29);
+            this.btnPnlTagClose.TabIndex = 34;
+            this.btnPnlTagClose.Text = "X";
+            this.btnPnlTagClose.UseVisualStyleBackColor = false;
+            // 
+            // txbDatePnlTag
+            // 
+            this.txbDatePnlTag.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txbDatePnlTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbDatePnlTag.Location = new System.Drawing.Point(109, 67);
+            this.txbDatePnlTag.Name = "txbDatePnlTag";
+            this.txbDatePnlTag.ReadOnly = true;
+            this.txbDatePnlTag.Size = new System.Drawing.Size(185, 29);
+            this.txbDatePnlTag.TabIndex = 37;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label34.Location = new System.Drawing.Point(15, 68);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(75, 23);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Дата:";
+            // 
+            // pnlChangeNumberActTOFull
+            // 
+            this.pnlChangeNumberActTOFull.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
+            this.pnlChangeNumberActTOFull.Controls.Add(this.btnPnlChangeNumberActTOFull);
+            this.pnlChangeNumberActTOFull.Controls.Add(this.label27);
+            this.pnlChangeNumberActTOFull.Controls.Add(this.txbPnlChangeNumberActTOFull);
+            this.pnlChangeNumberActTOFull.Controls.Add(this.btnPnlChangeNumberActTOFullClose);
+            this.pnlChangeNumberActTOFull.Location = new System.Drawing.Point(560, 307);
+            this.pnlChangeNumberActTOFull.Name = "pnlChangeNumberActTOFull";
+            this.pnlChangeNumberActTOFull.Size = new System.Drawing.Size(305, 162);
+            this.pnlChangeNumberActTOFull.TabIndex = 95;
+            this.pnlChangeNumberActTOFull.Visible = false;
+            // 
+            // btnPnlChangeNumberActTOFull
+            // 
+            this.btnPnlChangeNumberActTOFull.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlChangeNumberActTOFull.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPnlChangeNumberActTOFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlChangeNumberActTOFull.Location = new System.Drawing.Point(192, 107);
+            this.btnPnlChangeNumberActTOFull.Name = "btnPnlChangeNumberActTOFull";
+            this.btnPnlChangeNumberActTOFull.Size = new System.Drawing.Size(98, 29);
+            this.btnPnlChangeNumberActTOFull.TabIndex = 40;
+            this.btnPnlChangeNumberActTOFull.Text = "Изменить";
+            this.btnPnlChangeNumberActTOFull.UseVisualStyleBackColor = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label27.Location = new System.Drawing.Point(59, 14);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(175, 22);
+            this.label27.TabIndex = 39;
+            this.label27.Text = "Изменить № Акта";
+            // 
+            // txbPnlChangeNumberActTOFull
+            // 
+            this.txbPnlChangeNumberActTOFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbPnlChangeNumberActTOFull.Location = new System.Drawing.Point(15, 60);
+            this.txbPnlChangeNumberActTOFull.Name = "txbPnlChangeNumberActTOFull";
+            this.txbPnlChangeNumberActTOFull.Size = new System.Drawing.Size(275, 29);
+            this.txbPnlChangeNumberActTOFull.TabIndex = 38;
+            // 
+            // btnPnlChangeNumberActTOFullClose
+            // 
+            this.btnPnlChangeNumberActTOFullClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlChangeNumberActTOFullClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlChangeNumberActTOFullClose.Location = new System.Drawing.Point(267, 9);
+            this.btnPnlChangeNumberActTOFullClose.Name = "btnPnlChangeNumberActTOFullClose";
+            this.btnPnlChangeNumberActTOFullClose.Size = new System.Drawing.Size(30, 29);
+            this.btnPnlChangeNumberActTOFullClose.TabIndex = 35;
+            this.btnPnlChangeNumberActTOFullClose.Text = "X";
+            this.btnPnlChangeNumberActTOFullClose.UseVisualStyleBackColor = false;
+            // 
             // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2402,6 +2536,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1424, 777);
+            this.Controls.Add(this.pnlChangeNumberActTOFull);
+            this.Controls.Add(this.pnlTag);
             this.Controls.Add(this.pnlDecommissionSerialNumber);
             this.Controls.Add(this.pnlDateRegistrationStaff);
             this.Controls.Add(this.pnlRemontInformationCompany);
@@ -2443,6 +2579,10 @@
             this.pnlDecommissionSerialNumber.PerformLayout();
             this.pnlRemontInformationCompany.ResumeLayout(false);
             this.pnlRemontInformationCompany.PerformLayout();
+            this.pnlTag.ResumeLayout(false);
+            this.pnlTag.PerformLayout();
+            this.pnlChangeNumberActTOFull.ResumeLayout(false);
+            this.pnlChangeNumberActTOFull.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2641,5 +2781,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnIinformationRemontCompanyRegedit;
         private System.Windows.Forms.Label lblInformationRemontCompany;
+        private System.Windows.Forms.Panel pnlTag;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button btnFormTag;
+        private System.Windows.Forms.Button btnPnlTagClose;
+        private System.Windows.Forms.TextBox txbDatePnlTag;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Panel pnlChangeNumberActTOFull;
+        private System.Windows.Forms.Button btnPnlChangeNumberActTOFull;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txbPnlChangeNumberActTOFull;
+        private System.Windows.Forms.Button btnPnlChangeNumberActTOFullClose;
     }
 }
