@@ -83,6 +83,26 @@ namespace STelecom.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap data_analysis_icon_icons_com_52842 {
+            get {
+                object obj = ResourceManager.GetObject("data-analysis_icon-icons.com_52842", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gui_eraser_icon_157160 {
+            get {
+                object obj = ResourceManager.GetObject("gui_eraser_icon_157160", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gui_eraser_icon_157160__1_ {
             get {
                 object obj = ResourceManager.GetObject("gui_eraser_icon_157160 (1)", resourceCulture);
@@ -113,9 +133,29 @@ namespace STelecom.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap system_software_update_22485__1_ {
             get {
                 object obj = ResourceManager.GetObject("system_software_update_22485 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap system_software_update_22485__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("system_software_update_22485 (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -185,6 +185,9 @@
     <None Include="IMG\gui_eraser_icon_157160 %281%29.png" />
     <None Include="IMG\icons8-синхронизация-подключения-32.png" />
     <None Include="IMG\system_software_update_22485 %281%29.png" />
+    <None Include="IMG\data-analysis_icon-icons.com_52842.png" />
+    <None Include="IMG\pngwing.com.png" />
+    <None Include="IMG\gui_eraser_icon_157160.png" />
     <Content Include="radio_22703.ico" />
   </ItemGroup>
   <ItemGroup />
