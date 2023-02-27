@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mTrip_file = new System.Windows.Forms.ToolStripMenuItem();
             this.mTripAddChange = new System.Windows.Forms.ToolStripMenuItem();
@@ -194,6 +194,36 @@
             this.btnRecordDecommissionSerialNumber = new System.Windows.Forms.Button();
             this.btnPnlDecommissionSerialNumberClose = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
+            this.pnlRemontInformationCompany = new System.Windows.Forms.Panel();
+            this.chbPassTxbThreeFIO = new System.Windows.Forms.CheckBox();
+            this.btnContinueRemontActExcel = new System.Windows.Forms.Button();
+            this.txbRemontBE = new System.Windows.Forms.TextBox();
+            this.btnPnlRemontInformationCompanyClose = new System.Windows.Forms.Button();
+            this.lblCompanyRemont = new System.Windows.Forms.Label();
+            this.txbThreeRemontCompanyPost = new System.Windows.Forms.TextBox();
+            this.txbThreeRemontCompanyFIO = new System.Windows.Forms.TextBox();
+            this.txbTwoRemontCompanyPost = new System.Windows.Forms.TextBox();
+            this.txbTwoRemontCompanyFIO = new System.Windows.Forms.TextBox();
+            this.txbOneRemontCompanyPost = new System.Windows.Forms.TextBox();
+            this.txbOneRemontCompanyFIO = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txbChairmanRemontCompanyPost = new System.Windows.Forms.TextBox();
+            this.txbChairmanRemontCompanyFIO = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txbRemontOKPO = new System.Windows.Forms.TextBox();
+            this.txbDirectorRemontCompanyPost = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txbFullNameCompany = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txbDirectorRemontCompanyFIO = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnIinformationRemontCompanyRegedit = new System.Windows.Forms.Button();
+            this.lblInformationRemontCompany = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -209,6 +239,7 @@
             this.panel2.SuspendLayout();
             this.pnlDateRegistrationStaff.SuspendLayout();
             this.pnlDecommissionSerialNumber.SuspendLayout();
+            this.pnlRemontInformationCompany.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1041,44 +1072,44 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(0, 179);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.Size = new System.Drawing.Size(1427, 533);
@@ -2041,6 +2072,329 @@
             this.label33.TabIndex = 6;
             this.label33.Text = "№ Акта списания:";
             // 
+            // pnlRemontInformationCompany
+            // 
+            this.pnlRemontInformationCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlRemontInformationCompany.BackColor = System.Drawing.Color.SkyBlue;
+            this.pnlRemontInformationCompany.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
+            this.pnlRemontInformationCompany.Controls.Add(this.chbPassTxbThreeFIO);
+            this.pnlRemontInformationCompany.Controls.Add(this.btnContinueRemontActExcel);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbRemontBE);
+            this.pnlRemontInformationCompany.Controls.Add(this.btnPnlRemontInformationCompanyClose);
+            this.pnlRemontInformationCompany.Controls.Add(this.lblCompanyRemont);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbThreeRemontCompanyPost);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbThreeRemontCompanyFIO);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbTwoRemontCompanyPost);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbTwoRemontCompanyFIO);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbOneRemontCompanyPost);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbOneRemontCompanyFIO);
+            this.pnlRemontInformationCompany.Controls.Add(this.label15);
+            this.pnlRemontInformationCompany.Controls.Add(this.label14);
+            this.pnlRemontInformationCompany.Controls.Add(this.label12);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbChairmanRemontCompanyPost);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbChairmanRemontCompanyFIO);
+            this.pnlRemontInformationCompany.Controls.Add(this.label11);
+            this.pnlRemontInformationCompany.Controls.Add(this.label10);
+            this.pnlRemontInformationCompany.Controls.Add(this.label8);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbRemontOKPO);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbDirectorRemontCompanyPost);
+            this.pnlRemontInformationCompany.Controls.Add(this.label6);
+            this.pnlRemontInformationCompany.Controls.Add(this.label5);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbFullNameCompany);
+            this.pnlRemontInformationCompany.Controls.Add(this.label3);
+            this.pnlRemontInformationCompany.Controls.Add(this.txbDirectorRemontCompanyFIO);
+            this.pnlRemontInformationCompany.Controls.Add(this.label4);
+            this.pnlRemontInformationCompany.Controls.Add(this.btnIinformationRemontCompanyRegedit);
+            this.pnlRemontInformationCompany.Controls.Add(this.lblInformationRemontCompany);
+            this.pnlRemontInformationCompany.Location = new System.Drawing.Point(300, 180);
+            this.pnlRemontInformationCompany.Name = "pnlRemontInformationCompany";
+            this.pnlRemontInformationCompany.Size = new System.Drawing.Size(813, 458);
+            this.pnlRemontInformationCompany.TabIndex = 93;
+            this.pnlRemontInformationCompany.Visible = false;
+            // 
+            // chbPassTxbThreeFIO
+            // 
+            this.chbPassTxbThreeFIO.AutoSize = true;
+            this.chbPassTxbThreeFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chbPassTxbThreeFIO.Location = new System.Drawing.Point(785, 387);
+            this.chbPassTxbThreeFIO.Name = "chbPassTxbThreeFIO";
+            this.chbPassTxbThreeFIO.Size = new System.Drawing.Size(15, 14);
+            this.chbPassTxbThreeFIO.TabIndex = 37;
+            this.chbPassTxbThreeFIO.UseVisualStyleBackColor = true;
+            // 
+            // btnContinueRemontActExcel
+            // 
+            this.btnContinueRemontActExcel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnContinueRemontActExcel.Enabled = false;
+            this.btnContinueRemontActExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinueRemontActExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnContinueRemontActExcel.Location = new System.Drawing.Point(616, 413);
+            this.btnContinueRemontActExcel.Name = "btnContinueRemontActExcel";
+            this.btnContinueRemontActExcel.Size = new System.Drawing.Size(163, 29);
+            this.btnContinueRemontActExcel.TabIndex = 36;
+            this.btnContinueRemontActExcel.Text = "Продолжить печать";
+            this.btnContinueRemontActExcel.UseVisualStyleBackColor = false;
+            // 
+            // txbRemontBE
+            // 
+            this.txbRemontBE.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbRemontBE.Location = new System.Drawing.Point(278, 120);
+            this.txbRemontBE.Name = "txbRemontBE";
+            this.txbRemontBE.Size = new System.Drawing.Size(112, 29);
+            this.txbRemontBE.TabIndex = 35;
+            // 
+            // btnPnlRemontInformationCompanyClose
+            // 
+            this.btnPnlRemontInformationCompanyClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlRemontInformationCompanyClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlRemontInformationCompanyClose.Location = new System.Drawing.Point(767, 4);
+            this.btnPnlRemontInformationCompanyClose.Name = "btnPnlRemontInformationCompanyClose";
+            this.btnPnlRemontInformationCompanyClose.Size = new System.Drawing.Size(30, 29);
+            this.btnPnlRemontInformationCompanyClose.TabIndex = 34;
+            this.btnPnlRemontInformationCompanyClose.Text = "X";
+            this.btnPnlRemontInformationCompanyClose.UseVisualStyleBackColor = false;
+            // 
+            // lblCompanyRemont
+            // 
+            this.lblCompanyRemont.AutoSize = true;
+            this.lblCompanyRemont.BackColor = System.Drawing.Color.Transparent;
+            this.lblCompanyRemont.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCompanyRemont.Location = new System.Drawing.Point(492, 10);
+            this.lblCompanyRemont.Name = "lblCompanyRemont";
+            this.lblCompanyRemont.Size = new System.Drawing.Size(75, 23);
+            this.lblCompanyRemont.TabIndex = 33;
+            this.lblCompanyRemont.Text = "ДЦС-1";
+            // 
+            // txbThreeRemontCompanyPost
+            // 
+            this.txbThreeRemontCompanyPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbThreeRemontCompanyPost.Location = new System.Drawing.Point(407, 378);
+            this.txbThreeRemontCompanyPost.Name = "txbThreeRemontCompanyPost";
+            this.txbThreeRemontCompanyPost.Size = new System.Drawing.Size(372, 29);
+            this.txbThreeRemontCompanyPost.TabIndex = 32;
+            // 
+            // txbThreeRemontCompanyFIO
+            // 
+            this.txbThreeRemontCompanyFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbThreeRemontCompanyFIO.Location = new System.Drawing.Point(167, 378);
+            this.txbThreeRemontCompanyFIO.Name = "txbThreeRemontCompanyFIO";
+            this.txbThreeRemontCompanyFIO.Size = new System.Drawing.Size(224, 29);
+            this.txbThreeRemontCompanyFIO.TabIndex = 31;
+            // 
+            // txbTwoRemontCompanyPost
+            // 
+            this.txbTwoRemontCompanyPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbTwoRemontCompanyPost.Location = new System.Drawing.Point(407, 338);
+            this.txbTwoRemontCompanyPost.Name = "txbTwoRemontCompanyPost";
+            this.txbTwoRemontCompanyPost.Size = new System.Drawing.Size(372, 29);
+            this.txbTwoRemontCompanyPost.TabIndex = 30;
+            // 
+            // txbTwoRemontCompanyFIO
+            // 
+            this.txbTwoRemontCompanyFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbTwoRemontCompanyFIO.Location = new System.Drawing.Point(167, 338);
+            this.txbTwoRemontCompanyFIO.Name = "txbTwoRemontCompanyFIO";
+            this.txbTwoRemontCompanyFIO.Size = new System.Drawing.Size(224, 29);
+            this.txbTwoRemontCompanyFIO.TabIndex = 29;
+            // 
+            // txbOneRemontCompanyPost
+            // 
+            this.txbOneRemontCompanyPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbOneRemontCompanyPost.Location = new System.Drawing.Point(407, 295);
+            this.txbOneRemontCompanyPost.Name = "txbOneRemontCompanyPost";
+            this.txbOneRemontCompanyPost.Size = new System.Drawing.Size(372, 29);
+            this.txbOneRemontCompanyPost.TabIndex = 28;
+            // 
+            // txbOneRemontCompanyFIO
+            // 
+            this.txbOneRemontCompanyFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbOneRemontCompanyFIO.Location = new System.Drawing.Point(167, 295);
+            this.txbOneRemontCompanyFIO.Name = "txbOneRemontCompanyFIO";
+            this.txbOneRemontCompanyFIO.Size = new System.Drawing.Size(224, 29);
+            this.txbOneRemontCompanyFIO.TabIndex = 27;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(22, 384);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(142, 22);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "3 член Ком.:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(22, 344);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(142, 22);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "2 член Ком.:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(22, 301);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(142, 22);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "1 член Ком.:";
+            // 
+            // txbChairmanRemontCompanyPost
+            // 
+            this.txbChairmanRemontCompanyPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbChairmanRemontCompanyPost.Location = new System.Drawing.Point(407, 249);
+            this.txbChairmanRemontCompanyPost.Name = "txbChairmanRemontCompanyPost";
+            this.txbChairmanRemontCompanyPost.Size = new System.Drawing.Size(372, 29);
+            this.txbChairmanRemontCompanyPost.TabIndex = 23;
+            // 
+            // txbChairmanRemontCompanyFIO
+            // 
+            this.txbChairmanRemontCompanyFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbChairmanRemontCompanyFIO.Location = new System.Drawing.Point(167, 249);
+            this.txbChairmanRemontCompanyFIO.Name = "txbChairmanRemontCompanyFIO";
+            this.txbChairmanRemontCompanyFIO.Size = new System.Drawing.Size(224, 29);
+            this.txbChairmanRemontCompanyFIO.TabIndex = 22;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(12, 255);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(153, 22);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Председатель:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(233, 124);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 22);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "БЕ:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(42, 124);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 22);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "ОКПО:";
+            // 
+            // txbRemontOKPO
+            // 
+            this.txbRemontOKPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbRemontOKPO.Location = new System.Drawing.Point(113, 120);
+            this.txbRemontOKPO.Name = "txbRemontOKPO";
+            this.txbRemontOKPO.Size = new System.Drawing.Size(112, 29);
+            this.txbRemontOKPO.TabIndex = 17;
+            // 
+            // txbDirectorRemontCompanyPost
+            // 
+            this.txbDirectorRemontCompanyPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbDirectorRemontCompanyPost.Location = new System.Drawing.Point(407, 203);
+            this.txbDirectorRemontCompanyPost.Name = "txbDirectorRemontCompanyPost";
+            this.txbDirectorRemontCompanyPost.Size = new System.Drawing.Size(372, 29);
+            this.txbDirectorRemontCompanyPost.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(542, 177);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 22);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Должность";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(12, 209);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 22);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Руководитель:";
+            // 
+            // txbFullNameCompany
+            // 
+            this.txbFullNameCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbFullNameCompany.Location = new System.Drawing.Point(407, 73);
+            this.txbFullNameCompany.Multiline = true;
+            this.txbFullNameCompany.Name = "txbFullNameCompany";
+            this.txbFullNameCompany.Size = new System.Drawing.Size(372, 76);
+            this.txbFullNameCompany.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(44, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(362, 22);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Полное наименование предприятия:";
+            // 
+            // txbDirectorRemontCompanyFIO
+            // 
+            this.txbDirectorRemontCompanyFIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbDirectorRemontCompanyFIO.Location = new System.Drawing.Point(167, 203);
+            this.txbDirectorRemontCompanyFIO.Name = "txbDirectorRemontCompanyFIO";
+            this.txbDirectorRemontCompanyFIO.Size = new System.Drawing.Size(224, 29);
+            this.txbDirectorRemontCompanyFIO.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(257, 178);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 22);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "ФИО";
+            // 
+            // btnIinformationRemontCompanyRegedit
+            // 
+            this.btnIinformationRemontCompanyRegedit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIinformationRemontCompanyRegedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIinformationRemontCompanyRegedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnIinformationRemontCompanyRegedit.Location = new System.Drawing.Point(406, 413);
+            this.btnIinformationRemontCompanyRegedit.Name = "btnIinformationRemontCompanyRegedit";
+            this.btnIinformationRemontCompanyRegedit.Size = new System.Drawing.Size(160, 29);
+            this.btnIinformationRemontCompanyRegedit.TabIndex = 8;
+            this.btnIinformationRemontCompanyRegedit.Text = "Записать данные";
+            this.btnIinformationRemontCompanyRegedit.UseVisualStyleBackColor = false;
+            // 
+            // lblInformationRemontCompany
+            // 
+            this.lblInformationRemontCompany.AutoSize = true;
+            this.lblInformationRemontCompany.BackColor = System.Drawing.Color.Transparent;
+            this.lblInformationRemontCompany.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblInformationRemontCompany.Location = new System.Drawing.Point(242, 10);
+            this.lblInformationRemontCompany.Name = "lblInformationRemontCompany";
+            this.lblInformationRemontCompany.Size = new System.Drawing.Size(244, 23);
+            this.lblInformationRemontCompany.TabIndex = 6;
+            this.lblInformationRemontCompany.Text = "Данные для ремонта";
+            // 
             // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2050,6 +2404,7 @@
             this.ClientSize = new System.Drawing.Size(1424, 777);
             this.Controls.Add(this.pnlDecommissionSerialNumber);
             this.Controls.Add(this.pnlDateRegistrationStaff);
+            this.Controls.Add(this.pnlRemontInformationCompany);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView3);
@@ -2086,6 +2441,8 @@
             this.pnlDateRegistrationStaff.PerformLayout();
             this.pnlDecommissionSerialNumber.ResumeLayout(false);
             this.pnlDecommissionSerialNumber.PerformLayout();
+            this.pnlRemontInformationCompany.ResumeLayout(false);
+            this.pnlRemontInformationCompany.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2254,5 +2611,35 @@
         private System.Windows.Forms.Button btnRecordDecommissionSerialNumber;
         private System.Windows.Forms.Button btnPnlDecommissionSerialNumberClose;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Panel pnlRemontInformationCompany;
+        private System.Windows.Forms.CheckBox chbPassTxbThreeFIO;
+        private System.Windows.Forms.Button btnContinueRemontActExcel;
+        private System.Windows.Forms.TextBox txbRemontBE;
+        private System.Windows.Forms.Button btnPnlRemontInformationCompanyClose;
+        private System.Windows.Forms.Label lblCompanyRemont;
+        private System.Windows.Forms.TextBox txbThreeRemontCompanyPost;
+        private System.Windows.Forms.TextBox txbThreeRemontCompanyFIO;
+        private System.Windows.Forms.TextBox txbTwoRemontCompanyPost;
+        private System.Windows.Forms.TextBox txbTwoRemontCompanyFIO;
+        private System.Windows.Forms.TextBox txbOneRemontCompanyPost;
+        private System.Windows.Forms.TextBox txbOneRemontCompanyFIO;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txbChairmanRemontCompanyPost;
+        private System.Windows.Forms.TextBox txbChairmanRemontCompanyFIO;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txbRemontOKPO;
+        private System.Windows.Forms.TextBox txbDirectorRemontCompanyPost;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txbFullNameCompany;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txbDirectorRemontCompanyFIO;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnIinformationRemontCompanyRegedit;
+        private System.Windows.Forms.Label lblInformationRemontCompany;
     }
 }
