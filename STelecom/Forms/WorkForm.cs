@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STelecom.Classes.Cheack;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,20 @@ namespace STelecom.Forms
 {
     public partial class WorkForm : Form
     {
-        public WorkForm()
+        #region состояние Rows
+        enum RowState
+        {
+            New,
+            Deleted
+        }
+        #endregion
+
+        #region global perem
+        private delegate DialogResult ShowOpenFileDialogInvoker();
+        int selectedRow;
+        private readonly CheckUser _user;
+        #endregion
+        public WorkForm(CheckUser user)
         {
             InitializeComponent();
         }
