@@ -231,10 +231,27 @@
             this.txbDatePnlTag = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.pnlChangeNumberActTOFull = new System.Windows.Forms.Panel();
-            this.btnPnlChangeNumberActTOFull = new System.Windows.Forms.Button();
+            this.btn_pnl_ChangeNumberActTOFull = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
-            this.txbPnlChangeNumberActTOFull = new System.Windows.Forms.TextBox();
+            this.txB_pnl_ChangeNumberActTOFull = new System.Windows.Forms.TextBox();
             this.btnPnlChangeNumberActTOFullClose = new System.Windows.Forms.Button();
+            this.pnlPrintBase = new System.Windows.Forms.Panel();
+            this.btnSaveFullBase = new System.Windows.Forms.Button();
+            this.btnSaveDirectorateBase = new System.Windows.Forms.Button();
+            this.btnPnlPrintBaseClose = new System.Windows.Forms.Button();
+            this.pnlFunctionalLoading = new System.Windows.Forms.Panel();
+            this.btnShowDataBaseRstFull = new System.Windows.Forms.Button();
+            this.btnShowDataBaseRstLastYear = new System.Windows.Forms.Button();
+            this.btnLoadingFileLastYear = new System.Windows.Forms.Button();
+            this.btnUploadingJsonFile = new System.Windows.Forms.Button();
+            this.btnCopyingCurrentDataBaseEndOfTheYear = new System.Windows.Forms.Button();
+            this.btnLoadingFileFullDataBase = new System.Windows.Forms.Button();
+            this.btnManualBackupCurrentDataBase = new System.Windows.Forms.Button();
+            this.btnClearDataBaseCurrentYear = new System.Windows.Forms.Button();
+            this.btnLoadingFileCurrentDataBase = new System.Windows.Forms.Button();
+            this.btnLoadingJsonFileDataBase = new System.Windows.Forms.Button();
+            this.btnPnlFunctionalLoadingClose = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -253,6 +270,8 @@
             this.pnlRemontInformationCompany.SuspendLayout();
             this.pnlTag.SuspendLayout();
             this.pnlChangeNumberActTOFull.SuspendLayout();
+            this.pnlPrintBase.SuspendLayout();
+            this.pnlFunctionalLoading.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -2477,9 +2496,9 @@
             // pnlChangeNumberActTOFull
             // 
             this.pnlChangeNumberActTOFull.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
-            this.pnlChangeNumberActTOFull.Controls.Add(this.btnPnlChangeNumberActTOFull);
+            this.pnlChangeNumberActTOFull.Controls.Add(this.btn_pnl_ChangeNumberActTOFull);
             this.pnlChangeNumberActTOFull.Controls.Add(this.label27);
-            this.pnlChangeNumberActTOFull.Controls.Add(this.txbPnlChangeNumberActTOFull);
+            this.pnlChangeNumberActTOFull.Controls.Add(this.txB_pnl_ChangeNumberActTOFull);
             this.pnlChangeNumberActTOFull.Controls.Add(this.btnPnlChangeNumberActTOFullClose);
             this.pnlChangeNumberActTOFull.Location = new System.Drawing.Point(560, 307);
             this.pnlChangeNumberActTOFull.Name = "pnlChangeNumberActTOFull";
@@ -2487,17 +2506,17 @@
             this.pnlChangeNumberActTOFull.TabIndex = 95;
             this.pnlChangeNumberActTOFull.Visible = false;
             // 
-            // btnPnlChangeNumberActTOFull
+            // btn_pnl_ChangeNumberActTOFull
             // 
-            this.btnPnlChangeNumberActTOFull.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPnlChangeNumberActTOFull.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPnlChangeNumberActTOFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnPnlChangeNumberActTOFull.Location = new System.Drawing.Point(192, 107);
-            this.btnPnlChangeNumberActTOFull.Name = "btnPnlChangeNumberActTOFull";
-            this.btnPnlChangeNumberActTOFull.Size = new System.Drawing.Size(98, 29);
-            this.btnPnlChangeNumberActTOFull.TabIndex = 40;
-            this.btnPnlChangeNumberActTOFull.Text = "Изменить";
-            this.btnPnlChangeNumberActTOFull.UseVisualStyleBackColor = false;
+            this.btn_pnl_ChangeNumberActTOFull.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_pnl_ChangeNumberActTOFull.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pnl_ChangeNumberActTOFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_pnl_ChangeNumberActTOFull.Location = new System.Drawing.Point(192, 107);
+            this.btn_pnl_ChangeNumberActTOFull.Name = "btn_pnl_ChangeNumberActTOFull";
+            this.btn_pnl_ChangeNumberActTOFull.Size = new System.Drawing.Size(98, 29);
+            this.btn_pnl_ChangeNumberActTOFull.TabIndex = 40;
+            this.btn_pnl_ChangeNumberActTOFull.Text = "Изменить";
+            this.btn_pnl_ChangeNumberActTOFull.UseVisualStyleBackColor = false;
             // 
             // label27
             // 
@@ -2510,13 +2529,13 @@
             this.label27.TabIndex = 39;
             this.label27.Text = "Изменить № Акта";
             // 
-            // txbPnlChangeNumberActTOFull
+            // txB_pnl_ChangeNumberActTOFull
             // 
-            this.txbPnlChangeNumberActTOFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txbPnlChangeNumberActTOFull.Location = new System.Drawing.Point(15, 60);
-            this.txbPnlChangeNumberActTOFull.Name = "txbPnlChangeNumberActTOFull";
-            this.txbPnlChangeNumberActTOFull.Size = new System.Drawing.Size(275, 29);
-            this.txbPnlChangeNumberActTOFull.TabIndex = 38;
+            this.txB_pnl_ChangeNumberActTOFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txB_pnl_ChangeNumberActTOFull.Location = new System.Drawing.Point(15, 60);
+            this.txB_pnl_ChangeNumberActTOFull.Name = "txB_pnl_ChangeNumberActTOFull";
+            this.txB_pnl_ChangeNumberActTOFull.Size = new System.Drawing.Size(275, 29);
+            this.txB_pnl_ChangeNumberActTOFull.TabIndex = 38;
             // 
             // btnPnlChangeNumberActTOFullClose
             // 
@@ -2529,6 +2548,221 @@
             this.btnPnlChangeNumberActTOFullClose.Text = "X";
             this.btnPnlChangeNumberActTOFullClose.UseVisualStyleBackColor = false;
             // 
+            // pnlPrintBase
+            // 
+            this.pnlPrintBase.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
+            this.pnlPrintBase.Controls.Add(this.btnSaveFullBase);
+            this.pnlPrintBase.Controls.Add(this.btnSaveDirectorateBase);
+            this.pnlPrintBase.Controls.Add(this.btnPnlPrintBaseClose);
+            this.pnlPrintBase.Location = new System.Drawing.Point(547, 299);
+            this.pnlPrintBase.Name = "pnlPrintBase";
+            this.pnlPrintBase.Size = new System.Drawing.Size(330, 178);
+            this.pnlPrintBase.TabIndex = 96;
+            this.pnlPrintBase.Visible = false;
+            // 
+            // btnSaveFullBase
+            // 
+            this.btnSaveFullBase.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSaveFullBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveFullBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSaveFullBase.Location = new System.Drawing.Point(75, 99);
+            this.btnSaveFullBase.Name = "btnSaveFullBase";
+            this.btnSaveFullBase.Size = new System.Drawing.Size(182, 40);
+            this.btnSaveFullBase.TabIndex = 38;
+            this.btnSaveFullBase.Text = "Сохранить полную базу";
+            this.btnSaveFullBase.UseVisualStyleBackColor = false;
+            // 
+            // btnSaveDirectorateBase
+            // 
+            this.btnSaveDirectorateBase.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSaveDirectorateBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveDirectorateBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSaveDirectorateBase.Location = new System.Drawing.Point(75, 48);
+            this.btnSaveDirectorateBase.Name = "btnSaveDirectorateBase";
+            this.btnSaveDirectorateBase.Size = new System.Drawing.Size(182, 43);
+            this.btnSaveDirectorateBase.TabIndex = 37;
+            this.btnSaveDirectorateBase.Text = "Сохранить для дирекции";
+            this.btnSaveDirectorateBase.UseVisualStyleBackColor = false;
+            // 
+            // btnPnlPrintBaseClose
+            // 
+            this.btnPnlPrintBaseClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlPrintBaseClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlPrintBaseClose.Location = new System.Drawing.Point(297, 3);
+            this.btnPnlPrintBaseClose.Name = "btnPnlPrintBaseClose";
+            this.btnPnlPrintBaseClose.Size = new System.Drawing.Size(30, 29);
+            this.btnPnlPrintBaseClose.TabIndex = 35;
+            this.btnPnlPrintBaseClose.Text = "X";
+            this.btnPnlPrintBaseClose.UseVisualStyleBackColor = false;
+            // 
+            // pnlFunctionalLoading
+            // 
+            this.pnlFunctionalLoading.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlFunctionalLoading.BackColor = System.Drawing.Color.SkyBlue;
+            this.pnlFunctionalLoading.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
+            this.pnlFunctionalLoading.Controls.Add(this.btnShowDataBaseRstFull);
+            this.pnlFunctionalLoading.Controls.Add(this.btnShowDataBaseRstLastYear);
+            this.pnlFunctionalLoading.Controls.Add(this.btnLoadingFileLastYear);
+            this.pnlFunctionalLoading.Controls.Add(this.btnUploadingJsonFile);
+            this.pnlFunctionalLoading.Controls.Add(this.btnCopyingCurrentDataBaseEndOfTheYear);
+            this.pnlFunctionalLoading.Controls.Add(this.btnLoadingFileFullDataBase);
+            this.pnlFunctionalLoading.Controls.Add(this.btnManualBackupCurrentDataBase);
+            this.pnlFunctionalLoading.Controls.Add(this.btnClearDataBaseCurrentYear);
+            this.pnlFunctionalLoading.Controls.Add(this.btnLoadingFileCurrentDataBase);
+            this.pnlFunctionalLoading.Controls.Add(this.btnLoadingJsonFileDataBase);
+            this.pnlFunctionalLoading.Controls.Add(this.btnPnlFunctionalLoadingClose);
+            this.pnlFunctionalLoading.Controls.Add(this.label36);
+            this.pnlFunctionalLoading.ImeMode = System.Windows.Forms.ImeMode.Close;
+            this.pnlFunctionalLoading.Location = new System.Drawing.Point(391, 223);
+            this.pnlFunctionalLoading.Name = "pnlFunctionalLoading";
+            this.pnlFunctionalLoading.Size = new System.Drawing.Size(642, 330);
+            this.pnlFunctionalLoading.TabIndex = 97;
+            this.pnlFunctionalLoading.TabStop = true;
+            this.pnlFunctionalLoading.Visible = false;
+            // 
+            // btnShowDataBaseRstFull
+            // 
+            this.btnShowDataBaseRstFull.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnShowDataBaseRstFull.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnShowDataBaseRstFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnShowDataBaseRstFull.Location = new System.Drawing.Point(326, 246);
+            this.btnShowDataBaseRstFull.Name = "btnShowDataBaseRstFull";
+            this.btnShowDataBaseRstFull.Size = new System.Drawing.Size(247, 40);
+            this.btnShowDataBaseRstFull.TabIndex = 88;
+            this.btnShowDataBaseRstFull.Text = "Показать общую БД по всем участкам";
+            this.btnShowDataBaseRstFull.UseVisualStyleBackColor = false;
+            // 
+            // btnShowDataBaseRstLastYear
+            // 
+            this.btnShowDataBaseRstLastYear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnShowDataBaseRstLastYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnShowDataBaseRstLastYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnShowDataBaseRstLastYear.Location = new System.Drawing.Point(64, 245);
+            this.btnShowDataBaseRstLastYear.Name = "btnShowDataBaseRstLastYear";
+            this.btnShowDataBaseRstLastYear.Size = new System.Drawing.Size(249, 40);
+            this.btnShowDataBaseRstLastYear.TabIndex = 87;
+            this.btnShowDataBaseRstLastYear.Text = "Показать БД прошлого года по текущему участку";
+            this.btnShowDataBaseRstLastYear.UseVisualStyleBackColor = false;
+            // 
+            // btnLoadingFileLastYear
+            // 
+            this.btnLoadingFileLastYear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLoadingFileLastYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLoadingFileLastYear.Enabled = false;
+            this.btnLoadingFileLastYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnLoadingFileLastYear.Location = new System.Drawing.Point(64, 153);
+            this.btnLoadingFileLastYear.Name = "btnLoadingFileLastYear";
+            this.btnLoadingFileLastYear.Size = new System.Drawing.Size(249, 40);
+            this.btnLoadingFileLastYear.TabIndex = 86;
+            this.btnLoadingFileLastYear.Text = "Загрузка из файла для БД прошлого года";
+            this.btnLoadingFileLastYear.UseVisualStyleBackColor = false;
+            // 
+            // btnUploadingJsonFile
+            // 
+            this.btnUploadingJsonFile.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUploadingJsonFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnUploadingJsonFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUploadingJsonFile.Location = new System.Drawing.Point(326, 200);
+            this.btnUploadingJsonFile.Name = "btnUploadingJsonFile";
+            this.btnUploadingJsonFile.Size = new System.Drawing.Size(247, 40);
+            this.btnUploadingJsonFile.TabIndex = 85;
+            this.btnUploadingJsonFile.Text = "Выгрузка файла JSON";
+            this.btnUploadingJsonFile.UseVisualStyleBackColor = false;
+            // 
+            // btnCopyingCurrentDataBaseEndOfTheYear
+            // 
+            this.btnCopyingCurrentDataBaseEndOfTheYear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCopyingCurrentDataBaseEndOfTheYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCopyingCurrentDataBaseEndOfTheYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCopyingCurrentDataBaseEndOfTheYear.Location = new System.Drawing.Point(324, 105);
+            this.btnCopyingCurrentDataBaseEndOfTheYear.Name = "btnCopyingCurrentDataBaseEndOfTheYear";
+            this.btnCopyingCurrentDataBaseEndOfTheYear.Size = new System.Drawing.Size(249, 42);
+            this.btnCopyingCurrentDataBaseEndOfTheYear.TabIndex = 84;
+            this.btnCopyingCurrentDataBaseEndOfTheYear.Text = "Копирование текущей БД (конец года) для БД прошлого года";
+            this.btnCopyingCurrentDataBaseEndOfTheYear.UseVisualStyleBackColor = false;
+            // 
+            // btnLoadingFileFullDataBase
+            // 
+            this.btnLoadingFileFullDataBase.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLoadingFileFullDataBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLoadingFileFullDataBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnLoadingFileFullDataBase.Location = new System.Drawing.Point(326, 153);
+            this.btnLoadingFileFullDataBase.Name = "btnLoadingFileFullDataBase";
+            this.btnLoadingFileFullDataBase.Size = new System.Drawing.Size(247, 40);
+            this.btnLoadingFileFullDataBase.TabIndex = 83;
+            this.btnLoadingFileFullDataBase.Text = "Загрузка из файла для общей БД";
+            this.btnLoadingFileFullDataBase.UseVisualStyleBackColor = false;
+            // 
+            // btnManualBackupCurrentDataBase
+            // 
+            this.btnManualBackupCurrentDataBase.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnManualBackupCurrentDataBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManualBackupCurrentDataBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnManualBackupCurrentDataBase.Location = new System.Drawing.Point(324, 56);
+            this.btnManualBackupCurrentDataBase.Name = "btnManualBackupCurrentDataBase";
+            this.btnManualBackupCurrentDataBase.Size = new System.Drawing.Size(249, 42);
+            this.btnManualBackupCurrentDataBase.TabIndex = 81;
+            this.btnManualBackupCurrentDataBase.Text = "Ручное-резервное копирование текущей БД";
+            this.btnManualBackupCurrentDataBase.UseVisualStyleBackColor = false;
+            // 
+            // btnClearDataBaseCurrentYear
+            // 
+            this.btnClearDataBaseCurrentYear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClearDataBaseCurrentYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnClearDataBaseCurrentYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnClearDataBaseCurrentYear.Location = new System.Drawing.Point(64, 56);
+            this.btnClearDataBaseCurrentYear.Name = "btnClearDataBaseCurrentYear";
+            this.btnClearDataBaseCurrentYear.Size = new System.Drawing.Size(249, 42);
+            this.btnClearDataBaseCurrentYear.TabIndex = 80;
+            this.btnClearDataBaseCurrentYear.Text = "Полная очистка БД текущего года";
+            this.btnClearDataBaseCurrentYear.UseVisualStyleBackColor = false;
+            // 
+            // btnLoadingFileCurrentDataBase
+            // 
+            this.btnLoadingFileCurrentDataBase.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLoadingFileCurrentDataBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLoadingFileCurrentDataBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnLoadingFileCurrentDataBase.Location = new System.Drawing.Point(64, 105);
+            this.btnLoadingFileCurrentDataBase.Name = "btnLoadingFileCurrentDataBase";
+            this.btnLoadingFileCurrentDataBase.Size = new System.Drawing.Size(249, 42);
+            this.btnLoadingFileCurrentDataBase.TabIndex = 79;
+            this.btnLoadingFileCurrentDataBase.Text = "Загрузка из файла для текущей БД";
+            this.btnLoadingFileCurrentDataBase.UseVisualStyleBackColor = false;
+            // 
+            // btnLoadingJsonFileDataBase
+            // 
+            this.btnLoadingJsonFileDataBase.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLoadingJsonFileDataBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLoadingJsonFileDataBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnLoadingJsonFileDataBase.Location = new System.Drawing.Point(63, 200);
+            this.btnLoadingJsonFileDataBase.Name = "btnLoadingJsonFileDataBase";
+            this.btnLoadingJsonFileDataBase.Size = new System.Drawing.Size(249, 40);
+            this.btnLoadingJsonFileDataBase.TabIndex = 78;
+            this.btnLoadingJsonFileDataBase.Text = "Загрузка и обновление резервного файла JSON";
+            this.btnLoadingJsonFileDataBase.UseVisualStyleBackColor = false;
+            // 
+            // btnPnlFunctionalLoadingClose
+            // 
+            this.btnPnlFunctionalLoadingClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlFunctionalLoadingClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlFunctionalLoadingClose.Location = new System.Drawing.Point(609, 3);
+            this.btnPnlFunctionalLoadingClose.Name = "btnPnlFunctionalLoadingClose";
+            this.btnPnlFunctionalLoadingClose.Size = new System.Drawing.Size(30, 29);
+            this.btnPnlFunctionalLoadingClose.TabIndex = 37;
+            this.btnPnlFunctionalLoadingClose.Text = "X";
+            this.btnPnlFunctionalLoadingClose.UseVisualStyleBackColor = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label36.Location = new System.Drawing.Point(203, 12);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(241, 22);
+            this.label36.TabIndex = 6;
+            this.label36.Text = "Функциональная панель";
+            // 
             // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2536,10 +2770,12 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1424, 777);
+            this.Controls.Add(this.pnlPrintBase);
             this.Controls.Add(this.pnlChangeNumberActTOFull);
             this.Controls.Add(this.pnlTag);
             this.Controls.Add(this.pnlDecommissionSerialNumber);
             this.Controls.Add(this.pnlDateRegistrationStaff);
+            this.Controls.Add(this.pnlFunctionalLoading);
             this.Controls.Add(this.pnlRemontInformationCompany);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -2583,6 +2819,9 @@
             this.pnlTag.PerformLayout();
             this.pnlChangeNumberActTOFull.ResumeLayout(false);
             this.pnlChangeNumberActTOFull.PerformLayout();
+            this.pnlPrintBase.ResumeLayout(false);
+            this.pnlFunctionalLoading.ResumeLayout(false);
+            this.pnlFunctionalLoading.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2788,9 +3027,26 @@
         private System.Windows.Forms.TextBox txbDatePnlTag;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Panel pnlChangeNumberActTOFull;
-        private System.Windows.Forms.Button btnPnlChangeNumberActTOFull;
+        private System.Windows.Forms.Button btn_pnl_ChangeNumberActTOFull;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox txbPnlChangeNumberActTOFull;
+        private System.Windows.Forms.TextBox txB_pnl_ChangeNumberActTOFull;
         private System.Windows.Forms.Button btnPnlChangeNumberActTOFullClose;
+        private System.Windows.Forms.Panel pnlPrintBase;
+        private System.Windows.Forms.Button btnSaveFullBase;
+        private System.Windows.Forms.Button btnSaveDirectorateBase;
+        private System.Windows.Forms.Button btnPnlPrintBaseClose;
+        private System.Windows.Forms.Panel pnlFunctionalLoading;
+        private System.Windows.Forms.Button btnShowDataBaseRstFull;
+        private System.Windows.Forms.Button btnShowDataBaseRstLastYear;
+        private System.Windows.Forms.Button btnLoadingFileLastYear;
+        private System.Windows.Forms.Button btnUploadingJsonFile;
+        private System.Windows.Forms.Button btnCopyingCurrentDataBaseEndOfTheYear;
+        private System.Windows.Forms.Button btnLoadingFileFullDataBase;
+        private System.Windows.Forms.Button btnManualBackupCurrentDataBase;
+        private System.Windows.Forms.Button btnClearDataBaseCurrentYear;
+        private System.Windows.Forms.Button btnLoadingFileCurrentDataBase;
+        private System.Windows.Forms.Button btnLoadingJsonFileDataBase;
+        private System.Windows.Forms.Button btnPnlFunctionalLoadingClose;
+        private System.Windows.Forms.Label label36;
     }
 }
