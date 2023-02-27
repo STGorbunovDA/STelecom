@@ -89,7 +89,7 @@ namespace STelecom.Forms
             {
                 if (CheckPostUsersSettingBrigades(queryPost[3]))
                 {
-                    using (WorkForm workForm = new WorkForm())
+                    using (WorkForm workForm = new WorkForm(_user))
                     {
                         this.Hide();
                         workForm.ShowDialog();
@@ -212,7 +212,7 @@ namespace STelecom.Forms
 
         void SectionForeman_Click(object sender, EventArgs e)
         {
-            using (WorkForm workForm = new WorkForm())
+            using (WorkForm workForm = new WorkForm(_user))
             {
                 this.Hide();
                 workForm.ShowDialog();
