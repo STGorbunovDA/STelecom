@@ -26,9 +26,14 @@ namespace STelecom.Forms
         int selectedRow;
         private readonly CheckUser _user;
         #endregion
+
         public WorkForm(CheckUser user)
         {
             InitializeComponent();
+            cmbSeach.Text = cmbSeach.Items[2].ToString();
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.GhostWhite;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            _user = user;
         }
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mTrip_file = new System.Windows.Forms.ToolStripMenuItem();
             this.mTripAddChange = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,19 +173,27 @@
             this.txbNetworkNumber = new System.Windows.Forms.TextBox();
             this.txbInventoryNumber = new System.Windows.Forms.TextBox();
             this.txbCompany = new System.Windows.Forms.TextBox();
-            this.panel_date = new System.Windows.Forms.Panel();
-            this.lbL_numberPrintDocument = new System.Windows.Forms.Label();
+            this.pnlDateRegistrationStaff = new System.Windows.Forms.Panel();
+            this.lblNumberPrintDocument = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_close_panel_date_info = new System.Windows.Forms.Button();
+            this.btnPnlDateRegistrationStaffClose = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.lbl_ChiefFIO = new System.Windows.Forms.Label();
-            this.lbL_doverennost = new System.Windows.Forms.Label();
+            this.lblChiefFIO = new System.Windows.Forms.Label();
+            this.lblDoverennost = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.lbl_EngineerFIO = new System.Windows.Forms.Label();
-            this.lbL_road = new System.Windows.Forms.Label();
+            this.lblEngineerFIO = new System.Windows.Forms.Label();
+            this.lblRoad = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.pnlDecommissionSerialNumber = new System.Windows.Forms.Panel();
+            this.lblLastDecommission = new System.Windows.Forms.Label();
+            this.txbReasonDecommission = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txb1DecommissionSerialNumber = new System.Windows.Forms.TextBox();
+            this.btnRecordDecommissionSerialNumber = new System.Windows.Forms.Button();
+            this.btnPnlDecommissionSerialNumberClose = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -199,7 +207,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel_date.SuspendLayout();
+            this.pnlDateRegistrationStaff.SuspendLayout();
+            this.pnlDecommissionSerialNumber.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1032,44 +1041,44 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(0, 179);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.Size = new System.Drawing.Size(1427, 533);
@@ -1778,42 +1787,42 @@
             this.txbCompany.Size = new System.Drawing.Size(35, 26);
             this.txbCompany.TabIndex = 10;
             // 
-            // panel_date
+            // pnlDateRegistrationStaff
             // 
-            this.panel_date.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_date.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel_date.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
-            this.panel_date.Controls.Add(this.lbL_numberPrintDocument);
-            this.panel_date.Controls.Add(this.label7);
-            this.panel_date.Controls.Add(this.btn_close_panel_date_info);
-            this.panel_date.Controls.Add(this.label23);
-            this.panel_date.Controls.Add(this.label30);
-            this.panel_date.Controls.Add(this.lbl_ChiefFIO);
-            this.panel_date.Controls.Add(this.lbL_doverennost);
-            this.panel_date.Controls.Add(this.label16);
-            this.panel_date.Controls.Add(this.lbl_EngineerFIO);
-            this.panel_date.Controls.Add(this.lbL_road);
-            this.panel_date.Controls.Add(this.label28);
-            this.panel_date.Controls.Add(this.label29);
-            this.panel_date.Enabled = false;
-            this.panel_date.ImeMode = System.Windows.Forms.ImeMode.Close;
-            this.panel_date.Location = new System.Drawing.Point(445, 256);
-            this.panel_date.Name = "panel_date";
-            this.panel_date.Size = new System.Drawing.Size(534, 264);
-            this.panel_date.TabIndex = 91;
-            this.panel_date.TabStop = true;
-            this.panel_date.Visible = false;
+            this.pnlDateRegistrationStaff.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlDateRegistrationStaff.BackColor = System.Drawing.Color.SkyBlue;
+            this.pnlDateRegistrationStaff.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
+            this.pnlDateRegistrationStaff.Controls.Add(this.lblNumberPrintDocument);
+            this.pnlDateRegistrationStaff.Controls.Add(this.label7);
+            this.pnlDateRegistrationStaff.Controls.Add(this.btnPnlDateRegistrationStaffClose);
+            this.pnlDateRegistrationStaff.Controls.Add(this.label23);
+            this.pnlDateRegistrationStaff.Controls.Add(this.label30);
+            this.pnlDateRegistrationStaff.Controls.Add(this.lblChiefFIO);
+            this.pnlDateRegistrationStaff.Controls.Add(this.lblDoverennost);
+            this.pnlDateRegistrationStaff.Controls.Add(this.label16);
+            this.pnlDateRegistrationStaff.Controls.Add(this.lblEngineerFIO);
+            this.pnlDateRegistrationStaff.Controls.Add(this.lblRoad);
+            this.pnlDateRegistrationStaff.Controls.Add(this.label28);
+            this.pnlDateRegistrationStaff.Controls.Add(this.label29);
+            this.pnlDateRegistrationStaff.Enabled = false;
+            this.pnlDateRegistrationStaff.ImeMode = System.Windows.Forms.ImeMode.Close;
+            this.pnlDateRegistrationStaff.Location = new System.Drawing.Point(445, 256);
+            this.pnlDateRegistrationStaff.Name = "pnlDateRegistrationStaff";
+            this.pnlDateRegistrationStaff.Size = new System.Drawing.Size(534, 264);
+            this.pnlDateRegistrationStaff.TabIndex = 91;
+            this.pnlDateRegistrationStaff.TabStop = true;
+            this.pnlDateRegistrationStaff.Visible = false;
             // 
-            // lbL_numberPrintDocument
+            // lblNumberPrintDocument
             // 
-            this.lbL_numberPrintDocument.AutoSize = true;
-            this.lbL_numberPrintDocument.BackColor = System.Drawing.Color.Transparent;
-            this.lbL_numberPrintDocument.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbL_numberPrintDocument.Location = new System.Drawing.Point(209, 202);
-            this.lbL_numberPrintDocument.Name = "lbL_numberPrintDocument";
-            this.lbL_numberPrintDocument.Size = new System.Drawing.Size(32, 22);
-            this.lbL_numberPrintDocument.TabIndex = 77;
-            this.lbL_numberPrintDocument.Text = "00";
+            this.lblNumberPrintDocument.AutoSize = true;
+            this.lblNumberPrintDocument.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumberPrintDocument.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblNumberPrintDocument.Location = new System.Drawing.Point(209, 202);
+            this.lblNumberPrintDocument.Name = "lblNumberPrintDocument";
+            this.lblNumberPrintDocument.Size = new System.Drawing.Size(32, 22);
+            this.lblNumberPrintDocument.TabIndex = 77;
+            this.lblNumberPrintDocument.Text = "00";
             // 
             // label7
             // 
@@ -1826,16 +1835,16 @@
             this.label7.TabIndex = 76;
             this.label7.Text = "№ печати:";
             // 
-            // btn_close_panel_date_info
+            // btnPnlDateRegistrationStaffClose
             // 
-            this.btn_close_panel_date_info.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_close_panel_date_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_close_panel_date_info.Location = new System.Drawing.Point(501, 5);
-            this.btn_close_panel_date_info.Name = "btn_close_panel_date_info";
-            this.btn_close_panel_date_info.Size = new System.Drawing.Size(30, 29);
-            this.btn_close_panel_date_info.TabIndex = 37;
-            this.btn_close_panel_date_info.Text = "X";
-            this.btn_close_panel_date_info.UseVisualStyleBackColor = false;
+            this.btnPnlDateRegistrationStaffClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlDateRegistrationStaffClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlDateRegistrationStaffClose.Location = new System.Drawing.Point(501, 5);
+            this.btnPnlDateRegistrationStaffClose.Name = "btnPnlDateRegistrationStaffClose";
+            this.btnPnlDateRegistrationStaffClose.Size = new System.Drawing.Size(30, 29);
+            this.btnPnlDateRegistrationStaffClose.TabIndex = 37;
+            this.btnPnlDateRegistrationStaffClose.Text = "X";
+            this.btnPnlDateRegistrationStaffClose.UseVisualStyleBackColor = false;
             // 
             // label23
             // 
@@ -1859,27 +1868,27 @@
             this.label30.TabIndex = 21;
             this.label30.Text = "Доверенность:";
             // 
-            // lbl_ChiefFIO
+            // lblChiefFIO
             // 
-            this.lbl_ChiefFIO.AutoSize = true;
-            this.lbl_ChiefFIO.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ChiefFIO.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl_ChiefFIO.Location = new System.Drawing.Point(207, 104);
-            this.lbl_ChiefFIO.Name = "lbl_ChiefFIO";
-            this.lbl_ChiefFIO.Size = new System.Drawing.Size(131, 22);
-            this.lbl_ChiefFIO.TabIndex = 6;
-            this.lbl_ChiefFIO.Text = "Иванов В.В.";
+            this.lblChiefFIO.AutoSize = true;
+            this.lblChiefFIO.BackColor = System.Drawing.Color.Transparent;
+            this.lblChiefFIO.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblChiefFIO.Location = new System.Drawing.Point(207, 104);
+            this.lblChiefFIO.Name = "lblChiefFIO";
+            this.lblChiefFIO.Size = new System.Drawing.Size(131, 22);
+            this.lblChiefFIO.TabIndex = 6;
+            this.lblChiefFIO.Text = "Иванов В.В.";
             // 
-            // lbL_doverennost
+            // lblDoverennost
             // 
-            this.lbL_doverennost.AutoSize = true;
-            this.lbL_doverennost.BackColor = System.Drawing.Color.Transparent;
-            this.lbL_doverennost.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbL_doverennost.Location = new System.Drawing.Point(207, 71);
-            this.lbL_doverennost.Name = "lbL_doverennost";
-            this.lbL_doverennost.Size = new System.Drawing.Size(142, 22);
-            this.lbL_doverennost.TabIndex = 7;
-            this.lbL_doverennost.Text = "Доверенность";
+            this.lblDoverennost.AutoSize = true;
+            this.lblDoverennost.BackColor = System.Drawing.Color.Transparent;
+            this.lblDoverennost.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblDoverennost.Location = new System.Drawing.Point(207, 71);
+            this.lblDoverennost.Name = "lblDoverennost";
+            this.lblDoverennost.Size = new System.Drawing.Size(142, 22);
+            this.lblDoverennost.TabIndex = 7;
+            this.lblDoverennost.Text = "Доверенность";
             // 
             // label16
             // 
@@ -1892,27 +1901,27 @@
             this.label16.TabIndex = 75;
             this.label16.Text = "Дорога:";
             // 
-            // lbl_EngineerFIO
+            // lblEngineerFIO
             // 
-            this.lbl_EngineerFIO.AutoSize = true;
-            this.lbl_EngineerFIO.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_EngineerFIO.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl_EngineerFIO.Location = new System.Drawing.Point(207, 138);
-            this.lbl_EngineerFIO.Name = "lbl_EngineerFIO";
-            this.lbl_EngineerFIO.Size = new System.Drawing.Size(142, 22);
-            this.lbl_EngineerFIO.TabIndex = 18;
-            this.lbl_EngineerFIO.Text = "Сидоров В.В.";
+            this.lblEngineerFIO.AutoSize = true;
+            this.lblEngineerFIO.BackColor = System.Drawing.Color.Transparent;
+            this.lblEngineerFIO.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblEngineerFIO.Location = new System.Drawing.Point(207, 138);
+            this.lblEngineerFIO.Name = "lblEngineerFIO";
+            this.lblEngineerFIO.Size = new System.Drawing.Size(142, 22);
+            this.lblEngineerFIO.TabIndex = 18;
+            this.lblEngineerFIO.Text = "Сидоров В.В.";
             // 
-            // lbL_road
+            // lblRoad
             // 
-            this.lbL_road.AutoSize = true;
-            this.lbL_road.BackColor = System.Drawing.Color.Transparent;
-            this.lbL_road.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbL_road.Location = new System.Drawing.Point(207, 170);
-            this.lbL_road.Name = "lbL_road";
-            this.lbL_road.Size = new System.Drawing.Size(241, 22);
-            this.lbL_road.TabIndex = 74;
-            this.lbL_road.Text = "Восточно-Сибирская ЖД";
+            this.lblRoad.AutoSize = true;
+            this.lblRoad.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoad.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblRoad.Location = new System.Drawing.Point(207, 170);
+            this.lblRoad.Name = "lblRoad";
+            this.lblRoad.Size = new System.Drawing.Size(241, 22);
+            this.lblRoad.TabIndex = 74;
+            this.lblRoad.Text = "Восточно-Сибирская ЖД";
             // 
             // label28
             // 
@@ -1936,6 +1945,102 @@
             this.label29.TabIndex = 20;
             this.label29.Text = "Инженер:";
             // 
+            // pnlDecommissionSerialNumber
+            // 
+            this.pnlDecommissionSerialNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlDecommissionSerialNumber.BackColor = System.Drawing.Color.SkyBlue;
+            this.pnlDecommissionSerialNumber.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
+            this.pnlDecommissionSerialNumber.Controls.Add(this.lblLastDecommission);
+            this.pnlDecommissionSerialNumber.Controls.Add(this.txbReasonDecommission);
+            this.pnlDecommissionSerialNumber.Controls.Add(this.label2);
+            this.pnlDecommissionSerialNumber.Controls.Add(this.txb1DecommissionSerialNumber);
+            this.pnlDecommissionSerialNumber.Controls.Add(this.btnRecordDecommissionSerialNumber);
+            this.pnlDecommissionSerialNumber.Controls.Add(this.btnPnlDecommissionSerialNumberClose);
+            this.pnlDecommissionSerialNumber.Controls.Add(this.label33);
+            this.pnlDecommissionSerialNumber.Enabled = false;
+            this.pnlDecommissionSerialNumber.Location = new System.Drawing.Point(489, 232);
+            this.pnlDecommissionSerialNumber.Name = "pnlDecommissionSerialNumber";
+            this.pnlDecommissionSerialNumber.Size = new System.Drawing.Size(447, 313);
+            this.pnlDecommissionSerialNumber.TabIndex = 92;
+            this.pnlDecommissionSerialNumber.Visible = false;
+            // 
+            // lblLastDecommission
+            // 
+            this.lblLastDecommission.AutoSize = true;
+            this.lblLastDecommission.BackColor = System.Drawing.Color.Transparent;
+            this.lblLastDecommission.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblLastDecommission.Location = new System.Drawing.Point(233, 28);
+            this.lblLastDecommission.Name = "lblLastDecommission";
+            this.lblLastDecommission.Size = new System.Drawing.Size(54, 15);
+            this.lblLastDecommission.TabIndex = 103;
+            this.lblLastDecommission.Text = "Пустой";
+            // 
+            // txbReasonDecommission
+            // 
+            this.txbReasonDecommission.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbReasonDecommission.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbReasonDecommission.Location = new System.Drawing.Point(117, 82);
+            this.txbReasonDecommission.Multiline = true;
+            this.txbReasonDecommission.Name = "txbReasonDecommission";
+            this.txbReasonDecommission.Size = new System.Drawing.Size(314, 174);
+            this.txbReasonDecommission.TabIndex = 81;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(25, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 22);
+            this.label2.TabIndex = 80;
+            this.label2.Text = "Причина:";
+            // 
+            // txb1DecommissionSerialNumber
+            // 
+            this.txb1DecommissionSerialNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txb1DecommissionSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txb1DecommissionSerialNumber.Location = new System.Drawing.Point(204, 45);
+            this.txb1DecommissionSerialNumber.Name = "txb1DecommissionSerialNumber";
+            this.txb1DecommissionSerialNumber.Size = new System.Drawing.Size(227, 29);
+            this.txb1DecommissionSerialNumber.TabIndex = 79;
+            // 
+            // btnRecordDecommissionSerialNumber
+            // 
+            this.btnRecordDecommissionSerialNumber.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRecordDecommissionSerialNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecordDecommissionSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRecordDecommissionSerialNumber.Location = new System.Drawing.Point(335, 262);
+            this.btnRecordDecommissionSerialNumber.Name = "btnRecordDecommissionSerialNumber";
+            this.btnRecordDecommissionSerialNumber.Size = new System.Drawing.Size(96, 29);
+            this.btnRecordDecommissionSerialNumber.TabIndex = 36;
+            this.btnRecordDecommissionSerialNumber.Text = "Списать";
+            this.btnRecordDecommissionSerialNumber.UseVisualStyleBackColor = false;
+            // 
+            // btnPnlDecommissionSerialNumberClose
+            // 
+            this.btnPnlDecommissionSerialNumberClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPnlDecommissionSerialNumberClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPnlDecommissionSerialNumberClose.Location = new System.Drawing.Point(401, 10);
+            this.btnPnlDecommissionSerialNumberClose.Name = "btnPnlDecommissionSerialNumberClose";
+            this.btnPnlDecommissionSerialNumberClose.Size = new System.Drawing.Size(30, 29);
+            this.btnPnlDecommissionSerialNumberClose.TabIndex = 34;
+            this.btnPnlDecommissionSerialNumberClose.Text = "X";
+            this.btnPnlDecommissionSerialNumberClose.UseVisualStyleBackColor = false;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label33.Location = new System.Drawing.Point(25, 50);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(186, 22);
+            this.label33.TabIndex = 6;
+            this.label33.Text = "№ Акта списания:";
+            // 
             // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1943,7 +2048,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1424, 777);
-            this.Controls.Add(this.panel_date);
+            this.Controls.Add(this.pnlDecommissionSerialNumber);
+            this.Controls.Add(this.pnlDateRegistrationStaff);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView3);
@@ -1951,6 +2057,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(1366, 768);
@@ -1975,8 +2082,10 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel_date.ResumeLayout(false);
-            this.panel_date.PerformLayout();
+            this.pnlDateRegistrationStaff.ResumeLayout(false);
+            this.pnlDateRegistrationStaff.PerformLayout();
+            this.pnlDecommissionSerialNumber.ResumeLayout(false);
+            this.pnlDecommissionSerialNumber.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2124,18 +2233,26 @@
         private System.Windows.Forms.TextBox txbNetworkNumber;
         private System.Windows.Forms.TextBox txbInventoryNumber;
         private System.Windows.Forms.TextBox txbCompany;
-        private System.Windows.Forms.Panel panel_date;
-        private System.Windows.Forms.Label lbL_numberPrintDocument;
+        private System.Windows.Forms.Panel pnlDateRegistrationStaff;
+        private System.Windows.Forms.Label lblNumberPrintDocument;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btn_close_panel_date_info;
+        private System.Windows.Forms.Button btnPnlDateRegistrationStaffClose;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label lbl_ChiefFIO;
-        private System.Windows.Forms.Label lbL_doverennost;
+        private System.Windows.Forms.Label lblChiefFIO;
+        private System.Windows.Forms.Label lblDoverennost;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label lbl_EngineerFIO;
-        private System.Windows.Forms.Label lbL_road;
+        private System.Windows.Forms.Label lblEngineerFIO;
+        private System.Windows.Forms.Label lblRoad;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Panel pnlDecommissionSerialNumber;
+        internal System.Windows.Forms.Label lblLastDecommission;
+        private System.Windows.Forms.TextBox txbReasonDecommission;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txb1DecommissionSerialNumber;
+        private System.Windows.Forms.Button btnRecordDecommissionSerialNumber;
+        private System.Windows.Forms.Button btnPnlDecommissionSerialNumberClose;
+        private System.Windows.Forms.Label label33;
     }
 }
