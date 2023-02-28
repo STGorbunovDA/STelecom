@@ -183,6 +183,28 @@ namespace STelecom.Forms
                 if (cmbAddSignature.Items.Count > 0)
                     cmbAddSignature.Text = cmbAddSignature.Items[cmbAddSignature.Items.Count - 1].ToString();
             }
+            ///Таймер
+            Timer timer = new Timer();
+            timer.Interval = (31 * 60 * 1000); // 15 mins
+            timer.Tick += new EventHandler(TimerEventProcessor);
+            timer.Start();
+
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+        }
+        /// <summary>
+        /// Таймер для копирования БД, сохранение в Excel, Json
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void TimerEventProcessor(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+                return;
+            string taskCity = cmbCity.Text;
+            string road = cmbRoad.Text;
+            WorkFromMethod.RefreshDataGridTimerEventProcessor(dataGridView2, taskCity, road);
+
         }
     }
 }
