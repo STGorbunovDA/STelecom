@@ -1,4 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using STelecom.Classes.Cheack;
 using STelecom.Classes.Other;
 using STelecom.DataBase;
@@ -7,12 +9,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace STelecom.Classes.FormsMethods
 {
@@ -289,7 +293,10 @@ namespace STelecom.Classes.FormsMethods
         }
         #endregion
 
+        #region TimerEventProcessor 
+
         #region Заполнение DataGridView2 для Task TimerEventProcessor 
+
         /// <summary>
         /// Загрузка данных в datagridview2 для Task TimerEventProcessor 
         /// </summary>
@@ -355,6 +362,76 @@ namespace STelecom.Classes.FormsMethods
                 record.GetString(32), record.GetString(33), record.GetString(34), record.GetString(35), record.GetString(36),
                 record.GetString(37), record.GetString(38), record.GetString(39), record.GetString(40), record.GetString(41), 
                 RowState.New)));
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Сохранение таблицы DataGridView в Json на PC
+        /// </summary>
+        /// <param name="dgw"></param>
+        /// <param name="city"></param>
+        internal static void GetSaveDataGridViewInJson(DataGridView dgw, string city)
+        {
+            JArray products = new JArray();
+
+            foreach (DataGridViewRow row in dgw.Rows)
+            {
+                JObject product = JObject.FromObject(new
+                {
+                    id = row.Cells[0].Value,
+                    poligon = row.Cells[1].Value,
+                    company = row.Cells[2].Value,
+                    location = row.Cells[3].Value,
+                    model = row.Cells[4].Value,
+                    serialNumber = row.Cells[5].Value,
+                    inventoryNumber = row.Cells[6].Value,
+                    networkNumber = row.Cells[7].Value,
+                    dateTO = Convert.ToDateTime(row.Cells[8].Value).ToString("dd.MM.yyyy"),
+                    numberAct = row.Cells[9].Value,
+                    city = row.Cells[10].Value,
+                    price = row.Cells[11].Value,
+                    representative = row.Cells[12].Value,
+                    post = row.Cells[13].Value,
+                    numberIdentification = row.Cells[14].Value,
+                    dateIssue = row.Cells[15].Value,
+                    phoneNumber = row.Cells[16].Value,
+                    numberActRemont = row.Cells[17].Value,
+                    category = row.Cells[18].Value,
+                    priceRemont = row.Cells[19].Value,
+                    antenna = row.Cells[20].Value,
+                    manipulator = row.Cells[21].Value,
+                    AKB = row.Cells[22].Value,
+                    batteryСharger = row.Cells[23].Value,
+                    completed_works_1 = row.Cells[24].Value,
+                    completed_works_2 = row.Cells[25].Value,
+                    completed_works_3 = row.Cells[26].Value,
+                    completed_works_4 = row.Cells[27].Value,
+                    completed_works_5 = row.Cells[28].Value,
+                    completed_works_6 = row.Cells[29].Value,
+                    completed_works_7 = row.Cells[30].Value,
+                    parts_1 = row.Cells[31].Value,
+                    parts_2 = row.Cells[32].Value,
+                    parts_3 = row.Cells[33].Value,
+                    parts_4 = row.Cells[34].Value,
+                    parts_5 = row.Cells[35].Value,
+                    parts_6 = row.Cells[36].Value,
+                    parts_7 = row.Cells[37].Value,
+                    decommissionSerialNumber = row.Cells[38].Value,
+                    comment = row.Cells[39].Value,
+                    road = row.Cells[40].Value,
+                    verifiedRST = row.Cells[41].Value
+                });
+                products.Add(product);
+            }
+
+            string json = JsonConvert.SerializeObject(products);
+
+            string fileNamePath = $@"C:\Documents_ServiceTelekom\БазаДанныхJson\{city}\БазаДанныхJson.json";
+
+            if (!File.Exists($@"С:\Documents_ServiceTelekom\БазаДанныхJson\{city}\"))
+                Directory.CreateDirectory($@"C:\Documents_ServiceTelekom\БазаДанныхJson\{city}\");
+            File.WriteAllText(fileNamePath, json);
         }
 
         #endregion
