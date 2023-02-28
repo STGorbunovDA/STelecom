@@ -246,6 +246,14 @@ namespace STelecom.Forms
         }
         #endregion
 
+        #region загрузка данных в cmbCity при выборе дороги
+        void CmbRoad_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            WorkFromMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
+        }
+
+        #endregion
+
 
     }
 }
