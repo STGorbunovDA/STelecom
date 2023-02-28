@@ -1,4 +1,5 @@
-﻿using STelecom.Classes.Cheack;
+﻿using Microsoft.Win32;
+using STelecom.Classes.Cheack;
 using STelecom.Classes.FormsMethods;
 using System;
 using System.Collections.Generic;
@@ -35,9 +36,12 @@ namespace STelecom.Forms
             this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.GhostWhite;
             this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             _user = user;
-            IsAdmin();
+            IsPost();
         }
-        void IsAdmin()
+        /// <summary>
+        /// Смотрим кто зашёл и ограничиваем или нет функционал
+        /// </summary>
+        void IsPost()
         {
             if (_user.Post == "Дирекция связи")
             {
@@ -83,6 +87,38 @@ namespace STelecom.Forms
             }
         }
 
+        #region Счётчики
+        /// <summary>
+        /// Счётчики 
+        /// </summary>
+        void Counters()
+        {
+            decimal sumTO = 0;
+            int colRemont = 0;
+            decimal sumRemont = 0;
+            int inRepair = 0;
+            int verified = 0;
+            int decommission = 0;
+
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                if ((Boolean)(dataGridView1.Rows[i].Cells["category"].Value.ToString() != "")) colRemont++;
+                if ((Boolean)(dataGridView1.Rows[i].Cells["verifiedRST"].Value.ToString() == "+")) verified++;
+                if ((Boolean)(dataGridView1.Rows[i].Cells["verifiedRST"].Value.ToString() == "?")) inRepair++;
+                if ((Boolean)(dataGridView1.Rows[i].Cells["verifiedRST"].Value.ToString() == "0")) decommission++;
+                sumTO += Convert.ToDecimal(dataGridView1.Rows[i].Cells["price"].Value);
+                sumRemont += Convert.ToDecimal(dataGridView1.Rows[i].Cells["priceRemont"].Value);
+            }
+            lblVerified.Text = verified.ToString();
+            lblInRepair.Text = inRepair.ToString();
+            lblCount.Text = dataGridView1.Rows.Count.ToString();
+            lblSum.Text = sumTO.ToString();
+            lblCountRemont.Text = colRemont.ToString();
+            lblSumRemont.Text = sumRemont.ToString();
+            lblDecommission.Text = decommission.ToString();
+        }
+        #endregion
+
         void WorkForm_Load(object sender, EventArgs e)
         {
             dataGridView1.EnableHeadersVisualStyles = false;
@@ -93,6 +129,23 @@ namespace STelecom.Forms
             WorkFromMethod.GettingSettingBrigadesByUser(lblChiefFIO, lblEngineerFIO, lblDoverennost, 
                 lblRoad, lblNumberPrintDocument, _user, cmbRoad);
             WorkFromMethod.SelectCityGropByRoad(cmbCity,cmbRoad);
+            WorkFromMethod.CreateColums(dataGridView1);
+            WorkFromMethod.CreateColums(dataGridView2);
+            this.dataGridView1.Sort(this.dataGridView1.Columns["dateTO"], ListSortDirection.Ascending);
+            dataGridView1.Columns["dateTO"].ValueType = typeof(DateTime);
+            dataGridView1.Columns["dateTO"].DefaultCellStyle.Format = "dd.MM.yyyy";
+            dataGridView1.Columns["dateTO"].ValueType = System.Type.GetType("System.Date");
+            RegistryKey reg1 = Registry.CurrentUser.OpenSubKey($"SOFTWARE\\ServiceTelekom_Setting\\City");
+            if (reg1 != null)
+            {
+                RegistryKey currentUserKey = Registry.CurrentUser;
+                RegistryKey helloKey = currentUserKey.OpenSubKey($"SOFTWARE\\ServiceTelekom_Setting\\City");
+                cmbCity.Text = helloKey.GetValue("Город проведения проверки").ToString();
+
+                helloKey.Close();
+            }
+            WorkFromMethod.RefreshDataGrid(dataGridView1, cmbCity.Text, cmbRoad.Text);
+            Counters();
         }
     }
 }

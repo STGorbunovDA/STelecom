@@ -5,9 +5,12 @@ using STelecom.DataBase;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +18,14 @@ namespace STelecom.Classes.FormsMethods
 {
     internal class WorkFromMethod
     {
+        #region состояние Rows
+        enum RowState
+        {
+            New,
+            Deleted
+        }
+        #endregion
+
         #region получение данных о бриагде ФИО Начальника и Инженера, Доверенность, № печати, Дорога
 
         /// <summary>
@@ -117,6 +128,164 @@ namespace STelecom.Classes.FormsMethods
                 }
             }
 
+        }
+        #endregion
+
+        #region Заполнение DataGridView
+
+        /// <summary>
+        /// Создание столбцов
+        /// </summary>
+        /// <param name="dgw"></param>
+        internal static void CreateColums(DataGridView dgw)
+        {
+            dgw.Columns.Add("id", "№");
+            dgw.Columns.Add("poligon", "Полигон");
+            dgw.Columns.Add("company", "Предприятие");
+            dgw.Columns.Add("location", "Место нахождения");
+            dgw.Columns.Add("model", "Модель радиостанции");
+            dgw.Columns.Add("serialNumber", "Заводской номер");
+            dgw.Columns.Add("inventoryNumber", "Инвентарный номер");
+            dgw.Columns.Add("networkNumber", "Сетевой номер");
+            dgw.Columns.Add("dateTO", "Дата ТО");
+            dgw.Columns.Add("numberAct", "№ акта ТО");
+            dgw.Columns.Add("city", "Город");
+            dgw.Columns.Add("price", "Цена ТО");
+            dgw.Columns.Add("representative", "Представитель предприятия");
+            dgw.Columns.Add("post", "Должность");
+            dgw.Columns.Add("numberIdentification", "Номер удостоверения");
+            dgw.Columns.Add("dateIssue", "Дата выдачи удостоверения");
+            dgw.Columns.Add("phoneNumber", "Номер телефона");
+            dgw.Columns.Add("numberActRemont", "№ акта ремонта");
+            dgw.Columns.Add("category", "Категория");
+            dgw.Columns.Add("priceRemont", "Цена ремонта");
+            dgw.Columns.Add("antenna", "Антенна");
+            dgw.Columns.Add("manipulator", "Манипулятор");
+            dgw.Columns.Add("AKB", "АКБ");
+            dgw.Columns.Add("batteryСharger", "ЗУ");
+            dgw.Columns.Add("completed_works_1", "Выполненные работы_1");
+            dgw.Columns.Add("completed_works_2", "Выполненные работы_1");
+            dgw.Columns.Add("completed_works_3", "Выполненные работы_1");
+            dgw.Columns.Add("completed_works_4", "Выполненные работы_1");
+            dgw.Columns.Add("completed_works_5", "Выполненные работы_1");
+            dgw.Columns.Add("completed_works_6", "Выполненные работы_1");
+            dgw.Columns.Add("completed_works_7", "Выполненные работы_1");
+            dgw.Columns.Add("parts_1", "Израсходованные материалы и детали_1");
+            dgw.Columns.Add("parts_2", "Израсходованные материалы и детали_2");
+            dgw.Columns.Add("parts_3", "Израсходованные материалы и детали_3");
+            dgw.Columns.Add("parts_4", "Израсходованные материалы и детали_4");
+            dgw.Columns.Add("parts_5", "Израсходованные материалы и детали_5");
+            dgw.Columns.Add("parts_6", "Израсходованные материалы и детали_6");
+            dgw.Columns.Add("parts_7", "Израсходованные материалы и детали_7");
+            dgw.Columns.Add("decommissionNumber", "№ акта списания");
+            dgw.Columns.Add("comment", "Примечание");
+            dgw.Columns.Add("road", "Дорога");
+            dgw.Columns.Add("verifiedRST", "Состояние РСТ");
+            dgw.Columns.Add("IsNew", "RowState");
+            dgw.Columns[12].Visible = true;
+            dgw.Columns[13].Visible = false;
+            dgw.Columns[14].Visible = false;
+            dgw.Columns[15].Visible = false;
+            dgw.Columns[16].Visible = false;
+            dgw.Columns[20].Visible = false;
+            dgw.Columns[21].Visible = false;
+            dgw.Columns[22].Visible = false;
+            dgw.Columns[23].Visible = false;
+            dgw.Columns[24].Visible = false;
+            dgw.Columns[25].Visible = false;
+            dgw.Columns[26].Visible = false;
+            dgw.Columns[27].Visible = false;
+            dgw.Columns[28].Visible = false;
+            dgw.Columns[29].Visible = false;
+            dgw.Columns[30].Visible = false;
+            dgw.Columns[31].Visible = false;
+            dgw.Columns[32].Visible = false;
+            dgw.Columns[33].Visible = false;
+            dgw.Columns[34].Visible = false;
+            dgw.Columns[35].Visible = false;
+            dgw.Columns[36].Visible = false;
+            dgw.Columns[37].Visible = false;
+            dgw.Columns[40].Visible = false;
+            dgw.Columns[41].Visible = false;
+            dgw.Columns[42].Visible = false;
+        }
+
+        /// <summary>
+        /// Загрузка данных в datagridview
+        /// </summary>
+        /// <param name="dgw"></param>
+        /// <param name="city">город</param>
+        /// <param name="road">дорога</param>
+        internal static void RefreshDataGrid(DataGridView dgw, string city, string road)
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            if (!String.IsNullOrWhiteSpace(city))
+            {
+                var myCulture = new CultureInfo("ru-RU");
+                myCulture.NumberFormat.NumberDecimalSeparator = ".";
+                Thread.CurrentThread.CurrentCulture = myCulture;
+                dgw.Rows.Clear();
+
+                using (MySqlCommand command = new MySqlCommand("radiostantionSelect_2", DB.GetInstance.GetConnection()))
+                {
+                    DB.GetInstance.OpenConnection();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue($"city", city);
+                    command.Parameters.AddWithValue($"road", road);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            int i = 0;
+                            while (reader.Read())
+                            {
+                                ReedSingleRow(dgw, reader);
+                                if (dgw.Rows[i].Cells["verifiedRST"].Value.ToString() == "+")
+                                    dgw.Rows[i].Cells["serialNumber"].Style.BackColor = Color.LightGreen;
+                                else if (dgw.Rows[i].Cells["verifiedRST"].Value.ToString() == "?")
+                                    dgw.Rows[i].Cells["serialNumber"].Style.BackColor = Color.Yellow;
+                                else if (dgw.Rows[i].Cells["verifiedRST"].Value.ToString() == "0")
+                                    dgw.Rows[i].Cells["serialNumber"].Style.BackColor = Color.Red;
+                                i++;
+                            }
+                            reader.Close();
+                        }
+                    }
+                    command.ExecuteNonQuery();
+                    DB.GetInstance.CloseConnection();
+                }
+            }
+            else dgw.Rows.Clear();
+            dgw.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgw.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+            dgw.Columns[0].Width = 45;
+            dgw.Columns[3].Width = 170;
+            dgw.Columns[4].Width = 170;
+            dgw.Columns[5].Width = 170;
+            dgw.Columns[6].Width = 170;
+            dgw.Columns[7].Width = 178;
+            dgw.Columns[8].Width = 100;
+            dgw.Columns[9].Width = 110;
+            dgw.Columns[10].Width = 100;
+            dgw.Columns[11].Width = 100;
+            dgw.Columns[17].Width = 120;
+            dgw.Columns[39].Width = 300;
+            if (dgw.Rows.Count > 1)
+                dgw.CurrentCell = dgw.Rows[dgw.Rows.Count - 1].Cells[0];
+        }
+        internal static void ReedSingleRow(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), 
+                record.GetString(3), record.GetString(4), record.GetString(5), record.GetString(6), record.GetString(7), 
+                Convert.ToDateTime(record.GetString(8)), record.GetString(9), record.GetString(10), record.GetDecimal(11), 
+                record.GetString(12), record.GetString(13), record.GetString(14), record.GetString(15), record.GetString(16), 
+                record.GetString(17), record.GetString(18), record.GetDecimal(19), record.GetString(20), record.GetString(21), 
+                record.GetString(22), record.GetString(23), record.GetString(24), record.GetString(25), record.GetString(26), 
+                record.GetString(27), record.GetString(28), record.GetString(29), record.GetString(30), record.GetString(31), 
+                record.GetString(32), record.GetString(33), record.GetString(34), record.GetString(35), record.GetString(36), 
+                record.GetString(37), record.GetString(38), record.GetString(39), record.GetString(40), record.GetString(41), 
+                RowState.New)));
         }
         #endregion
     }
