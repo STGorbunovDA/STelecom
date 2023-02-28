@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Win32;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using STelecom.Classes.Cheack;
@@ -550,6 +551,38 @@ namespace STelecom.Classes.FormsMethods
             dgw.Columns[11].Width = 100;
             dgw.Columns[17].Width = 120;
         }
+        #endregion
+
+        #region загрузка данных ТО радиостанций по городу и сохранение в реестр
+
+        /// <summary>
+        /// загрузка данных ТО радиостанций по городу и сохранение в реестр
+        /// </summary>
+        /// <param name="dgw"></param>
+        /// <param name="city"></param>
+        /// <param name="road"></param>
+        internal static void LoadingSeachDataBaseCity(DataGridView dgw, ComboBox city, ComboBox road)
+        {
+            if (String.IsNullOrWhiteSpace(city.Text))
+            {
+                MessageBox.Show("Комбобокс \"Город\" пуст, необходимо добавить новую радиостанцию\n P.s. Ввводи город правильно", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            RegistryKey currentUserKey = Registry.CurrentUser;
+            RegistryKey helloKey = currentUserKey.CreateSubKey("SOFTWARE\\ServiceTelekom_Setting\\City");
+            helloKey.SetValue("Город проведения проверки", $"{city.Text}");
+            helloKey.Close();
+            RefreshDataGrid(dgw, city.Text, road.Text);
+            SelectCityGropByRoad(city, road);
+            RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\ServiceTelekom_Setting\\City");
+            if (reg != null)
+            {
+                RegistryKey currentUserKey2 = Registry.CurrentUser;
+                RegistryKey helloKey2 = currentUserKey2.OpenSubKey("SOFTWARE\\ServiceTelekom_Setting\\City");
+                city.Text = helloKey2.GetValue("Город проведения проверки").ToString();
+            }
+        }
+
         #endregion
     }
 }

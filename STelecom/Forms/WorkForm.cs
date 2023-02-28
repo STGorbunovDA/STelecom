@@ -56,7 +56,7 @@ namespace STelecom.Forms
                     element.Enabled = false;
 
                 cmbCity.Enabled = true;
-                btnSeachDatabaseCity.Enabled = true;
+                btnLoadingSeachDataBaseCity.Enabled = true;
                 btnAddCityInRegistry.Enabled = true;
                 btnAllDataBase.Enabled = true;
                 picbUpdate.Enabled = true;
@@ -124,13 +124,13 @@ namespace STelecom.Forms
         void WorkForm_Load(object sender, EventArgs e)
         {
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily,
                 12f, FontStyle.Bold); //жирный курсив размера 16
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.White; //цвет текста
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; //цвет ячейки
-            WorkFromMethod.GettingSettingBrigadesByUser(lblChiefFIO, lblEngineerFIO, lblDoverennost, 
+            WorkFromMethod.GettingSettingBrigadesByUser(lblChiefFIO, lblEngineerFIO, lblDoverennost,
                 lblRoad, lblNumberPrintDocument, _user, cmbRoad);
-            WorkFromMethod.SelectCityGropByRoad(cmbCity,cmbRoad);
+            WorkFromMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
             WorkFromMethod.CreateColums(dataGridView1);
             WorkFromMethod.CreateColums(dataGridView2);
             this.dataGridView1.Sort(this.dataGridView1.Columns["dateTO"], ListSortDirection.Ascending);
@@ -225,5 +225,27 @@ namespace STelecom.Forms
             txbFlagAllDataBase.Text = "Вся БД";
         }
         #endregion
+
+        #region загрузка уникальных городов по дороге
+        void CmbCity_Click(object sender, EventArgs e)
+        {
+            WorkFromMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
+        }
+
+        #endregion
+
+        #region загрузка данных ТО радиостанций по городу и сохранение в реестр
+        void BtnLoadingSeachDataBaseCity_Click(object sender, EventArgs e)
+        {
+            WorkFromMethod.LoadingSeachDataBaseCity(dataGridView1, cmbCity, cmbRoad);
+            Counters();
+        }
+        void CmbCity_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            BtnLoadingSeachDataBaseCity_Click(sender, e);
+        }
+        #endregion
+
+
     }
 }
