@@ -108,7 +108,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.cmbSeach = new System.Windows.Forms.ComboBox();
             this.txbNumberAct = new System.Windows.Forms.TextBox();
-            this.textBox_search = new System.Windows.Forms.TextBox();
+            this.txbSearch = new System.Windows.Forms.TextBox();
             this.picbUpdate = new System.Windows.Forms.PictureBox();
             this.picbClear = new System.Windows.Forms.PictureBox();
             this.txbNumberActRemont = new System.Windows.Forms.TextBox();
@@ -253,11 +253,6 @@
             this.btnPnlFunctionalLoadingClose = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.pnlSeachDataGrid = new System.Windows.Forms.Panel();
-            this.panel_ = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.btnPnlSeachDataGrid = new System.Windows.Forms.Button();
             this.btnPnlSeachDataGridClose = new System.Windows.Forms.Button();
             this.txbPnlSeachDataGrid = new System.Windows.Forms.TextBox();
@@ -289,7 +284,6 @@
             this.pnlPrintBase.SuspendLayout();
             this.pnlFunctionalLoading.SuspendLayout();
             this.pnlSeachDataGrid.SuspendLayout();
-            this.panel_.SuspendLayout();
             this.pnlInfoPhoneFIO.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -403,7 +397,7 @@
             // mTripRstDecommission
             // 
             this.mTripRstDecommission.Name = "mTripRstDecommission";
-            this.mTripRstDecommission.Size = new System.Drawing.Size(180, 22);
+            this.mTripRstDecommission.Size = new System.Drawing.Size(149, 22);
             this.mTripRstDecommission.Text = "Списать РСТ";
             // 
             // mTripCurator
@@ -649,7 +643,7 @@
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.cmbSeach);
             this.panel1.Controls.Add(this.txbNumberAct);
-            this.panel1.Controls.Add(this.textBox_search);
+            this.panel1.Controls.Add(this.txbSearch);
             this.panel1.Controls.Add(this.picbUpdate);
             this.panel1.Controls.Add(this.picbClear);
             this.panel1.Controls.Add(this.txbNumberActRemont);
@@ -851,7 +845,7 @@
             this.cmbNumberUnique.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbNumberUnique.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbNumberUnique.FormattingEnabled = true;
-            this.cmbNumberUnique.Location = new System.Drawing.Point(1137, 32);
+            this.cmbNumberUnique.Location = new System.Drawing.Point(1135, 31);
             this.cmbNumberUnique.Name = "cmbNumberUnique";
             this.cmbNumberUnique.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cmbNumberUnique.Size = new System.Drawing.Size(251, 28);
@@ -1049,15 +1043,15 @@
             this.txbNumberAct.Size = new System.Drawing.Size(141, 29);
             this.txbNumberAct.TabIndex = 27;
             // 
-            // textBox_search
+            // txbSearch
             // 
-            this.textBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_search.Location = new System.Drawing.Point(1135, 31);
-            this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(249, 29);
-            this.textBox_search.TabIndex = 4;
+            this.txbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txbSearch.Location = new System.Drawing.Point(1135, 31);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(249, 29);
+            this.txbSearch.TabIndex = 4;
             // 
             // picbUpdate
             // 
@@ -2787,7 +2781,6 @@
             this.pnlSeachDataGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlSeachDataGrid.BackColor = System.Drawing.Color.SkyBlue;
             this.pnlSeachDataGrid.BackgroundImage = global::STelecom.Properties.Resources.Untitled_6;
-            this.pnlSeachDataGrid.Controls.Add(this.panel_);
             this.pnlSeachDataGrid.Controls.Add(this.btnPnlSeachDataGrid);
             this.pnlSeachDataGrid.Controls.Add(this.btnPnlSeachDataGridClose);
             this.pnlSeachDataGrid.Controls.Add(this.txbPnlSeachDataGrid);
@@ -2798,62 +2791,6 @@
             this.pnlSeachDataGrid.Size = new System.Drawing.Size(528, 141);
             this.pnlSeachDataGrid.TabIndex = 98;
             this.pnlSeachDataGrid.Visible = false;
-            // 
-            // panel_
-            // 
-            this.panel_.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel_.Controls.Add(this.button1);
-            this.panel_.Controls.Add(this.button2);
-            this.panel_.Controls.Add(this.textBox1);
-            this.panel_.Controls.Add(this.label17);
-            this.panel_.Enabled = false;
-            this.panel_.Location = new System.Drawing.Point(400, 330);
-            this.panel_.Name = "panel_";
-            this.panel_.Size = new System.Drawing.Size(528, 141);
-            this.panel_.TabIndex = 38;
-            this.panel_.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(394, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 29);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Поиск";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(495, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 29);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(119, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(372, 29);
-            this.textBox1.TabIndex = 37;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(25, 50);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 23);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "Поиск:";
             // 
             // btnPnlSeachDataGrid
             // 
@@ -2976,11 +2913,11 @@
             this.ClientSize = new System.Drawing.Size(1424, 777);
             this.Controls.Add(this.pnlInfoPhoneFIO);
             this.Controls.Add(this.pnlSeachDataGrid);
+            this.Controls.Add(this.pnlDateRegistrationStaff);
             this.Controls.Add(this.pnlPrintBase);
             this.Controls.Add(this.pnlChangeNumberActTOFull);
             this.Controls.Add(this.pnlTag);
             this.Controls.Add(this.pnlDecommissionSerialNumber);
-            this.Controls.Add(this.pnlDateRegistrationStaff);
             this.Controls.Add(this.pnlFunctionalLoading);
             this.Controls.Add(this.pnlRemontInformationCompany);
             this.Controls.Add(this.panel2);
@@ -3030,8 +2967,6 @@
             this.pnlFunctionalLoading.PerformLayout();
             this.pnlSeachDataGrid.ResumeLayout(false);
             this.pnlSeachDataGrid.PerformLayout();
-            this.panel_.ResumeLayout(false);
-            this.panel_.PerformLayout();
             this.pnlInfoPhoneFIO.ResumeLayout(false);
             this.pnlInfoPhoneFIO.PerformLayout();
             this.ResumeLayout(false);
@@ -3116,7 +3051,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cmbSeach;
         private System.Windows.Forms.TextBox txbNumberAct;
-        private System.Windows.Forms.TextBox textBox_search;
+        private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.PictureBox picbUpdate;
         private System.Windows.Forms.PictureBox picbClear;
         private System.Windows.Forms.TextBox txbNumberActRemont;
@@ -3261,11 +3196,6 @@
         private System.Windows.Forms.Button btnPnlFunctionalLoadingClose;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Panel pnlSeachDataGrid;
-        private System.Windows.Forms.Panel panel_;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnPnlSeachDataGrid;
         private System.Windows.Forms.Button btnPnlSeachDataGridClose;
         private System.Windows.Forms.TextBox txbPnlSeachDataGrid;
