@@ -207,6 +207,7 @@ namespace STelecom.Forms
             string road = cmbRoad.Text;
             WorkFromMethod.RefreshDataGridTimerEventProcessor(dataGridView2, taskCity, road);
             new Thread(() => { WorkFromMethod.GetSaveDataGridViewInJson(dataGridView2, taskCity); }) { IsBackground = true }.Start();
+            new Thread(() => { WorkFromMethod.AutoSaveFilePC(dataGridView2, taskCity); }) { IsBackground = true }.Start();
 
         }
     }
