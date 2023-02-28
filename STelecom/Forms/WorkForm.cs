@@ -2,14 +2,9 @@
 using STelecom.Classes.Cheack;
 using STelecom.Classes.FormsMethods;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinForms = System.Windows.Forms;
 
@@ -187,7 +182,7 @@ namespace STelecom.Forms
             }
             ///Таймер
             WinForms::Timer timer = new WinForms::Timer();
-            timer.Interval = (1 * 60 * 1000); // 15 mins
+            timer.Interval = (31 * 60 * 1000); // 15 mins
             timer.Tick += new EventHandler(TimerEventProcessor);
             timer.Start();
 
@@ -250,6 +245,76 @@ namespace STelecom.Forms
         void CmbRoad_SelectionChangeCommitted(object sender, EventArgs e)
         {
             WorkFromMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
+        }
+
+
+        #endregion
+
+        #region запись города в реестр
+        void BtnAddCityInRegistry_Click(object sender, EventArgs e)
+        {
+            if(String.IsNullOrWhiteSpace(cmbCity.Text))
+            {
+                MessageBox.Show("Комбобокс \"Город\" пуст, необходимо добавить новую радиостанцию\n P.s. Ввводи город правильно", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            RegistryKey currentUserKey = Registry.CurrentUser;
+            RegistryKey helloKey = currentUserKey.CreateSubKey("SOFTWARE\\ServiceTelekom_Setting");
+            helloKey.SetValue("Город проведения проверки", $"{cmbCity.Text}");
+            helloKey.Close();
+        }
+        #endregion
+
+        #region получение данных в Control-ы, button right mouse
+        void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.ReadOnly = false;
+            selectedRow = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[selectedRow];
+                txbid.Text = row.Cells[0].Value.ToString();
+                cmbPoligon.Text = row.Cells[1].Value.ToString();
+                txbCompany.Text = row.Cells[2].Value.ToString();
+                txbLocation.Text = row.Cells[3].Value.ToString();
+                cmbModel.Text = row.Cells[4].Value.ToString();
+                txbSerialNumber.Text = row.Cells[5].Value.ToString();
+                txbInventoryNumber.Text = row.Cells[6].Value.ToString();
+                txbNetworkNumber.Text = row.Cells[7].Value.ToString();
+                txbDateTO.Text = row.Cells[8].Value.ToString();
+                txbNumberAct.Text = row.Cells[9].Value.ToString();
+                txbCity.Text = row.Cells[10].Value.ToString();
+                txbPrice.Text = row.Cells[11].Value.ToString();
+                txBRepresentative.Text = row.Cells[12].Value.ToString();
+                txbPost.Text = row.Cells[13].Value.ToString();
+                txbNumberIdentification.Text = row.Cells[14].Value.ToString();
+                txbDateIssue.Text = row.Cells[15].Value.ToString();
+                txbPhoneNumber.Text = row.Cells[16].Value.ToString();
+                txbNumberActRemont.Text = row.Cells[17].Value.ToString();
+                cmbCategory.Text = row.Cells[18].Value.ToString();
+                txbPriceRemont.Text = row.Cells[19].Value.ToString();
+                txbAntenna.Text = row.Cells[20].Value.ToString();
+                txbManipulator.Text = row.Cells[21].Value.ToString();
+                txbAKB.Text = row.Cells[22].Value.ToString();
+                txbBatteryСharger.Text = row.Cells[23].Value.ToString();
+                txbCompletedWorks1.Text = row.Cells[24].Value.ToString();
+                txbCompletedWorks2.Text = row.Cells[25].Value.ToString();
+                txbCompletedWorks3.Text = row.Cells[26].Value.ToString();
+                txbCompletedWorks4.Text = row.Cells[27].Value.ToString();
+                txbCompletedWorks5.Text = row.Cells[28].Value.ToString();
+                txbCompletedWorks6.Text = row.Cells[29].Value.ToString();
+                txbCompletedWorks7.Text = row.Cells[30].Value.ToString();
+                txbParts1.Text = row.Cells[31].Value.ToString();
+                txbParts2.Text = row.Cells[32].Value.ToString();
+                txbParts3.Text = row.Cells[33].Value.ToString();
+                txbParts4.Text = row.Cells[34].Value.ToString();
+                txbParts5.Text = row.Cells[35].Value.ToString();
+                txbParts6.Text = row.Cells[36].Value.ToString();
+                txbParts7.Text = row.Cells[37].Value.ToString();
+                txbDecommissionNumber.Text = row.Cells[38].Value.ToString();
+                txbComment.Text = row.Cells[39].Value.ToString();
+                //cmbRoad.Text = row.Cells[40].Value.ToString();
+            }
         }
 
         #endregion
