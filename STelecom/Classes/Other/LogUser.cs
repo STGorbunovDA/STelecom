@@ -7,6 +7,10 @@ namespace STelecom.Classes.Other
 {
     internal class LogUser
     {
+        /// <summary>
+        /// Храним Log-и с ошибками.
+        /// </summary>
+        /// <param name="exception"></param>
         internal static void LogExceptionUserSaveFilePC(string exception)
         {
             try

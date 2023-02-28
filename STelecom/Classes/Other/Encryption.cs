@@ -7,7 +7,11 @@ namespace STelecom.Classes.Other
     class Encryption
     {
         private const string SecurityKey = "ServiceTelecomGorbunov2015";
-
+        /// <summary>
+        /// Шифруем
+        /// </summary>
+        /// <param name="PlainText"></param>
+        /// <returns></returns>
         public static string EncryptPlainTextToCipherText(string PlainText)
         {
             // Getting the bytes of Input String.
@@ -33,6 +37,11 @@ namespace STelecom.Classes.Other
             objTripleDESCryptoService.Clear();
             return Convert.ToBase64String(resultArray, 0, resultArray.Length);
         }
+        /// <summary>
+        /// Дешифруем
+        /// </summary>
+        /// <param name="CipherText"></param>
+        /// <returns></returns>
         public static string DecryptCipherTextToPlainText(string CipherText)
         {
             byte[] toEncryptArray = Convert.FromBase64String(CipherText);

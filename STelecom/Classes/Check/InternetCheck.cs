@@ -6,6 +6,10 @@ namespace STelecom.Classes.Cheack
 {
     class InternetCheck
     {
+        /// <summary>
+        /// Проверка Интернета
+        /// </summary>
+        /// <returns></returns>
         public static bool CheackSkyNET()
         {
             try

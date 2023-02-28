@@ -19,6 +19,7 @@ namespace STelecom.Forms
         private readonly CheckUser _user;
         int selectedRow;
         string[] queryPost = { "tutorialEngineerSelect_1", "tutorialEngineerSelect_2", "tutorialEngineerSelect_3" };
+
         #region состояние Rows
         enum RowState
         {
@@ -214,6 +215,14 @@ namespace STelecom.Forms
         {
             SearchEngineer(dataGridView1, cmbSeach.Text, txbSearch.Text, cmbUnique.Text);
         }
+
+        /// <summary>
+        /// Поиск по Базе данных
+        /// </summary>
+        /// <param name="dgw">DataGrid</param>
+        /// <param name="cmbUnique">Столбец в БД</param>
+        /// <param name="txbSearch">Произвольное значение пользователя для столбца "info" в БД</param>
+        /// <param name="cmbNumberUnique">Поиск по уникальным значениям, загруженных из БД в CMB</param>
         void SearchEngineer(DataGridView dgw, string cmbUnique, string txbSearch, string cmbNumberUnique)
         {
             if (!InternetCheck.CheackSkyNET())
