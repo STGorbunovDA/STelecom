@@ -187,7 +187,7 @@ namespace STelecom.Forms
             }
             ///Таймер
             WinForms::Timer timer = new WinForms::Timer();
-            timer.Interval = (31 * 60 * 1000); // 15 mins
+            timer.Interval = (1 * 60 * 1000); // 15 mins
             timer.Tick += new EventHandler(TimerEventProcessor);
             timer.Start();
 
@@ -206,9 +206,9 @@ namespace STelecom.Forms
             string taskCity = cmbCity.Text;
             string road = cmbRoad.Text;
             WorkFromMethod.RefreshDataGridTimerEventProcessor(dataGridView2, taskCity, road);
+            new Thread(() => { WorkFromMethod.CopyDataBaseRadiostantionInRadiostantionCopy(); }) { IsBackground = true }.Start();
             new Thread(() => { WorkFromMethod.GetSaveDataGridViewInJson(dataGridView2, taskCity); }) { IsBackground = true }.Start();
             new Thread(() => { WorkFromMethod.AutoSaveFilePC(dataGridView2, taskCity); }) { IsBackground = true }.Start();
-
         }
     }
 }
