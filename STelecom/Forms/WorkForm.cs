@@ -1,4 +1,5 @@
 ﻿using STelecom.Classes.Cheack;
+using STelecom.Classes.FormsMethods;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,6 +81,15 @@ namespace STelecom.Forms
                 mTripFuncionalPanel.Visible = false;
                 panel4.Visible = false;
             }
+        }
+
+        void WorkForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 12f, FontStyle.Bold); //жирный курсив размера 16
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.White; //цвет текста
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; //цвет ячейки
+            WorkFromMethod.GettingTeamData(lblChiefFIO, lblEngineerFIO, lblDoverennost, lblRoad, lblNumberPrintDocument, _user, cmbRoad);
         }
     }
 }
