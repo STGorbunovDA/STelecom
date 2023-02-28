@@ -194,6 +194,7 @@ namespace STelecom.Forms
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
         }
+
         /// <summary>
         /// Таймер для копирования БД, сохранение в Excel, Json
         /// </summary>
@@ -210,5 +211,19 @@ namespace STelecom.Forms
             new Thread(() => { WorkFromMethod.GetSaveDataGridViewInJson(dataGridView2, taskCity); }) { IsBackground = true }.Start();
             new Thread(() => { WorkFromMethod.AutoSaveFilePC(dataGridView2, taskCity); }) { IsBackground = true }.Start();
         }
+
+        #region загрузка всех данных радиостанций без города по всей дороге
+        void BtnAllDataBase_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Сначала добавь радиостанцию", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            WorkFromMethod.FullDataBase(dataGridView1, cmbRoad.Text);
+            Counters();
+            txbFlagAllDataBase.Text = "Вся БД";
+        }
+        #endregion
     }
 }
