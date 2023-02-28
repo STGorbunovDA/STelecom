@@ -8,8 +8,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForms = System.Windows.Forms;
 
 namespace STelecom.Forms
 {
@@ -184,7 +186,7 @@ namespace STelecom.Forms
                     cmbAddSignature.Text = cmbAddSignature.Items[cmbAddSignature.Items.Count - 1].ToString();
             }
             ///Таймер
-            Timer timer = new Timer();
+            WinForms::Timer timer = new WinForms::Timer();
             timer.Interval = (31 * 60 * 1000); // 15 mins
             timer.Tick += new EventHandler(TimerEventProcessor);
             timer.Start();
@@ -204,6 +206,7 @@ namespace STelecom.Forms
             string taskCity = cmbCity.Text;
             string road = cmbRoad.Text;
             WorkFromMethod.RefreshDataGridTimerEventProcessor(dataGridView2, taskCity, road);
+            new Thread(() => { WorkFromMethod.GetSaveDataGridViewInJson(dataGridView2, taskCity); }) { IsBackground = true }.Start();
 
         }
     }
