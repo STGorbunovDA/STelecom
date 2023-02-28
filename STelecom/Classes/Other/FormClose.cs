@@ -23,7 +23,46 @@ namespace STelecom.Classes.Other
                 return Class;
             }
         }
-        #region получение Даты регистрации входа в программу для табеля
+
+        #region Метод при закрытии формы. Сохраняем дату и время выхода пользователя из программы.
+        /// <summary>
+        /// Метод при закрытии формы. Сохраняем дату и время выхода пользователя из программы.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public bool FClose(string user)
+        {
+            DialogResult result = MessageBox.Show("Вы действительно хотите закрыть программу?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (result == DialogResult.OK)
+            {
+                DateTime Date = DateTime.Now;
+                string exitDate = Date.ToString("yyyy-MM-dd HH:mm:ss");
+                DateTime dateTimeInput = CheckDateTimeInputLogUserDatabase(user);
+                if (Date.ToString("yyyy-MM-dd") == dateTimeInput.ToString("yyyy-MM-dd"))
+                {
+                    using (MySqlCommand command = new MySqlCommand("logUsersUpdate_1", DB.GetInstance.GetConnection()))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue($"dateTimeExit", exitDate);
+                        command.Parameters.AddWithValue($"user", user);
+                        command.Parameters.AddWithValue($"dateTimeInput", dateTimeInput.ToString("yyyy-MM-dd HH:mm:ss"));
+                        DB.GetInstance.OpenConnection();
+                        command.ExecuteNonQuery();
+                        DB.GetInstance.CloseConnection();
+                        return false;
+                    }
+                }
+                return true;
+            }
+            else return true;
+        }
+        #endregion
+
+        /// <summary>
+        /// Получаем дату регистрации входа пользователя для табеля
+        /// </summary>
+        /// <param name="user">Пользователь</param>
+        /// <returns></returns>
         DateTime CheckDateTimeInputLogUserDatabase(string user)
         {
             DateTime Date = DateTime.Now;
@@ -40,33 +79,6 @@ namespace STelecom.Classes.Other
                     else return DateTime.MinValue;
                 }
             }
-        }
-        #endregion
-        public bool FClose(string login)
-        {
-            DialogResult result = MessageBox.Show("Вы действительно хотите закрыть программу?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-            if (result == DialogResult.OK)
-            {
-                DateTime Date = DateTime.Now;
-                string exitDate = Date.ToString("yyyy-MM-dd HH:mm:ss");
-                DateTime dateTimeInput = CheckDateTimeInputLogUserDatabase(login);
-                if (Date.ToString("yyyy-MM-dd") == dateTimeInput.ToString("yyyy-MM-dd"))
-                {
-                    using (MySqlCommand command = new MySqlCommand("logUsersUpdate_1", DB.GetInstance.GetConnection()))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue($"dateTimeExit", exitDate);
-                        command.Parameters.AddWithValue($"user", login);
-                        command.Parameters.AddWithValue($"dateTimeInput", dateTimeInput.ToString("yyyy-MM-dd HH:mm:ss"));
-                        DB.GetInstance.OpenConnection();
-                        command.ExecuteNonQuery();
-                        DB.GetInstance.CloseConnection();
-                        return false;
-                    }
-                }
-                return true;
-            }
-            else return true;
         }
     }
 }

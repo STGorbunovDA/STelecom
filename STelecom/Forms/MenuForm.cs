@@ -99,6 +99,12 @@ namespace STelecom.Forms
                 else MessageBox.Show("Сообщи руководителю что-бы сформировал тебя в бригаду");
             }
         }
+
+        /// <summary>
+        /// Проверка должности пользователя
+        /// </summary>
+        /// <param name="queryPost">Хранимая процедура в массиве</param>
+        /// <returns></returns>
         bool CheckPostUsersSettingBrigades(string queryPost)
         {
             using (MySqlCommand command = new MySqlCommand(queryPost, DB.GetInstance.GetConnection()))
@@ -114,8 +120,12 @@ namespace STelecom.Forms
                     else return false;
                 }
             }
-        }
-        #region получение Даты регистрации входа в программу для табеля
+        }    
+        /// <summary>
+        /// Получаем дату регистрации входа пользователя для табеля
+        /// </summary>
+        /// <param name="user">Пользователь</param>
+        /// <returns></returns>
         DateTime CheckDateTimeInputLogUserDatabase(string user)
         {
             DateTime Date = DateTime.Now;
@@ -133,8 +143,6 @@ namespace STelecom.Forms
                 }
             }
         }
-        #endregion
-
         void SettingAdmin_Click(object sender, EventArgs e)
         {
             using (SettingAdminForm SettingAdmin = new SettingAdminForm())
@@ -144,7 +152,6 @@ namespace STelecom.Forms
                 this.Show();
             }
         }
-
         void SettingBrigades_Click(object sender, EventArgs e)
         {
             using (RegistrationStaff registrationStaff = new RegistrationStaff(_user))
@@ -154,23 +161,29 @@ namespace STelecom.Forms
                 this.Show();
             }
         }
-
         void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
         }
-
         void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = FormClose.GetInstance.FClose(_user.Login);
         }
-
         void TutorialEngineers_Click(object sender, EventArgs e)
         {
             using (TutorialEngineerForm tutorialEngineer = new TutorialEngineerForm(_user))
             {
                 this.Hide();
                 tutorialEngineer.ShowDialog();
+                this.Show();
+            }
+        }
+        void SectionForeman_Click(object sender, EventArgs e)
+        {
+            using (WorkForm workForm = new WorkForm(_user))
+            {
+                this.Hide();
+                workForm.ShowDialog();
                 this.Show();
             }
         }
@@ -208,16 +221,6 @@ namespace STelecom.Forms
         {
             settingBrigades.ForeColor = Color.Black;
         }
-        #endregion
-
-        void SectionForeman_Click(object sender, EventArgs e)
-        {
-            using (WorkForm workForm = new WorkForm(_user))
-            {
-                this.Hide();
-                workForm.ShowDialog();
-                this.Show();
-            }
-        }
+        #endregion      
     }
 }
