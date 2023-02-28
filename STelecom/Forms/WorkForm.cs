@@ -146,6 +146,43 @@ namespace STelecom.Forms
             }
             WorkFromMethod.RefreshDataGrid(dataGridView1, cmbCity.Text, cmbRoad.Text);
             Counters();
+            /// получение актов(незаполненные) из реестра которые которые добавил пользователь
+            RegistryKey reg2 = Registry.CurrentUser.OpenSubKey($"SOFTWARE\\ServiceTelekom_Setting\\Акты_Заполняем_До_full");
+            if (reg2 != null)
+            {
+                string registry = String.Empty;
+                RegistryKey currentUserKey = Registry.CurrentUser;
+                RegistryKey helloKey = currentUserKey.OpenSubKey($"SOFTWARE\\ServiceTelekom_Setting\\Акты_Заполняем_До_full");
+                registry = helloKey.GetValue("Акты_незаполненные").ToString();
+                string[] split = registry.Split(new Char[] { ';' });
+
+                foreach (string s in split)
+                    if (!String.IsNullOrWhiteSpace(s))
+                        cmbAddFillFullActTO.Items.Add(s);
+                helloKey.Close();
+                cmbAddFillFullActTO.Sorted = true;
+                if (cmbAddFillFullActTO.Items.Count > 0)
+                    cmbAddFillFullActTO.Text = cmbAddFillFullActTO.Items[cmbAddFillFullActTO.Items.Count - 1].ToString();
+            }
+            /// получение актов(на подпись) из реестра которые которые добавил пользователь
+            RegistryKey reg3 = Registry.CurrentUser.OpenSubKey($"SOFTWARE\\ServiceTelekom_Setting\\Акты_на_подпись");
+            if (reg3 != null)
+            {
+                string registry2 = String.Empty;
+                RegistryKey currentUserKey = Registry.CurrentUser;
+                RegistryKey helloKey = currentUserKey.OpenSubKey($"SOFTWARE\\ServiceTelekom_Setting\\Акты_на_подпись");
+                registry2 = helloKey.GetValue("Акты_на_подпись").ToString();
+                string[] split = registry2.Split(new Char[] { ';' });
+
+                foreach (string s in split)
+                    if (!String.IsNullOrWhiteSpace(s))
+                        cmbAddSignature.Items.Add(s);
+
+                helloKey.Close();
+                cmbAddSignature.Sorted = true;
+                if (cmbAddSignature.Items.Count > 0)
+                    cmbAddSignature.Text = cmbAddSignature.Items[cmbAddSignature.Items.Count - 1].ToString();
+            }
         }
     }
 }
