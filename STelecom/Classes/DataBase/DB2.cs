@@ -1,13 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using STelecom.Classes.Other;
 
-namespace STelecom.DataBase
+namespace STelecom.Classes.DataBase
 {
-    class DB
+    internal class DB2
     {
-        static volatile DB Class;
+        static volatile DB2 Class;
         static object SyncObject = new object();
-        public static DB GetInstance
+        public static DB2 GetInstance
         {
             get
             {
@@ -15,14 +15,14 @@ namespace STelecom.DataBase
                     lock (SyncObject)
                     {
                         if (Class == null)
-                            Class = new DB();
+                            Class = new DB2();
                     }
                 return Class;
             }
         }
         readonly MySqlConnection connection = new MySqlConnection($"server=31.31.198.62;port=3306;" +
-            $"username={Encryption.DecryptCipherTextToPlainText("vKGbDdqaoW8UbfKI44/flQ==")};" +
-            $"password={Encryption.DecryptCipherTextToPlainText("fuB1hXCQ1pYUBw+qqevUc7uqOmtN19aQ")};" +
+            $"username={Encryption.DecryptCipherTextToPlainText("vKGbDdqaoW9LHTIUufr0vw==")};" +
+            $"password={Encryption.DecryptCipherTextToPlainText("fuB1hXCQ1pYUBw+qqevUc/HVeLjqAEtcds46B6NqcLs=")};" +
             $"database={Encryption.DecryptCipherTextToPlainText("vKGbDdqaoW+93a+IIGwtEvH5h0BsY+fx")};" +
             $"charset=utf8");
         public MySqlConnection GetConnection()

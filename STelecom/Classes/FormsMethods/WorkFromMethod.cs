@@ -2,22 +2,18 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using STelecom.Classes.Cheack;
+using STelecom.Classes.DataBase;
 using STelecom.Classes.Other;
 using STelecom.DataBase;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace STelecom.Classes.FormsMethods
 {
@@ -353,15 +349,15 @@ namespace STelecom.Classes.FormsMethods
         }
         internal static void ReedSingleRowTimerEventProcessor(DataGridView dgw, IDataRecord record)
         {
-            dgw.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), 
+            dgw.Invoke((MethodInvoker)(() => dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2),
                 record.GetString(3), record.GetString(4), record.GetString(5), record.GetString(6), record.GetString(7),
-                Convert.ToDateTime(record.GetString(8)), record.GetString(9), record.GetString(10), record.GetDecimal(11), 
-                record.GetString(12), record.GetString(13), record.GetString(14), record.GetString(15), record.GetString(16), 
-                record.GetString(17), record.GetString(18), record.GetDecimal(19), record.GetString(20), record.GetString(21), 
-                record.GetString(22), record.GetString(23), record.GetString(24), record.GetString(25), record.GetString(26), 
-                record.GetString(27), record.GetString(28), record.GetString(29), record.GetString(30), record.GetString(31), 
+                Convert.ToDateTime(record.GetString(8)), record.GetString(9), record.GetString(10), record.GetDecimal(11),
+                record.GetString(12), record.GetString(13), record.GetString(14), record.GetString(15), record.GetString(16),
+                record.GetString(17), record.GetString(18), record.GetDecimal(19), record.GetString(20), record.GetString(21),
+                record.GetString(22), record.GetString(23), record.GetString(24), record.GetString(25), record.GetString(26),
+                record.GetString(27), record.GetString(28), record.GetString(29), record.GetString(30), record.GetString(31),
                 record.GetString(32), record.GetString(33), record.GetString(34), record.GetString(35), record.GetString(36),
-                record.GetString(37), record.GetString(38), record.GetString(39), record.GetString(40), record.GetString(41), 
+                record.GetString(37), record.GetString(38), record.GetString(39), record.GetString(40), record.GetString(41),
                 RowState.New)));
         }
 
@@ -482,6 +478,28 @@ namespace STelecom.Classes.FormsMethods
                     }
                     sw.WriteLine();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Копирование БД
+        /// </summary>
+        internal static void CopyDataBaseRadiostantionInRadiostantionCopy()
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            using (MySqlCommand command = new MySqlCommand("radiostantion_copy_1", DB2.GetInstance.GetConnection()))
+            {
+                DB2.GetInstance.OpenConnection();
+                command.ExecuteNonQuery();
+                DB2.GetInstance.CloseConnection();
+            }
+            using (MySqlCommand command2 = new MySqlCommand("radiostantion_copy_2", DB2.GetInstance.GetConnection()))
+            {
+
+                DB2.GetInstance.OpenConnection();
+                command2.ExecuteNonQuery();
+                DB2.GetInstance.CloseConnection();
             }
         }
 
