@@ -504,5 +504,52 @@ namespace STelecom.Classes.FormsMethods
         }
 
         #endregion
+
+        #region загрузка всех данных радиостанций без города по всей дороге
+        /// <summary>
+        /// Метод получения данных проверки ТО радиостанций по дороге без города
+        /// </summary>
+        /// <param name="dgw"></param>
+        /// <param name="road"></param>
+        internal static void FullDataBase(DataGridView dgw, string road)
+        {
+            if (!InternetCheck.CheackSkyNET())
+                return;
+            var myCulture = new CultureInfo("ru-RU");
+            myCulture.NumberFormat.NumberDecimalSeparator = ".";
+            Thread.CurrentThread.CurrentCulture = myCulture;
+            dgw.Rows.Clear();
+            using (MySqlCommand command = new MySqlCommand("radiostantionSelect_3", DB.GetInstance.GetConnection()))
+            {
+                DB.GetInstance.OpenConnection();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue($"road", road);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                            ReedSingleRow(dgw, reader);
+                        reader.Close();
+                    }
+                }
+                command.ExecuteNonQuery();
+                DB.GetInstance.CloseConnection();
+            }
+            dgw.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgw.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+            dgw.Columns[0].Width = 45;
+            dgw.Columns[3].Width = 170;
+            dgw.Columns[4].Width = 180;
+            dgw.Columns[5].Width = 150;
+            dgw.Columns[6].Width = 178;
+            dgw.Columns[7].Width = 178;
+            dgw.Columns[8].Width = 100;
+            dgw.Columns[9].Width = 110;
+            dgw.Columns[10].Width = 100;
+            dgw.Columns[11].Width = 100;
+            dgw.Columns[17].Width = 120;
+        }
+        #endregion
     }
 }
