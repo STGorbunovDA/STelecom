@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -432,6 +433,56 @@ namespace STelecom.Classes.FormsMethods
             if (!File.Exists($@"С:\Documents_ServiceTelekom\БазаДанныхJson\{city}\"))
                 Directory.CreateDirectory($@"C:\Documents_ServiceTelekom\БазаДанныхJson\{city}\");
             File.WriteAllText(fileNamePath, json);
+        }
+
+        /// <summary>
+        /// Сохранение резервного файла CSV на PC 
+        /// </summary>
+        /// <param name="dgw"></param>
+        /// <param name="city"></param>
+        internal static void AutoSaveFilePC(DataGridView dgw, string city)
+        {
+            DateTime today = DateTime.Today;
+            if (File.Exists($@"C:\Documents_ServiceTelekom\БазаДанныхExcel\{city}\БазаДанных-{city}-{today.ToString("dd.MM.yyyy")}.csv"))
+                File.Delete($@"C:\Documents_ServiceTelekom\БазаДанныхExcel\{city}\БазаДанных-{city}-{today.ToString("dd.MM.yyyy")}.csv");
+            string fileNamePath = $@"C:\Documents_ServiceTelekom\БазаДанныхExcel\{city}\БазаДанных-{city}-{today.ToString("dd.MM.yyyy")}.csv";
+            if (!File.Exists($@"С:\Documents_ServiceTelekom\БазаДанныхExcel\{city}\"))
+                Directory.CreateDirectory($@"C:\Documents_ServiceTelekom\БазаДанныхExcel\{city}\");
+            using (StreamWriter sw = new StreamWriter(fileNamePath, false, Encoding.Unicode))
+            {
+                string note = string.Empty;
+                note += $"Полигон\tПредприятие\tМесто нахождения\tМодель\tЗаводской номер\t" +
+                    $"Инвентарный номер\tСетевой номер\tДата проведения ТО\tНомер акта\tГород\tЦена ТО\t" +
+                    $"Представитель предприятия\tДолжность\tНомер удостоверения\tДата выдачи\tНомер телефона\t" +
+                    $"Номер Акта ремонта\tКатегория\tЦена ремонта\tАнтенна\tМанипулятор\tАКБ\tЗУ\tВыполненные работы_1\t" +
+                    $"Выполненные работы_2\tВыполненные работы_3\tВыполненные работы_4\tВыполненные работы_5\t" +
+                    $"Выполненные работы_6\tВыполненные работы_7\tДеталь_1\tДеталь_2\tДеталь_3\tДеталь_4\tДеталь_5\t" +
+                    $"Деталь_6\tДеталь_7\t№ Акта списания\tПримечания\tДорога\tСостояние РСТ";
+                sw.WriteLine(note);
+                for (int i = 0; i < dgw.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgw.ColumnCount; j++)
+                    {
+                        Regex re = new Regex(Environment.NewLine);
+                        string value = dgw.Rows[i].Cells[j].Value.ToString();
+                        value = re.Replace(value, " ");
+                        if (dgw.Columns[j].HeaderText.ToString() == "№")
+                        {
+
+                        }
+                        else if (dgw.Columns[j].HeaderText.ToString() == "Дата ТО")
+                            sw.Write(Convert.ToDateTime(value).ToString("dd.MM.yyyy") + "\t");
+                        else if (dgw.Columns[j].HeaderText.ToString() == "Состояние РСТ")
+                            sw.Write(value);
+                        else if (dgw.Columns[j].HeaderText.ToString() == "RowState")
+                        {
+
+                        }
+                        else sw.Write(value + "\t");
+                    }
+                    sw.WriteLine();
+                }
+            }
         }
 
         #endregion
