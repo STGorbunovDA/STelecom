@@ -123,11 +123,11 @@ namespace STelecom.Forms
                 12f, FontStyle.Bold); //жирный курсив размера 16
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.White; //цвет текста
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; //цвет ячейки
-            WorkFromMethod.GettingSettingBrigadesByUser(lblChiefFIO, lblEngineerFIO, lblDoverennost,
+            WorkFormMethod.GettingSettingBrigadesByUser(lblChiefFIO, lblEngineerFIO, lblDoverennost,
                 lblRoad, lblNumberPrintDocument, _user, cmbRoad);
-            WorkFromMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
-            WorkFromMethod.CreateColums(dataGridView1);
-            WorkFromMethod.CreateColums(dataGridView2);
+            WorkFormMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
+            WorkFormMethod.CreateColums(dataGridView1);
+            WorkFormMethod.CreateColums(dataGridView2);
             this.dataGridView1.Sort(this.dataGridView1.Columns["dateTO"], ListSortDirection.Ascending);
             dataGridView1.Columns["dateTO"].ValueType = typeof(DateTime);
             dataGridView1.Columns["dateTO"].DefaultCellStyle.Format = "dd.MM.yyyy";
@@ -141,7 +141,7 @@ namespace STelecom.Forms
 
                 helloKey.Close();
             }
-            WorkFromMethod.RefreshDataGrid(dataGridView1, cmbCity.Text, cmbRoad.Text);
+            WorkFormMethod.RefreshDataGrid(dataGridView1, cmbCity.Text, cmbRoad.Text);
             Counters();
             /// получение актов(незаполненные) из реестра которые которые добавил пользователь
             RegistryKey reg2 = Registry.CurrentUser.OpenSubKey($"SOFTWARE\\ServiceTelekom_Setting\\Акты_Заполняем_До_full");
@@ -201,10 +201,10 @@ namespace STelecom.Forms
                 return;
             string taskCity = cmbCity.Text;
             string road = cmbRoad.Text;
-            WorkFromMethod.RefreshDataGridTimerEventProcessor(dataGridView2, taskCity, road);
-            new Thread(() => { WorkFromMethod.CopyDataBaseRadiostantionInRadiostantionCopy(); }) { IsBackground = true }.Start();
-            new Thread(() => { WorkFromMethod.GetSaveDataGridViewInJson(dataGridView2, taskCity); }) { IsBackground = true }.Start();
-            new Thread(() => { WorkFromMethod.AutoSaveFilePC(dataGridView2, taskCity); }) { IsBackground = true }.Start();
+            WorkFormMethod.RefreshDataGridTimerEventProcessor(dataGridView2, taskCity, road);
+            new Thread(() => { WorkFormMethod.CopyDataBaseRadiostantionInRadiostantionCopy(); }) { IsBackground = true }.Start();
+            new Thread(() => { WorkFormMethod.GetSaveDataGridViewInJson(dataGridView2, taskCity); }) { IsBackground = true }.Start();
+            new Thread(() => { WorkFormMethod.AutoSaveFilePC(dataGridView2, taskCity); }) { IsBackground = true }.Start();
         }
 
         #region загрузка всех данных радиостанций без города по всей дороге
@@ -215,7 +215,7 @@ namespace STelecom.Forms
                 MessageBox.Show("Сначала добавь радиостанцию", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            WorkFromMethod.FullDataBase(dataGridView1, cmbRoad.Text);
+            WorkFormMethod.FullDataBase(dataGridView1, cmbRoad.Text);
             Counters();
             txbFlagAllDataBase.Text = "Вся БД";
         }
@@ -224,7 +224,7 @@ namespace STelecom.Forms
         #region загрузка уникальных городов по дороге
         void CmbCity_Click(object sender, EventArgs e)
         {
-            WorkFromMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
+            WorkFormMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
         }
 
         #endregion
@@ -232,7 +232,7 @@ namespace STelecom.Forms
         #region загрузка данных ТО радиостанций по городу и сохранение в реестр
         void BtnLoadingSeachDataBaseCity_Click(object sender, EventArgs e)
         {
-            WorkFromMethod.LoadingSeachDataBaseCity(dataGridView1, cmbCity, cmbRoad);
+            WorkFormMethod.LoadingSeachDataBaseCity(dataGridView1, cmbCity, cmbRoad);
             Counters();
         }
         void CmbCity_SelectionChangeCommitted(object sender, EventArgs e)
@@ -244,7 +244,7 @@ namespace STelecom.Forms
         #region загрузка данных в cmbCity при выборе дороги
         void CmbRoad_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            WorkFromMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
+            WorkFormMethod.SelectCityGropByRoad(cmbCity, cmbRoad);
         }
 
 
@@ -317,7 +317,82 @@ namespace STelecom.Forms
             }
         }
 
+
         #endregion
+
+        #region Clear contorl-ы
+        void PicbClear_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in panel1.Controls)
+                if (control is TextBox)
+                    control.Text = String.Empty;
+            foreach (Control control in panel2.Controls)
+                if (control is TextBox)
+                    control.Text = String.Empty;
+        }
+        #endregion
+
+        #region ProcessKbdCtrlShortCuts
+        void ProcessKbdCtrlShortCuts(object sender, KeyEventArgs e)
+        {
+            TextBox t = (TextBox)sender;
+            if (e.KeyData == (Keys.C | Keys.Control))
+            {
+                t.Copy();
+                e.Handled = true;
+            }
+            else if (e.KeyData == (Keys.X | Keys.Control))
+            {
+                t.Cut();
+                e.Handled = true;
+            }
+            else if (e.KeyData == (Keys.V | Keys.Control))
+            {
+                t.Paste();
+                e.Handled = true;
+            }
+            else if (e.KeyData == (Keys.A | Keys.Control))
+            {
+                t.SelectAll();
+                e.Handled = true;
+            }
+            else if (e.KeyData == (Keys.Z | Keys.Control))
+            {
+                t.Undo();
+                e.Handled = true;
+            }
+        }
+        #endregion
+
+        #region Сохранение БД на PC
+        void BtnSaveInFile_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Сначала добавь радиостанцию", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            pnlPrintBase.Visible = true;
+
+        }
+        void BtnPnlPrintBaseClose_Click(object sender, EventArgs e)
+        {
+            pnlPrintBase.Visible = false;
+        }
+        void BtnSaveDirectorateBase_Click(object sender, EventArgs e)
+        {
+            pnlPrintBase.Visible = false;
+            WorkFormMethod.DirectorateSaveFilePC(dataGridView1, cmbCity.Text);
+        }
+        void BtnSaveFullBase_Click(object sender, EventArgs e)
+        {
+            pnlPrintBase.Visible = false;
+            WorkFormMethod.SaveFullBasePC(dataGridView1, cmbCity.Text);
+        }
+
+        #endregion
+
+
 
 
     }
